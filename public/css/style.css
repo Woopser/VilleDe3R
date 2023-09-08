@@ -8,3 +8,13 @@ nav{
     justify-content: space-between;  
     background-color: var(--main);
 }
+
+#boutonMenu{
+    display: flex;
+    background-color: gray;
+    margin: 4px;
+    padding: 4px;
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+}
