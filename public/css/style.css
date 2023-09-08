@@ -1,0 +1,10 @@
+:root{
+    --main: rgb(0, 118, 213);
+    --secondary: rgb(99, 188, 85);
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;  
+    background-color: var(--main);
+}
