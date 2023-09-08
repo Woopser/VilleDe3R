@@ -11,15 +11,23 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('formulaire', function (Blueprint $table) {
+        Schema::create('accidentTravail', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('matricule');
+            $table->foreignId('superviseur');
             $table->dateTime('dateAccident');
             $table->text('description');
             $table->string('temoin')->nullable($value = true);
             $table->string('nature');
             $table->text('descriptionBlessure');
             $table->string('violence');
-            $table->
+            $table->text('comment');
+            $table->string('premierSoin');
+            $table->string('nomSecouriste');
+            $table->string('detail');
+            $table->date('DateRempli');
+            $tabe->date('dateSuperviseur');
+            $table->string('lieu');
             $table->timestamps();
         });
     }
