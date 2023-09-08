@@ -10,8 +10,13 @@
 <body>
     <!-- Navbar -->
     <nav>
-        <a href="{{ route('home') }}"><img src="{{ asset('img/logo_v3r_n_et_blanc.eps') }}" alt=""></a>
-        <a href="{{ route('about') }}">À propos</a>
+        <a id="nav-logo" href=""><img src="{{ asset('img/logo_v3r_n_et_blanc.svg') }}" alt="Logo" width="60"></a>
+        <a id="nav-hamburger" href="">x</a>
+        <div id="nav-links">
+            <a class="nav-link" href="">Accueil</a>
+            <a class="nav-link" href="">À propos</a>
+            <a class="nav-link" href="">Contact</a>
+        </div>
     </nav>
 
     <!-- Content -->
