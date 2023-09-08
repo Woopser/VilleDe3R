@@ -11,15 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('utilisateur', function (Blueprint $table) {
-            $table->id('matricule');
+        Schema::create('grilleAudit', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('departement');
             $table->string('nom');
-            $table->string('prenom');
-            $table->string('password');
-            $table->string('email');
-            $table->int('departement');
-            $table->foreignId('superviseur')->nullable($value = true);
-            $table->string('role');
+            $table->string('lien');
             $table->timestamps();
         });
     }
