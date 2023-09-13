@@ -12,7 +12,7 @@ class departementSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('departement')->insert([
+        DB::table('departements')->insert([
             [
                 'nom' => 'direction général'
             ],
