@@ -7,6 +7,7 @@
    
         <div id="fond">
             <div id="rowMen">
+                <a href="">
                 <div id="boutonMenu">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
@@ -17,8 +18,9 @@
                        <a> Formulaires </a> 
                     </div>  
                 </div>
+                </a>
             
-
+                <a href="">
                 <div id="boutonMenu">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
@@ -30,9 +32,11 @@
                        <a> Liens utiles </a> 
                     </div>  
                 </div>
+                </a>
             </div>
 
             <div id="rowMen">
+                <a href="">
                 <div id="boutonMenu">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -43,7 +47,9 @@
                        <a> Consulter </a> 
                     </div>  
                 </div>
+                </a>
             
+                <a href="">
                 <div id="boutonMenu">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
@@ -54,6 +60,7 @@
                        <a> Formulaires </a> 
                     </div>  
                 </div>
+                </a>
             </div>
 
         </div>
