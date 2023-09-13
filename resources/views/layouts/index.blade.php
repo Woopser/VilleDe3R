@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>@yield('V3R')</title>
 </head>
-<body>
+<body id="body">
     <!-- Navbar -->
     <nav>
         <a ><img src="{{ asset('img/logo_v3r_n_et_blanc.eps') }}" alt=""></a>
