@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grilleAudit', function (Blueprint $table) {
+        Schema::create('accidentauto', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
             $table->foreignId('superviseur');
@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('departement');
             //$table->string('nomEmployeImpliquer');
             $table->foreignId('employeImpliquer');
-            $table->foreignId('superviseur');
+            $table->foreignId('superviseurImpliquer');
             $table->string('numeroDePermit');
             $table->boolean('autreVehicule');
             $table->timestamps();
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('accidentauto');
     }
 };

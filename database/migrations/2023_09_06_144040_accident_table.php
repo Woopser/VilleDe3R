@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('accidentTravail', function (Blueprint $table) {
+        Schema::create('accidenttravail', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
             $table->foreignId('superviseur');
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('nomSecouriste');
             $table->string('detail');
             $table->date('DateRempli');
-            $tabe->date('dateSuperviseur');
+            $table->date('dateSuperviseur');
             $table->string('lieu');
             $table->timestamps();
         });
@@ -37,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('accidenttravail');
     }
 };

@@ -14,7 +14,7 @@ class userSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('utilisateur')->insert(
+        DB::table('utilisateur')->insert([
             [
                 'matricule' => 1234567,
                 'nom' => 'Lefebvre',
@@ -85,6 +85,6 @@ class userSeeder extends Seeder
                 'superviseur' => 2222222,
                 'role' => 'employe'
             ]
-        );
+        ]);
     }
 }

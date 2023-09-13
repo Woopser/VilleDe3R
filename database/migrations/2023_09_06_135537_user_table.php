@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('password');
             $table->string('email');
-            $table->int('departement');
+            $table->foreignId('departement');
             $table->foreignId('superviseur')->nullable($value = true);
             $table->string('role');
             $table->timestamps();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('utilisateur');
     }
 };
