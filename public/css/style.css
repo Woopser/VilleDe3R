@@ -1,10 +1,37 @@
 :root{
     --main: rgb(0, 118, 213);
     --secondary: rgb(99, 188, 85);
+    --tertiary: #0B2341;
 }
 
 nav{
     display: flex;
     justify-content: space-between;  
     background-color: var(--main);
+}
+
+#boutonMenu{
+    display: flex;
+    background-color: lightgrey;
+    margin: 30px;
+    padding: 4px;
+    width: 50%;
+    height: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+#fond{
+    background-color: var(--tertiary);
+    height: 100vh;
+    padding-top: 70px;
+}
+
+#rowMen{
+    display: flex;
+}
+
+#body{
+    margin: 0px;
+    min-height: 100vh;
 }

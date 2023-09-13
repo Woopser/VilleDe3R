@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>@yield('V3R')</title>
 </head>
-<body>
+<body id="body">
     <!-- Navbar -->
     <nav>
-        <a href="{{ route('home') }}"><img src="{{ asset('img/logo_v3r_n_et_blanc.eps') }}" alt=""></a>
-        <a href="{{ route('about') }}">À propos</a>
+        <a ><img src="{{ asset('img/logo_v3r_n_et_blanc.eps') }}" alt=""></a>
+        <a >À propos</a>
     </nav>
 
     <!-- Content -->
-    @yield('content')
+    @yield('contenu')
 
     <!-- Footer -->
 </body>
