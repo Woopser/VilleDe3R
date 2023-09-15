@@ -1,8 +1,6 @@
 :root{
     --main: rgb(0, 118, 213);
     --secondary: rgb(99, 188, 85);
-<<<<<<< Updated upstream
-=======
     --secondary-dark: rgb(76, 142, 66);
     --light: #f0f0f0;
     --dark: rgb(0, 83, 151);
@@ -33,7 +31,6 @@ h1, h2, h3, h4, h5, h6, a{
 
 p, li, span{
     font-family: 'Poppins';
->>>>>>> Stashed changes
 }
 
 html, body{
@@ -102,11 +99,6 @@ nav{
     align-items: center;
 
     background-color: var(--main);
-<<<<<<< Updated upstream
-    color: white;
-}
-
-=======
 }
 
 .boutonMenu{
@@ -132,7 +124,6 @@ nav{
 .display-flex{
     display: flex;
 }
->>>>>>> Stashed changes
 #nav-logo{
     margin-left: 1%;
 }
