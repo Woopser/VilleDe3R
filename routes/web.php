@@ -17,6 +17,12 @@ Route::get('/', function () {
     return view('Menus/accueil');
 });
 
-Route::get('/', function () {
-    return view('connection');
+
+//------------- Authentification
+Route::get('/connexion', function () {
+    return view('connexion');
 });
+
+Route::post('/connexion/login', [UserController::class 'login'])->name('user.login');
+
+Route::post('');
