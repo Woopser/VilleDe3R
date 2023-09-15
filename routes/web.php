@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AccidentAutosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('Menus/accueil');
 });
+
+Route::get('/', function () {
+    return view('connection');
+});
+
+//Route pour formulaire accident de voiture
+Route::get('/formulaires/accidentVoiture',[AccidentAutosController::class, 'index'])->name('formulaireAccidentAuto');
+
