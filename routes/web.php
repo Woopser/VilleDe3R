@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+<<<<<<< Updated upstream
 Route::get('/', function () {
     return view('test');
+=======
+Route::get('/accueil', function () {
+    return view('Menus/accueil');
+>>>>>>> Stashed changes
 });
