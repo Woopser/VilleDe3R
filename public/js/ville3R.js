@@ -10,12 +10,14 @@ async function toggleMenu() {
         x.style.display = "none";
         z.style.filter = "none";
         z.style.backdropFilter = "none";
+        z.style.zIndex = "-1";
     } 
     else {
         x.style.animationName = "slide-in";
         x.style.display = "flex";
         z.style.filter = "brightness(0.5)";
         z.style.backdropFilter = "brightness(0.5)";
+        z.style.zIndex = "3";
     }
 }
 
