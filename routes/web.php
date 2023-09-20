@@ -1,9 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormulaireAccidentTravailController;
 use App\Http\Controllers\AccidentAutosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MenuController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,4 +35,11 @@ Route::post('/connexion/login',
 Route::post('/connexion/logout',
 [UsersController::class, 'logout'])->name('users.logout');
 
+
+Route::get('/', function () {
+    return view('connection');
+});
+//route du formulaire declaration d'accident de travail =====================================================================================
+Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidenttravail');
+=======
 
