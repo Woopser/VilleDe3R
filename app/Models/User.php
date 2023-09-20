@@ -4,12 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticable;
+use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class User extends Authenticable
 {
     use HasFactory;
-    use Auth;
+    use Notifiable;
 
+    protected $table = 'Utilisateurs';
 
     protected $fillable = [
         'matricule',
@@ -20,6 +23,11 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+
+    public function getAuthPassword()
+    {
+        return $this->password;
+    }
 
     
 }

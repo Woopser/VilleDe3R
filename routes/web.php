@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\MenuController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,16 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('Menus/accueil');
-});
+
+Route::get('/',
+[MenuController::class, 'index'])->name('Menus.accueil');
 
 
 //------------- Authentification
-Route::get('/connexion', function () {
-    return view('connexion');
-});
+Route::get('/connexion',
+[UsersController::class, 'index'])->name('users.index');
 
-Route::post('/connexion/login', [UserController::class 'login'])->name('user.login');
+Route::post('/connexion/login',
+[UsersController::class, 'login'])->name('users.login');
 
-Route::post('');
+Route::post('/connexion/logout',
+[UsersController::class, 'logout'])->name('users.logout');
+
+
