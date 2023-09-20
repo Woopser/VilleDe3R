@@ -14,6 +14,12 @@ body
   min-height: 100vh;
   background-image: linear-gradient(rgb(72, 109, 212),rgb(12, 124, 17));
 }
+
+.blanc {
+background-color: white;
+padding: 20px;
+border-radius: 4%;
+}
 section 
 {
   position: absolute;
@@ -31,7 +37,7 @@ section .signin
 {
   position: absolute;
   width: 400px;
-  background: #222;  
+  background: #5a5656;  
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -119,7 +125,7 @@ section .signin .content .form .inputBox i
 .signin .content .form .inputBox input[type="submit"]
 {
   padding: 10px;
-  background:linear-gradient(rgb(152, 162, 189),rgb(58, 59, 58));
+  background-color: #8d8989;
   color: #000;
   font-weight: 600;
   font-size: 1.35em;
