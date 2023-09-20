@@ -2,7 +2,7 @@
 <html lang="fr-CA">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -18,11 +18,12 @@
             <div class="bar3"></div>
         </a>
         <div id="nav-links">
-            <a class="nav-link" href="">Accueil</a>
-            <a class="nav-link" href="">À propos</a>
-            <a class="nav-link" href="">Contact</a>
+            <a class="nav-link" href=""><h1 class="nav-link-text">Accueil</h1></a>
+            <a class="nav-link" href=""><h1 class="nav-link-text">À propos</h1></a>
+            <a class="nav-link" href=""><h1 class="nav-link-text">Contact</h1></a>
         </div>
     </nav>
+    <div id="nav-filter"></div>
 
     <!-- Content -->
     @yield('content')
