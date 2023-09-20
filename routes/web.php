@@ -34,3 +34,5 @@ Route::post('/connexion/logout',
 [UsersController::class, 'logout'])->name('users.logout');
 
 
+//-------------Route formulaires accidenet cahr
+Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'store'])->name('accidentAuto.store');
