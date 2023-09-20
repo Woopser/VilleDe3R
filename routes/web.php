@@ -13,7 +13,7 @@ use App\Http\Controllers\AccidentAutosController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/accueil', function () {
     return view('Menus/accueil');
 });
 
@@ -23,4 +23,4 @@ Route::get('/', function () {
 
 //Route pour formulaire accident de voiture
 Route::get('/formulaires/accidentVoiture',[AccidentAutosController::class, 'index'])->name('formulaireAccidentAuto');
-
+});

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grilleAudit', function (Blueprint $table) {
+        Schema::create('grilleAudits', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
             $table->foreignId('superviseur');
@@ -39,6 +39,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('grilleAudits');
     }
 };

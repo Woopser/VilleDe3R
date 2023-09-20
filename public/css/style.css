@@ -2,36 +2,246 @@
     --main: rgb(0, 118, 213);
     --secondary: rgb(99, 188, 85);
     --tertiary: #0B2341;
+    --secondary-dark: rgb(76, 142, 66);
+    --light: #f0f0f0;
+    --dark: rgb(0, 83, 151);
 }
 
+@font-face{
+    font-family: 'Alumni Sans';
+    src: url('../fonts/AlumniSans-VariableFont_wght.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, a{
+    font-family: 'Alumni Sans';
+}
+
+.titleFont{
+    font-family: 'Alumni Sans';
+    font-size: 200%;
+    margin: 0;
+}
+
+p, li, span{
+    font-family: 'Poppins';
+}
+
+html, body{
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    z-index: 1;
+    display: flex;
+    flex-direction: column; 
+    background-color: var(--light);
+}
+#nav-filter{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    filter: brightness(100%);
+    backdrop-filter: brightness(100%);
+}
+div{
+    display: block;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: white;
+}
+a:visited{
+    color: white;
+}
+
+.hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+  }
+  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    filter: blur(0);
+  }
+
+/* Header */
 nav{
+    position: fixed;
+    z-index: 3;
+
+    height: 15%;
+    width: 100%;
+
     display: flex;
     justify-content: space-between;  
+    align-items: center;
+
     background-color: var(--main);
 }
 
-#boutonMenu{
-    display: flex;
-    background-color: lightgrey;
+.boutonMenu{
+    display: block;
+    background-color: var(--dark);
+    color: white;
     margin: 30px;
-    padding: 4px;
-    width: 50%;
-    height: 50%;
-    display: inline-block;
+    padding: 10px 200px;
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
-#fond{
-    background-color: var(--tertiary);
-    height: 100vh;
-    padding-top: 70px;
+#accueil{
+    margin: auto;
 }
 
-#rowMen{
+#fond{
+    background-color: var(--light);
+    height: 100%;
+}
+
+.display-flex{
     display: flex;
 }
+#nav-logo{
+    margin-left: 1%;
+}
 
-#body{
-    margin: 0px;
-    min-height: 100vh;
+#nav-hamburger{
+    margin-right: 1%;
+    cursor: pointer;
+}
+
+#nav-links{
+    position: fixed;
+    z-index: 20;
+    left: 70%;
+    top: 15%;
+
+    width: 30%;
+    height: 85%;
+
+    padding: 1% 0 1% 0;
+
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: var(--secondary);
+
+    animation-name: slide-in;
+    animation-duration: 0.5s;
+}
+
+@media only screen and (max-width: 768px){
+    #nav-links{
+        position: fixed;
+        left: 0%;
+        top: 15%;
+    
+        width: 100%;
+        height: 85%;
+    
+        padding: 1% 0 1% 0;
+    
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    
+        background-color: var(--secondary);
+    
+        animation-name: slide-in;
+        animation-duration: 0.5s;
+    }
+}
+
+.nav-link{
+    font-size: 2em;
+    color: white;
+    border-bottom: 1px solid white;
+    width: 100%;
+    margin: 0;
+    padding: 5% 0;
+}
+
+.nav-link:hover{
+    background-color: var(--secondary-dark);
+}
+
+.nav-link-text{
+    margin: 0 0 0 5%;
+}
+
+.bar1, .bar2, .bar3{
+    width: 35px;
+    height: 4px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1{
+    transform: translate(0, 10px) rotate(-45deg);
+}
+.change .bar2{
+    opacity: 0;
+}
+.change .bar3{
+    transform: translate(0, -10px) rotate(45deg);
+}
+
+@keyframes slide-in{
+    from{
+        left: 100%;
+    }
+    to{
+        left: 70%;
+    }
+}
+@keyframes slide-out{
+    from{
+        left: 70%;
+    }
+    to{
+        left: 100%;
+    }
+}
+
+
+/* Footer */
+footer{
+    position: fixed;
+    bottom: 0;
+
+    height: 15%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--secondary);
+    color: white;
 }
