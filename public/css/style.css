@@ -1,8 +1,8 @@
 :root{
     --main: rgb(0, 118, 213);
     --secondary: rgb(99, 188, 85);
-    --tertiary: #0B2341;
     --secondary-dark: rgb(76, 142, 66);
+    --tertiary: #0B2341;
     --light: #f0f0f0;
     --dark: rgb(0, 83, 151);
     --slide-in-x: 70%;
@@ -252,6 +252,7 @@ footer{
 }
 
 
+/* Modal */
 .modalYesNo{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -271,6 +272,4 @@ footer{
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
-  }
-=======
-
+}
