@@ -11,7 +11,7 @@ class MenuController extends Controller
      */
     public function index()
     {
-        return view ('Menus.accueil');
+        return view ('menus.index');
     }
 
     /**
