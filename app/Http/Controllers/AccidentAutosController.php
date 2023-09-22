@@ -36,7 +36,7 @@ class AccidentAutosController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $accidentAuto = new accidentauto($request->all());
     }
 
     /**
