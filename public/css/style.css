@@ -5,6 +5,7 @@
     --secondary-dark: rgb(76, 142, 66);
     --light: #f0f0f0;
     --dark: rgb(0, 83, 151);
+    --slide-in-x: 70%;
 }
 
 @font-face{
@@ -156,6 +157,9 @@ nav{
 }
 
 @media only screen and (max-width: 768px){
+    :root{
+        --slide-in-x: 0%;
+    }
     #nav-links{
         position: fixed;
         z-index: 20;
@@ -218,12 +222,12 @@ nav{
         left: 100%;
     }
     to{
-        left: 70%;
+        left: var(--slide-in-x);
     }
 }
 @keyframes slide-out{
     from{
-        left: 70%;
+        left: var(--slide-in-x);
     }
     to{
         left: 100%;

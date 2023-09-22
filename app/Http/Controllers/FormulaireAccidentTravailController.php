@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\FormulaireAccidentTravail;
+use App\Models\accidenttravail;
 use Illuminate\Http\Request;
 
 class FormulaireAccidentTravailController extends Controller
@@ -12,7 +12,8 @@ class FormulaireAccidentTravailController extends Controller
      */
     public function index()
     {
-        //
+        //renvoit au formualire a remplir
+        return view('form/declarationAccident');
     }
 
     /**
