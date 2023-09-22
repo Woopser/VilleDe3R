@@ -2,18 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\accidenttravail;
 use Illuminate\Http\Request;
+use App\Models\accidentauto;
 
-class FormulaireAccidentTravailController extends Controller
+class AccidentAutosController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //renvoit au formualire a remplir
-        return view('form/declarationAccident');
+        return View('form/accidentAuto');
     }
 
     /**
@@ -35,15 +34,15 @@ class FormulaireAccidentTravailController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(FormulaireAccidentTravail $formulaireAccidentTravail)
+    public function show(string $id)
     {
-        //
+        $accidentAuto = new accidentauto($request->all());
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(FormulaireAccidentTravail $formulaireAccidentTravail)
+    public function edit(string $id)
     {
         //
     }
@@ -51,7 +50,7 @@ class FormulaireAccidentTravailController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, FormulaireAccidentTravail $formulaireAccidentTravail)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -59,7 +58,7 @@ class FormulaireAccidentTravailController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(FormulaireAccidentTravail $formulaireAccidentTravail)
+    public function destroy(string $id)
     {
         //
     }

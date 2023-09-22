@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormulaireAccidentTravailController;
+use App\Http\Controllers\AccidentAutosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MenuController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +17,9 @@ use App\Http\Controllers\MenuController;
 |
 */
 
+//Route pour formulaire accident de voiture
+Route::get('/formulaires/accidentVoiture',
+[AccidentAutosController::class, 'index'])->name('formulaireAccidentAuto');
 
 Route::get('/',
 [MenuController::class, 'index'])->name('Menus.accueil');
@@ -29,4 +35,15 @@ Route::post('/connexion/login',
 Route::post('/connexion/logout',
 [UsersController::class, 'logout'])->name('users.logout');
 
+
+//-------------Route formulaires accidenet cahr
+Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'store'])->name('accidentAuto.store');
+
+
+Route::get('/', function () {
+    return view('connection');
+});
+
+//route du formulaire declaration d'accident de travail =====================================================================================
+Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidenttravail');
 
