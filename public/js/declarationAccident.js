@@ -7,3 +7,5 @@ radioOui.addEventListener('change', function(){
     }
 });
 */
+
+let modal = document.getElementById("yesNoModal");
