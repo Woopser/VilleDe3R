@@ -40,9 +40,6 @@ Route::post('/connexion/logout',
 Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'store'])->name('accidentAuto.store');
 
 
-Route::get('/', function () {
-    return view('connection');
-});
 
 //route du formulaire declaration d'accident de travail =====================================================================================
 Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidenttravail');

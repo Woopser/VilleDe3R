@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('accidenttravails', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
-            $table->foreignId('superviseur');
+            $table->foreignId('superviseur')->nullable($value = true);
             $table->dateTime('dateAccident');
             $table->text('description');
             $table->string('temoin')->nullable($value = true);
@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('nomSecouriste');
             $table->string('detail');
             $table->date('DateRempli');
-            $table->date('dateSuperviseur');
+            $table->date('dateSuperviseur')->nullable($value = true);
             $table->string('lieu');
             $table->timestamps();
         });

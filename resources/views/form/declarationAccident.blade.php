@@ -5,14 +5,29 @@
     <div style="height: 115px"></div>
     <div>
         <div>
-            <div class="modal" id="yesNoModal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>Some text in the Modal..</p>
+            <div class="modalYesNo" id="yesNoModal">
+                <div style="height: 115px"></div>
+                <div class="modalYesNo-content">
+                    <p>Êtes-vous la personne blessée</p>
+                    <div class="d-flex justify-content-center">
+                        <button class="buttonYesNo" style="background-color: #4CAF50;" id="yesButton">
+                            Oui
+                        </button>
+                        <button class="buttonYesNo" style="background-color: #f44336;" id="nonButton">
+                            Non
+                        </button>
+                    </div>
                 </div>
             </div>
             <form action="">
                 @csrf
+                <div class="mb-3">
+                    <label for="matricule" class="form-label">Matricule</label>
+                    <input type="text" class="form-control" id="inputMatricule" name="matricule">
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label"></label>
+                </div>
                 <!--
                 <label class="form-label d-flex justify-content-center">Es se que vous êtes la personne blesser ?</label>
                 <div class="d-flex justify-content-center">
@@ -31,6 +46,7 @@
                 
             </form>
         </div>
+        <div onload="declarationAccident.js"></div>
     </div>
 </div>
 @endsection

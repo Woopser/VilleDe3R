@@ -33,7 +33,7 @@ class UsersController extends Controller
            if($con)
            {
                 $user = User::where('matricule', $request->matricule)->first();
-                Session::put('matricule'. $request->matricule);
+                Session::put('matricule', $request->matricule);
 
                 return view('Menus/accueil');
            } 

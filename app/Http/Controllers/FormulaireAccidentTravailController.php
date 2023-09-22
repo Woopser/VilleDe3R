@@ -12,8 +12,9 @@ class FormulaireAccidentTravailController extends Controller
      */
     public function index()
     {
+        $matricule = Session::get('matricule');
         //renvoit au formualire a remplir
-        return view('form/declarationAccident');
+        return view('form/declarationAccident', compact('matricule'));
     }
 
     /**
