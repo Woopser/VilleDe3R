@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\accidentauto;
+use Illuminate\Support\Facades\Log;
+
 
 class AccidentAutosController extends Controller
 {
@@ -28,7 +30,11 @@ class AccidentAutosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Log::debug("ICi");
+        $accidentAuto = new accidentauto($request->all());
+        //$accidentAuto->numeroUnite = $request->numUnit;
+        //$accidentAuto->departmenet = $request->dept;
+        Log::debug($accidentAuto->dept);
     }
 
     /**
@@ -36,7 +42,8 @@ class AccidentAutosController extends Controller
      */
     public function show(string $id)
     {
-        $accidentAuto = new accidentauto($request->all());
+        
+
     }
 
     /**
