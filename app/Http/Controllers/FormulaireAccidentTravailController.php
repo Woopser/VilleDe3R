@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\accidenttravail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
+use App\Models\User;
+use Illuminate\Support\Facades\Log;
+
 
 class FormulaireAccidentTravailController extends Controller
 {
@@ -12,9 +16,16 @@ class FormulaireAccidentTravailController extends Controller
      */
     public function index()
     {
-        $matricule = Session::get('matricule');
-        //renvoit au formualire a remplir
-        return view('form/declarationAccident', compact('matricule'));
+        if(Session::has('matricule')){
+            $matricule = Session::get('matricule');//cherche la matricule de l'employer connecter
+            Log::debug(Session::get('matricule')); //test
+            $personne = User::where('matricule','=',$matricule)->first();//s'assure qu'il l'a dans la base de donner 
+            return view('form/declarationAccident', compact('personne'));//renvoit au formualire a remplir
+        }
+        else{
+            Log::debug(Session::all());
+        }
+            
     }
 
     /**

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreignId('departement');
             //$table->string('nomEmployeImpliquer');
             $table->foreignId('employeImpliquer');
-            $table->foreignId('superviseurImpliquer');
+            //$table->foreignId('superviseurImpliquer');
             $table->string('numeroDePermis');
             $table->boolean('autreVehicule');
             $table->timestamps();

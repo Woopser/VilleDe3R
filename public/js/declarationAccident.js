@@ -16,8 +16,9 @@ let non = document.getElementById("nonButton");
 
 yes.addEventListener('click', function(){
     modal.style.display = "none";
-    let matricule = document.getElementById("inputMatricule");
-    matricule.value = 1234;
+    let matricule = document.getElementById("matriculeP");
+    let matriculeInput = document.getElementById("inputMatricule");
+    matriculeInput.value = matricule.textContent;
 });
 
 non.addEventListener('click', function(){
