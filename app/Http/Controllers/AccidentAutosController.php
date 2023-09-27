@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\accidentauto;
 use Illuminate\Support\Facades\Log;
-
+use Illuminate\Support\Facades\Session;
+use App\Models\User;
+use App\Models\Departement;
 
 class AccidentAutosController extends Controller
 {
@@ -14,7 +16,8 @@ class AccidentAutosController extends Controller
      */
     public function index()
     {
-        return View('form/accidentAuto');
+        $departements = Departement::all();
+        return View('form/accidentAuto', compact('departements'));
     }
 
     /**
@@ -32,9 +35,19 @@ class AccidentAutosController extends Controller
     {
         Log::debug("ICi");
         $accidentAuto = new accidentauto($request->all());
-        //$accidentAuto->numeroUnite = $request->numUnit;
-        //$accidentAuto->departmenet = $request->dept;
-        Log::debug($accidentAuto->dept);
+
+        $accidentAuto2 = new accidentauto();
+        $accidentAuto2->matricule = Session::get('matricule');
+        $accidentAuto2->superviseur = Session::get('superviseur');
+        $accidentAuto2->numeroUnite = $accidentAuto->numeroUnite;
+        $accidentAuto2->departement = $accidentAuto->departement;
+        $accidentAuto2->employeImpliquer = $accidentAuto->employeImpliquer;
+        $accidentAuto2->numeroDePermis = $accidentAuto->numeroDePermis;
+        $accidentAuto2->autreVehicule = $accidentAuto->autreVehicule;
+
+        $accidentAuto2->save();
+        return redirect()->back();
+
     }
 
     /**

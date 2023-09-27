@@ -9,5 +9,5 @@ class accidentauto extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['matricule', 'superviseur', 'numeroUnite', 'departement', 'employerImpliquer', 'superviseurImpliquer', 'numeroDePermit', 'autreVehicule'];
+    protected $fillable = ['matricule', 'superviseur', 'numeroUnite', 'departement', 'employerImpliquer', 'numeroDePermis', 'autreVehicule'];
 }
