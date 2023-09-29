@@ -25,8 +25,8 @@
         </div>
 
         <div class="mb-3">
-            <label for="nomEmp" class="form-label">Prénom et nom de l'employé impliqué :</label>
-            <input type="text" class="form-control" id="nomEmp" name="employerImpliquer">
+            <label for="nomEmp" class="form-label">Matricule de l'employé impliqué :</label>
+            <input type="number" class="form-control" id="nomEmp" name="employeImpliquer">
         </div>
 
         <div class="mb-3">

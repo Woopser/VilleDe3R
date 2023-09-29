@@ -34,7 +34,10 @@ class AccidentAutosController extends Controller
     public function store(Request $request)
     {
         Log::debug("ICi");
+        
         $accidentAuto = new accidentauto($request->all());
+        Log::debug($accidentAuto);
+        Log::debug($accidentAuto->employeImpliquer);
 
         $accidentAuto2 = new accidentauto();
         $accidentAuto2->matricule = Session::get('matricule');
