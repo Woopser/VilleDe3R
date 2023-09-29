@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('temoin')->nullable($value = true);
             $table->string('nature');
             $table->text('descriptionBlessure');
-            $table->string('violence');
+            $table->string('violence')->nullable($value = true);
             $table->text('comment');
             $table->string('premierSoin');
             $table->string('nomSecouriste');
