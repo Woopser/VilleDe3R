@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('accidentautos', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
-            $table->foreignId('superviseur');
+            $table->foreignId('superviseur')->nullable($value = true);
             $table->string('numeroUnite');
             $table->foreignId('departement');
             //$table->string('nomEmployeImpliquer');
             $table->foreignId('employeImpliquer');
-            $table->foreignId('superviseurImpliquer');
-            $table->string('numeroDePermit');
+            //$table->foreignId('superviseurImpliquer');
+            $table->string('numeroDePermis');
             $table->boolean('autreVehicule');
             $table->timestamps();
         });

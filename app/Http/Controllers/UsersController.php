@@ -27,13 +27,18 @@ class UsersController extends Controller
             $con = Auth::attempt([
                 'matricule' => $request->matricule,
                 'password' => $request->password
-            ]);       
+            ]); 
 
+            $request->validate([
+                'matricule'=>'required',           
+                'password'=>'required',
+            ]);
 
            // Authentification
            if($con)
            {
                 $user = User::where('matricule', $request->matricule)->first();
+
                 Log::debug($user->matricule);
                 Session::put('matricule', $request->matricule);
                 if($user->superviseur != null){
@@ -42,7 +47,18 @@ class UsersController extends Controller
                 Log::debug(Session::get('matricule'));
                 Log::debug(Session::get('superviseur'));
 
-                return view('Menus/accueil');
+
+                Session::put('matricule', $request->matricule);
+                Session::put('nom',$user->nom);
+                Session::put('prenom',$user->prenom);
+                Session::put('email',$user->email);
+                Session::put('departement',$user->departement);
+                Session::put('superviseur',$user->superviseur);
+                Session::put('role',$user->role);
+
+
+
+                return redirect('/accueil');
            } 
            else
            {

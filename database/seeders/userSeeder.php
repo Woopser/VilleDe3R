@@ -23,7 +23,7 @@ class userSeeder extends Seeder
                 'email' => 'antoinelefebvre@hotmail.com',
                 'departement' => 1,
                 'superviseur' => null,
-                'role' => 'admin'
+                'role' => 'Directeur'
             ],
             [
                 'matricule' => 7654321,
@@ -32,7 +32,7 @@ class userSeeder extends Seeder
                 'password' => Hash::make('motdepasse'),
                 'email' => 'thomasdesruisseaux@hotmail.com',
                 'departement' => 1,
-                'superviseur' => null,
+                'superviseur' => 1234567,
                 'role' => 'admin'
             ],
             [
@@ -42,7 +42,7 @@ class userSeeder extends Seeder
                 'password' => Hash::make('motdepasse'),
                 'email' => 'arnaudlambert@hotmail.com',
                 'departement' => 4,
-                'superviseur' => null,
+                'superviseur' => 1234567,
                 'role' => 'superieur'
             ],
             [
@@ -52,7 +52,7 @@ class userSeeder extends Seeder
                 'password' => Hash::make('motdepasse'),
                 'email' => 'acedricleaobelzile@hotmail.com',
                 'departement' => 5,
-                'superviseur' => null,
+                'superviseur' => 1234567,
                 'role' => 'superieur'
             ],
             [

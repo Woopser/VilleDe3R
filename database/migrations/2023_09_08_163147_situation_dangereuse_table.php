@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('situations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
-            $table->foreignId('superviseur');
+            $table->foreignId('superviseur')->nullable($value = true);
             $table->string('fonction');
             $table->string('secteur');
             $table->dateTime('dateObservation');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('description');
             $table->text('correction');
             $table->date('dateRempli');
-            $table->date('dateSuperviseur');
+            $table->date('dateSuperviseur')->nullable($value = true);
             $table->timestamps();
         });
     }
