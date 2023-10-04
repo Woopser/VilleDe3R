@@ -36,9 +36,10 @@ Route::post('/connexion/logout',
 [UsersController::class, 'logout'])->name('users.logout');
 
 
-//-------------Route formulaires accidenet cahr
+//-------------Route formulaires accidenet char
 Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'store'])->name('accidentAuto.store');
 
 //route du formulaire declaration d'accident de travail =====================================================================================
-Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidenttravail');
+Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidentTravail');
+Route::POST('/formulaire/declarationAccident/store',[FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidentTravail.store');
 

@@ -25,7 +25,7 @@
             @else
                 <p>bipboup erreur</p>
             @endif
-            <form action="">
+            <form method="POST" action="{{route('formulaireAccidentTravail.store')}}">
                 @csrf
                     <div class="mb-3">
                         <label for="matricule" class="form-label">Matricule</label>
