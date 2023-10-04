@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UsersController extends Controller
 {
@@ -37,6 +38,15 @@ class UsersController extends Controller
            if($con)
            {
                 $user = User::where('matricule', $request->matricule)->first();
+
+                Log::debug($user->matricule);
+                Session::put('matricule', $request->matricule);
+                if($user->superviseur != null){
+                    Session::put('superviseur', $user->superviseur);
+                }
+                Log::debug(Session::get('matricule'));
+                Log::debug(Session::get('superviseur'));
+
 
                 Session::put('matricule', $request->matricule);
                 Session::put('nom',$user->nom);
