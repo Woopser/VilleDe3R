@@ -21,12 +21,12 @@ use App\Http\Controllers\MenuController;
 Route::get('/formulaires/accidentVoiture',
 [AccidentAutosController::class, 'index'])->name('formulaireAccidentAuto');
 
-Route::get('/',
-[MenuController::class, 'index'])->name('Menus.accueil');
+Route::get('/accueil',
+[MenuController::class, 'index'])->name('menus.index');
 
 
 //------------- Authentification
-Route::get('/connexion',
+Route::get('/',
 [UsersController::class, 'index'])->name('users.index');
 
 Route::post('/connexion/login',
@@ -38,8 +38,6 @@ Route::post('/connexion/logout',
 
 //-------------Route formulaires accidenet cahr
 Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'store'])->name('accidentAuto.store');
-
-
 
 //route du formulaire declaration d'accident de travail =====================================================================================
 Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidenttravail');
