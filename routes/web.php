@@ -5,6 +5,8 @@ use App\Http\Controllers\FormulaireAccidentTravailController;
 use App\Http\Controllers\AccidentAutosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\FormulaireController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +37,8 @@ Route::post('/connexion/login',
 Route::post('/connexion/logout',
 [UsersController::class, 'logout'])->name('users.logout');
 
+//------------- Route liste formulaire
+Route::get('/formulaires',[FormulaireController::class, 'index'])->name('form.index');
 
 //-------------Route formulaires accidenet cahr
 Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'store'])->name('accidentAuto.store');
