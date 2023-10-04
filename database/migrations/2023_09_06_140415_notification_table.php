@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('matriculeEmploye');
             $table->tinyText('description');
+            $table->boolean("verifier")->default(false);
             $table->timestamps();
         });
     }

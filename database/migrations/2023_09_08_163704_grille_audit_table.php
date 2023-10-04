@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('grilleAudits', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
-            $table->foreignId('superviseur');
+            $table->foreignId('superviseur')->nullable($value = true);
             $table->string('lieu');
             $table->dateTime('date');
             $table->string('EPI');

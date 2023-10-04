@@ -234,7 +234,7 @@ nav{
 
 /* Footer */
 footer{
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
 
     height: 15%;
@@ -249,6 +249,7 @@ footer{
 }
 
 
+/*antoine*/
 /* Modal */
 .modalYesNo{
     display: none; /* Hidden by default */
@@ -262,11 +263,32 @@ footer{
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
-.modalyesNo-content {
+/*antoine*/
+.modalYesNo-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
+
+  }
+/*antoine*/
+  .buttonYesNo{
+    border-radius: 12px;
+    margin: 20px;
+    font-size: 20px;
+    padding: 10px 24px;
+  }
+/*antoine*/
+  .temoinCacher{
+    display: none;
+  }
+/*antoine*/
+.BTEnvoyer{
+    border-radius: 10px;
+    background-color: #68B545;
+    color: #ffffff;
+    padding: 8px 16px;
 }
+
+

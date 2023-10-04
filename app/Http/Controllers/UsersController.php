@@ -37,6 +37,7 @@ class UsersController extends Controller
            if($con)
            {
                 $user = User::where('matricule', $request->matricule)->first();
+
                 Session::put('matricule', $request->matricule);
                 Session::put('nom',$user->nom);
                 Session::put('prenom',$user->prenom);
@@ -44,6 +45,7 @@ class UsersController extends Controller
                 Session::put('departement',$user->departement);
                 Session::put('superviseur',$user->superviseur);
                 Session::put('role',$user->role);
+
 
 
                 return redirect('/accueil');

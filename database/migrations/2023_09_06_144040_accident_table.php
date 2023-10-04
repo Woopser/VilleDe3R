@@ -14,19 +14,19 @@ return new class extends Migration
         Schema::create('accidenttravails', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
-            $table->foreignId('superviseur');
+            $table->foreignId('superviseur')->nullable($value = true);
             $table->dateTime('dateAccident');
             $table->text('description');
             $table->string('temoin')->nullable($value = true);
             $table->string('nature');
             $table->text('descriptionBlessure');
-            $table->string('violence');
+            $table->string('violence')->nullable($value = true);
             $table->text('comment');
             $table->string('premierSoin');
             $table->string('nomSecouriste');
             $table->string('detail');
             $table->date('DateRempli');
-            $table->date('dateSuperviseur');
+            $table->date('dateSuperviseur')->nullable($value = true);
             $table->string('lieu');
             $table->timestamps();
         });
