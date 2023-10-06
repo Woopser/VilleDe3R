@@ -5,6 +5,7 @@ use App\Http\Controllers\FormulaireAccidentTravailController;
 use App\Http\Controllers\AccidentAutosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\AuditsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,3 +43,6 @@ Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'st
 //route du formulaire declaration d'accident de travail =====================================================================================
 Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidenttravail');
 
+
+//-----------------Route pour Grille Audit SST
+Route::get('/formulaires/audit', [AuditsController::class, 'index'])->name('formulaireAudit');
