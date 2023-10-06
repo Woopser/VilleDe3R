@@ -3,9 +3,9 @@
 @section('V3R')
 
 @section('content')
-    <div class="container" id="accueil">
+    <div id="accueil">
         <div class="display-flex">
-            <a href="" class="boutonMenu hvr-grow">
+            <a href="" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
@@ -18,23 +18,19 @@
                 </div>
             </a>
         
-            <a href="" class="boutonMenu hvr-grow">
+            <a href="" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
-                            <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
-                            <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
-                        </svg>
-                    </div>
-                    <div>
-                        <p class="titleFont"> Liens utiles </p> 
-                    </div>  
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                        <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                        <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                    </svg>
+                    <p class="titleFont"> Liens Utiles </p> 
                 </div>
             </a>
         </div>
 
         <div class="display-flex">
-            <a href="" class="boutonMenu hvr-grow">
+            <a href="" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -47,7 +43,7 @@
                 </div>
             </a>
         
-            <a href="" class="boutonMenu hvr-grow">
+            <a href="" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
@@ -55,7 +51,7 @@
                         </svg>
                     </div>
                     <div>
-                        <p class="titleFont"> Formulaires </p> 
+                        <p class="titleFont"> Notifications </p> 
                     </div>  
                 </div>
             </a>

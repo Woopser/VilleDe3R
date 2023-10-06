@@ -1,3 +1,4 @@
+/* VARIABLES */
 :root{
     --main: rgb(0, 118, 213);
     --secondary: rgb(99, 188, 85);
@@ -5,18 +6,22 @@
     --tertiary: #0B2341;
     --light: #f0f0f0;
     --dark: rgb(0, 83, 151);
+
     --slide-in-x: 70%;
     --button-width: 500px;
-    --button-display: flex;
+    --nav-justify-content: start;
 }
 @media only screen and (max-width: 768px){
     :root{
         --slide-in-x: 0%;
         --button-width: 150px;
-        --button-display: block;
+        --nav-justify-content: center;
     }
 }
 
+
+
+/* GENERAL */
 @font-face{
     font-family: 'Alumni Sans';
     src: url('../fonts/AlumniSans-VariableFont_wght.ttf');
@@ -29,41 +34,28 @@
     font-weight: normal;
     font-style: normal;
 }
-
 h1, h2, h3, h4, h5, h6, a{
     font-family: 'Alumni Sans';
 }
-
 .titleFont{
     font-family: 'Alumni Sans';
     font-size: 200%;
     margin: 0;
 }
-
 p, li, span{
     font-family: 'Poppins';
 }
-
 html, body{
     height: 100vh;
     width: 100vw;
     margin: 0;
     padding: 0;
 }
-
 body{
     z-index: 1;
     display: flex;
     flex-direction: column; 
     background-color: var(--light);
-}
-#nav-filter{
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-    filter: brightness(100%);
-    backdrop-filter: brightness(100%);
 }
 div{
     display: block;
@@ -79,8 +71,7 @@ a:hover{
 a:visited{
     color: white;
 }
-
-.hvr-grow {
+.hvr-shrink {
     display: inline-block;
     vertical-align: middle;
     -webkit-transform: perspective(1px) translateZ(0);
@@ -91,13 +82,15 @@ a:visited{
     -webkit-transition-property: transform;
     transition-property: transform;
   }
-  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+.hvr-shrink:hover, .hvr-shrink:focus, .hvr-shrink:active {
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
     filter: blur(0);
-  }
+}
 
-/* Header */
+
+
+/* NAVBAR */
 nav{
     position: fixed;
     z-index: 6;
@@ -111,56 +104,28 @@ nav{
 
     background-color: var(--main);
 }
-
-.boutonMenu{
-    display: block;
-    background-color: var(--dark);
-    color: white;
-    margin: 30px;
-    padding: 10px;
-    width: var(--button-width);
-    height: 100px;
-    text-align: center;
-}
-
-.boutonMenu-content{
-    margin: auto;
-    width: 120px;
-    height: 100%;
-}
-
-.w-100{
-    width: 100%;
-}
-
-#accueil{
-    margin: auto;
-}
-
-#fond{
-    background-color: var(--light);
-    height: 100%;
-}
-
-.display-flex{
-    display: var(--button-display);
+#nav-filter{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    filter: brightness(100%);
+    backdrop-filter: brightness(100%);
 }
 #nav-logo{
-    margin-left: 1%;
+    margin-left: 2%;
 }
-
 #nav-hamburger{
-    margin-right: 1%;
+    margin-right: 2%;
     cursor: pointer;
 }
-
 #nav-links{
     position: fixed;
     z-index: 20;
     left: var(--slide-in-x);
     top: 15%;
 
-    width: 30%;
+    width: calc(100% - var(--slide-in-x));
     height: 85%;
 
     padding: 1% 0 1% 0;
@@ -174,9 +139,6 @@ nav{
     animation-name: slide-in;
     animation-duration: 0.5s;
 }
-
-
-
 .nav-link{
     font-size: 2em;
     color: white;
@@ -185,17 +147,14 @@ nav{
     margin: 0;
     padding: 5% 0;
 }
-
 .nav-link:hover{
     background-color: var(--secondary-dark);
 }
-
 .nav-link-text{
     color: white;
     text-align: start;
     margin: 0 0 0 5%;
 }
-
 .bar1, .bar2, .bar3{
     width: 35px;
     height: 4px;
@@ -203,7 +162,6 @@ nav{
     margin: 6px 0;
     transition: 0.4s;
 }
-
 .change .bar1{
     transform: translate(0, 10px) rotate(-45deg);
 }
@@ -213,7 +171,6 @@ nav{
 .change .bar3{
     transform: translate(0, -10px) rotate(45deg);
 }
-
 @keyframes slide-in{
     from{
         left: 100%;
@@ -232,9 +189,50 @@ nav{
 }
 
 
-/* Footer */
+
+/* MAIN */
+.boutonMenu{
+    display: block;
+    background-color: var(--dark);
+    color: white;
+    margin: 15px;
+    padding: 10px;
+    width: var(--button-width);
+    height: 100px;
+    text-align: center;
+}
+.boutonMenu:hover{
+    filter: brightness(90%);
+}
+.boutonMenu-content{
+    margin: auto;
+    width: 120px;
+    height: 100%;
+}
+.w-100{
+    width: 100%;
+}
+#accueil{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    margin: auto;
+    padding: 15vh 0;
+}
+#fond{
+    background-color: var(--light);
+    height: 100%;
+}
+.display-flex{
+    display: flex;
+    margin: auto;
+}
+
+
+/* FOOTER */
 footer{
-    position: fixed;
+    position: absolute;
     bottom: 0;
 
     height: 15%;
@@ -249,7 +247,8 @@ footer{
 }
 
 
-/* Modal */
+
+/* MODAL */
 .modalYesNo{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -262,7 +261,6 @@ footer{
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
-
 .modalyesNo-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
