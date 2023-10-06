@@ -45,7 +45,7 @@ class FormulaireAccidentTravailRequest extends FormRequest
             'lieu.required' => 'Le lieu est obligatoire',
             'description.required' => 'La description est obligatoire',
             'nature.required' => 'La naturede l\'accident est obligatoire',
-            'descritpionBlessure' => 'La description de la blessure est obligatoire',
+            'descritpionBlessure.required' => 'La description de la blessure est obligatoire',
             'comment.required' => 'Ce champ est obligatoire',
             'premierSoin.required' => 'Les premiers soins sont obligatoire',
             'nomSecouriste.required' => 'Le nom du secouriste est obligatoire'
