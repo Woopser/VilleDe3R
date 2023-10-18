@@ -8,7 +8,7 @@
         <section>  
         <div class="signin"> 
             <div class="content"> 
-                <div class="blanc"><img src="{{ asset('img/logo_v3r_n_et_blanc.svg') }}" alt="Logo" width="90"></div>
+                <div class="blanc"><img src="{{ asset('img/logo_v3r_noir.svg') }}" alt="Logo" width="90"></div>
                 <form action="{{ route('users.login')}}" method="POST">
                     @csrf
                     <div class="form"> 

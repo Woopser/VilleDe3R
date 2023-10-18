@@ -11,7 +11,7 @@
 <body>
     <!-- Navbar -->
     <nav>
-        <a id="nav-logo" href=""><img src="{{ asset('img/logo_v3r_n_et_blanc.svg') }}" alt="Logo" width="60"></a>
+        <a id="nav-logo" href=""><img src="{{ asset('img/logo_v3r_blanc.svg') }}" alt="Logo" width="60"></a>
         <a id="nav-hamburger" href="javascript:void(0);" class="icon" onclick="toggleMenu()">
             <div class="bar1"></div>
             <div class="bar2"></div>
