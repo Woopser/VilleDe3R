@@ -6,6 +6,19 @@
     <div style="height: 100.05px"></div>
 
 
+    @if(isset($errors) && $errors->any())
+
+     <div class="alert alert-danger">
+
+         @foreach($errors->all() as $error)
+
+             <p>{{$error}}</p>
+
+        @endforeach
+
+    </div>
+@endif
+
     <form method="POST" action="{{route('accidentAuto.store')}}">
       @csrf
         <div class="mb-3">

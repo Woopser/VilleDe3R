@@ -5,6 +5,7 @@ use App\Http\Controllers\FormulaireAccidentTravailController;
 use App\Http\Controllers\AccidentAutosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\FormulaireController;
 
 
@@ -47,3 +48,6 @@ Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'st
 Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidentTravail');
 Route::POST('/formulaire/declarationAccident/store',[FormulaireAccidentTravailController::class, 'store'])->name('formulaireAccidentTravail.store');
 
+
+//-----------------Route pour Grille Audit SST
+Route::get('/formulaires/audit', [AuditsController::class, 'index'])->name('formulaireAudit');

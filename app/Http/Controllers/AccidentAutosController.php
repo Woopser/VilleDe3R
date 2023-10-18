@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
 use App\Models\Departement;
+use App\Http\Requests\AccidentAutosRequest;
 
 class AccidentAutosController extends Controller
 {
@@ -31,7 +32,7 @@ class AccidentAutosController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AccidentAutosRequest $request)
     {
         Log::debug("ICi");
         
