@@ -25,7 +25,7 @@
             @else
                 <p>bipboup erreur</p>
             @endif
-            <form action="">
+            <form method="POST" action="{{route('formulaireAccidentTravail.store')}}">
                 @csrf
                     <div class="mb-3">
                         <label for="matricule" class="form-label">Matricule</label>
@@ -73,11 +73,11 @@
                 <div class="mb-3">
                     <label for="violence" class="form-label">Es se qu'il y a eu de la violence</label>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="violence" value="Physique">
+                        <input type="checkbox" class="form-check-input" name="violenceP" value="Physique">
                         <label for="violenecePhysique" class="form-check-label">Physique</label>
                     </div>
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="violence" value="Verbale">
+                        <input type="checkbox" class="form-check-input" name="violenceV" value="Verbale">
                         <label for="violeneceVerbale" class="form-check-label">Verbale</label>
                     </div>
                 </div>
@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-end">
-                    <button class="BTEnvoyer ">Remplir</button>
+                    <button type="submit" class="BTEnvoyer ">Remplir</button>
                 </div>
                 
             </form>

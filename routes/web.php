@@ -6,6 +6,8 @@ use App\Http\Controllers\AccidentAutosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AuditsController;
+use App\Http\Controllers\FormulaireController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -36,12 +38,15 @@ Route::post('/connexion/login',
 Route::post('/connexion/logout',
 [UsersController::class, 'logout'])->name('users.logout');
 
+//------------- Route liste formulaire
+Route::get('/formulaires',[FormulaireController::class, 'index'])->name('form.index');
 
-//-------------Route formulaires accidenet cahr
+//-------------Route formulaires accidenet char
 Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'store'])->name('accidentAuto.store');
 
 //route du formulaire declaration d'accident de travail =====================================================================================
-Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidenttravail');
+Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidentTravail');
+Route::POST('/formulaire/declarationAccident/store',[FormulaireAccidentTravailController::class, 'store'])->name('formulaireAccidentTravail.store');
 
 
 //-----------------Route pour Grille Audit SST
