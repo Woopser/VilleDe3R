@@ -38,10 +38,13 @@ class FormulaireAccidentTravailController extends Controller
         Log::debug($accidentTest); // Log l'interrieur de la variable
         Log::debug($request->detail); // Log la value de detail
         //=================================Store======================================================================================================================================
-        $accident = new accidenttravail(); // Créer une nouvelle variable
+        try{
+            $accident = new accidenttravail(); // Créer une nouvelle variable
         // Met toute les données utiles
-        $accident->matricule = $request->matricule; 
-        $accident->dateAccident = $request->dateAccident;
+        if(Session::has('matricule')){
+        $accident->matricule = Session::get('matricule'); 
+        }
+        $accident->dateAccident = date('yyyy-MM-dd HH:mm:ss',$request->dateAccident);
         $accident->lieu = $request->lieu;
         $accident->description = $request->description;
         if($request->temoin != null){ // Vérification de témoin pour savoir si il y en a ou non
@@ -54,16 +57,15 @@ class FormulaireAccidentTravailController extends Controller
         $accident->descriptionBlessure = $request->descriptionBlessure;
         //Besoin de faire une vérification pour la violence
         //$accident->violence = $request->violence;
-        if($request->violenceV === true){
-            if($request->violenceP === true){
-                Log::debug("good");
-                $accident->violence = "Physique et Verbale";
+        if($request->violenceV == "Verbale"){
+            if($request->violenceP == "Physique"){
+                $accident->violence = "Physique et Verbale"; 
             }
             else{
                 $accident->violence = "Verbale";
             }
         }
-        else if($request->violenceP === true){
+        else if($request->violenceP === "Physique"){
             $accident->violence = "Verbale";
         }
         $accident->comment = $request->comment;
@@ -71,17 +73,29 @@ class FormulaireAccidentTravailController extends Controller
         $accident->nomSecouriste = $request->nomSecouriste;
         // Vérification pour details parce que s,est des données pré enregistrer
         if($request->detail == 1){ // Assigne la value si la valeur retourner est 1
-            $accident->detail = "Accident ne nécessitant aucune absence";
+            $accident->detail = "Accident ne nécessitant aucune absence"; 
         }
         else if($request->detail == 2){ // Assigne la value si la valeur retourner est 2
             $accident->detail = "Accident nécessitant une consultation médicale";
         }
         else{
             Log::debug("erreur pour les details");
+            return redirect()->route('menus.index');
         }
         //===================================================== Test ============================================================================================
         Log::debug($accident); // Test tout
-        Log::debug($accident->detail); // test detail
+        Log::debug($accident->detail); // Test detail
+        //================================================== Sauvegarde =========================================================================================
+        $accident->save();
+
+        }
+        catch(\Throwable $e){
+            //Il y a une erreur 
+            Log::debug($e);
+            return redirect()->route('menus.index');
+        }
+        return redirect()->route('menus.index');
+
     }
 
     public function update(Request $request, FormulaireAccidentTravail $formulaireAccidentTravail)
