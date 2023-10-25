@@ -27,6 +27,14 @@
                 <p>bipboup erreur</p>
             @endif
             -->
+            @if(isset($errors) && $errors->any())
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <p>{{$error}}</p>
+                    @endforeach
+                </div>
+            @endif
+
             @if(isset($personne))
             <form method="POST" action="{{route('formulaireAccidentTravail.store')}}">
                 @csrf
@@ -40,7 +48,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="lieu" class="form-label"><strong>Quelle est le lieu de l'accident</strong></label>
-                    <input type="text" class="form-control" name="lieu">
+                    <input type="text" id="lieu" class="form-control" name="lieu">
+                    <p id="erreurLieu" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label"><strong>Description de l'accident</strong></label>

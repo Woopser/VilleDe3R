@@ -41,3 +41,17 @@ radioNon.addEventListener('change',function(){
         inputTemoin.value = "";
     }
 });
+// Vérifiaction JAVASCRIPT ===================================================================================================================================================
+let inputLieu = document.getElementById("lieu");
+let erreurLieu = document.getElementById("erreurLieu");
+
+inputLieu.addEventListener("keyup", function(){
+    
+    
+    if(inputLieu.value == ""){
+        erreurLieu.textContent = "Erreur : veuillez rentrer un lieu"
+    }
+    else{
+        erreurLieu.textContent = "";
+    }
+})
