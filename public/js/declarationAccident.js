@@ -42,16 +42,21 @@ radioNon.addEventListener('change',function(){
     }
 });
 // Vérifiaction JAVASCRIPT ===================================================================================================================================================
-let inputLieu = document.getElementById("lieu");
-let erreurLieu = document.getElementById("erreurLieu");
-
-inputLieu.addEventListener("keyup", function(){
-    
-    
-    if(inputLieu.value == ""){
+// Vérification du lieu de l'accident
+let inputLieu = document.getElementById("lieu"); // prend le input du lieu
+let erreurLieu = document.getElementById("erreurLieu"); // prend le p pour marquer les erreurs
+inputLieu.addEventListener("keyup", function(){ // regarde a chaque fois qu'une touche ce le lève pour regarder si le contenu est null
+    if(inputLieu.value == ""){ // contenu null dit que se n,est pas correcte l'erreur
         erreurLieu.textContent = "Erreur : veuillez rentrer un lieu"
     }
     else{
-        erreurLieu.textContent = "";
+        erreurLieu.textContent = ""; // ne met rie dans le cas contraire
     }
 })
+// Vérification de la date de l'accident
+let inputDateAccident = document.getElementById("dateAccident"); // prend le input de la date
+let erreurDateAccident = document.getElementById("erreurDateAccident"); // prend le p pour marquer les erreurs
+inputDateAccident.addEventListener("change", function(){
+    console.log(inputDateAccident.value);
+    console.log(Date.now());
+});

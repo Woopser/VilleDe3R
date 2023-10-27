@@ -44,7 +44,8 @@
                     </div>
                 <div class="mb-3">
                     <label for="dateAccident" class="form-label"><strong>Date de l'accident</strong></label>                   
-                    <input type="datetime-local" class="form-control" name="dateAccident">
+                    <input type="datetime-local" class="form-control" name="dateAccident" id="dateAccident">
+                    <p id="erreurDateAccident" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
                     <label for="lieu" class="form-label"><strong>Quelle est le lieu de l'accident</strong></label>

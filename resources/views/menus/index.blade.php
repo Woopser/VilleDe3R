@@ -60,7 +60,7 @@
 
     <div class="modal-form" id="modal-form">
         <div class="modal-content">
-            <a href="">Formulaire 1</a>
+            <a href="{{ route('formulaireAccidentTravail') }}">Formulaire 1</a>
             <a href="">Formulaire 2</a>
             <a href="">Formulaire 3</a>
             <a href="">Formulaire 4</a>
