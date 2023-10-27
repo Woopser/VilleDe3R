@@ -24,3 +24,28 @@ async function toggleMenu() {
 function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+// Modal
+var modal = document.getElementById("modal-form");
+var filter = document.getElementById("nav-filter");
+var btn = document.getElementsByClassName("boutonMenu")[0];
+async function toggleModal() {
+    if (modal.style.display !== "flex") {
+        modal.style.animationName = "slide-down";
+        modal.style.display = "flex";
+        filter.style.filter = "brightness(0.5)";
+        filter.style.backdropFilter = "brightness(0.5)";
+        filter.style.zIndex = "3";
+    }
+}
+// Ferme le modal si on clique en dehors
+window.onclick = async function(event) {
+    if (event.target === filter) {
+        modal.style.animationName = "slide-up";
+        await delay(400);
+        modal.style.display = "none";
+        filter.style.filter = "none";
+        filter.style.backdropFilter = "none";
+        filter.style.zIndex = "-1";
+    }
+}

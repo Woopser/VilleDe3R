@@ -5,6 +5,7 @@
     <div style="height: 115px"></div>
     <div>
         <div>
+            <!--
             @if(isset($personne))
             <div class="modalYesNo" id="yesNoModal">
                 <div style="height: 115px"></div>
@@ -25,32 +26,37 @@
             @else
                 <p>bipboup erreur</p>
             @endif
+            -->
+            @if(isset($errors) && $errors->any())
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $error)
+                        <p>{{$error}}</p>
+                    @endforeach
+                </div>
+            @endif
+
+            @if(isset($personne))
             <form method="POST" action="{{route('formulaireAccidentTravail.store')}}">
                 @csrf
                     <div class="mb-3">
-                        <label for="matricule" class="form-label">Matricule</label>
-                        <input type="text" class="form-control" id="inputMatricule" name="matricule">
+                        <label for="matricule" class="form-label"><strong>Matricule</strong></label>
+                        <input type="text" class="form-control" id="inputMatricule" name="matricule" disabled value="{{$personne->matricule}}">
                     </div>
-                    <!--- à voir avec la ville 
-                    <div class="mb-3">
-                        <label for="superviseur" class="form-label">Superviseur</label>
-                        <input type="text" class="form-control" name="superviseur">
-                    </div>
-                    -->
                 <div class="mb-3">
-                    <label for="dateAccident" class="form-label">Date de l'accident</label>                   
-                    <input type="date-time" class="form-control" name="dateAccident">
+                    <label for="dateAccident" class="form-label"><strong>Date de l'accident</strong></label>                   
+                    <input type="datetime-local" class="form-control" name="dateAccident">
                 </div>
                 <div class="mb-3">
-                    <label for="lieu" class="form-label">Quelle est le lieu de l'accident</label>
-                    <input type="text" class="form-control" name="lieu">
+                    <label for="lieu" class="form-label"><strong>Quelle est le lieu de l'accident</strong></label>
+                    <input type="text" id="lieu" class="form-control" name="lieu">
+                    <p id="erreurLieu" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
-                    <label for="description" class="form-label">Description de l'accident</label>
+                    <label for="description" class="form-label"><strong>Description de l'accident</strong></label>
                     <textarea name="description" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="temoinTrueFalse" class="form-label">Es se qu'il y a eu des temoin</label>
+                    <label for="temoinTrueFalse" class="form-label"><strong>Es se qu'il y a eu des temoin</strong></label>
                     <div class="d-flex justify-content-center">
                         <input type="radio" name="ouiNon" class="form-check-input" id="Oui">
                         <label style="margin-right: 20px; margin-left:5px" for="Oui" class="form-check-label">Oui</label>
@@ -59,19 +65,19 @@
                     </div>
                 </div>
                 <div id="Temoin" class="mb-3 temoinCacher">
-                        <label for="temoin" class="form-label">Témoin</label>
+                        <label for="temoin" class="form-label"><strong>Témoin</strong></label>
                         <input type="text" class="form-control" name="temoin" id="inputTemoin">
                     </div>
                 <div class="mb-3">
-                    <label for="nature" class="form-label">Nature</label>
+                    <label for="nature" class="form-label"><strong>Nature</strong></label>
                     <input type="text" class="form-control" name="nature">
                 </div>
                 <div class="mb-3">
-                    <label for="descriptionBlessure" class="form-label">Description Blessure</label>
+                    <label for="descriptionBlessure" class="form-label"><strong>Description Blessure</strong></label>
                     <textarea name="descriptionBlessure" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="violence" class="form-label">Es se qu'il y a eu de la violence</label>
+                    <label for="violence" class="form-label"><strong>Es se qu'il y a eu de la violence</strong></label>
                     <div class="form-check">
                         <input type="checkbox" class="form-check-input" name="violenceP" value="Physique">
                         <label for="violenecePhysique" class="form-check-label">Physique</label>
@@ -82,19 +88,19 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="comment" class="form-label">Comment s'est produit la blessure</label>
+                    <label for="comment" class="form-label"><strong>Comment s'est produit la blessure</strong></label>
                     <textarea name="comment" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="premierSoin" class="form-label">Premier soin</label>
+                    <label for="premierSoin" class="form-label"><strong>Premier soin</strong></label>
                     <input type="text" class="form-control" name="premierSoin">
                 </div>
                 <div class="mb-3">
-                    <label for="NomSecouriste" class="form-label">Nom du secouriste</label>
+                    <label for="NomSecouriste" class="form-label"><strong>Nom du secouriste</strong></label>
                     <input type="text" class="form-control" name="nomSecouriste">
                 </div>
                 <div class="mb-3">
-                    <label for="detail" class="form-label">Detail de l'accident</label>
+                    <label for="detail" class="form-label"><strong>Detail de l'accident</strong></label>
                     <div class="form-check">
                         <input type="radio" name="detail" value="1" class="form-check-input">
                         <label for="aucuneAbsence" class="form-check-label">Accident ne nécessitant aucune absence</label>
@@ -107,8 +113,11 @@
                 <div class="d-flex justify-content-end">
                     <button type="submit" class="BTEnvoyer ">Remplir</button>
                 </div>
-                
             </form>
+            @else
+                <p>bipboup erreur</p>
+            @endif
+            <div style="height: 115px"></div>
         </div>
     </div>
 </div>

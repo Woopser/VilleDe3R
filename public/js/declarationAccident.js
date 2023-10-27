@@ -6,7 +6,6 @@ radioOui.addEventListener('change', function(){
         console.log("Checkbox is checked..")
     }
 });
-*/
 // Cherche les elements utiliser dedans le html
 let modal = document.getElementById("yesNoModal");
 modal.style.display = "block"; //fait apparaitre le l'option oui ou non
@@ -22,7 +21,7 @@ yes.addEventListener('click', function(){
 //Dans le cas de non cela de ne fait rien
 non.addEventListener('click', function(){
     modal.style.display = "none";
-});
+});*/
 // code pour les radios buttons de temoins ====================================================================
 // chercher les element utiliser dedans le html
 let temoin = document.getElementById("Temoin");
@@ -42,3 +41,17 @@ radioNon.addEventListener('change',function(){
         inputTemoin.value = "";
     }
 });
+// Vérifiaction JAVASCRIPT ===================================================================================================================================================
+let inputLieu = document.getElementById("lieu");
+let erreurLieu = document.getElementById("erreurLieu");
+
+inputLieu.addEventListener("keyup", function(){
+    
+    
+    if(inputLieu.value == ""){
+        erreurLieu.textContent = "Erreur : veuillez rentrer un lieu"
+    }
+    else{
+        erreurLieu.textContent = "";
+    }
+})

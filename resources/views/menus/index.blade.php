@@ -5,7 +5,7 @@
 @section('content')
     <div id="accueil">
         <div class="display-flex">
-            <a href="{{route('form.index')}}" class="boutonMenu hvr-shrink">
+            <a href="javascript:void(0)" onclick="toggleModal()" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
@@ -55,6 +55,15 @@
                     </div>  
                 </div>
             </a>
+        </div>
+    </div>
+
+    <div class="modal-form" id="modal-form">
+        <div class="modal-content">
+            <a href="">Formulaire 1</a>
+            <a href="">Formulaire 2</a>
+            <a href="">Formulaire 3</a>
+            <a href="">Formulaire 4</a>
         </div>
     </div>
 @endsection
