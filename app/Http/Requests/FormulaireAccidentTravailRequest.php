@@ -22,7 +22,7 @@ class FormulaireAccidentTravailRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'matricule' => 'required|max:7|min:7|numeric',
+            //'matricule' => 'required|max:7|min:7|numeric',
             'dateAccident' => 'required|before_or_equal:now',
             'lieu' => 'required',
             'description' => 'required',
@@ -38,10 +38,10 @@ class FormulaireAccidentTravailRequest extends FormRequest
 
     public function messages(){
         return[
-            'matricule.required' => 'Le champ matricule est obligatoire',
-            'matricule.max' => 'Le champ rentrer n\'est pas conforme au matricule',
-            'matricule.min' => 'Le champ rentrer n\'est pas conforme au matricule',
-            'matricule.numeric' => 'Le champ rentrer n\'est pas conforme au matricule',
+            //'matricule.required' => 'Le champ matricule est obligatoire',
+            //'matricule.max' => 'Le champ rentrer n\'est pas conforme au matricule',
+            //'matricule.min' => 'Le champ rentrer n\'est pas conforme au matricule',
+            //'matricule.numeric' => 'Le champ rentrer n\'est pas conforme au matricule',
             'lieu.required' => 'Le lieu est obligatoire',
             'description.required' => 'La description est obligatoire',
             'nature.required' => 'La naturede l\'accident est obligatoire',

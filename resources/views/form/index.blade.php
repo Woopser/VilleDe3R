@@ -4,46 +4,16 @@
 
 @section('content')
 
+<div class="container">
+    <div style="height: 115px"></div>
+<div class="container">
+    <a class=" noir" href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
+</div>
+<div class="container">
+    <a class=" noir" href="{{ route('formulaireAccidentTravail')}}">Formulaire accident</a>
+</div>
+</div>
 
-<div class="container">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container noir">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container noir">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container noir">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container noir">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container noir">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container noir">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container noir">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
-<div class="container noir">
-    <a href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
-</div>
 
 
 
