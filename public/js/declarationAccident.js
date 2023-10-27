@@ -57,6 +57,14 @@ inputLieu.addEventListener("keyup", function(){ // regarde a chaque fois qu'une 
 let inputDateAccident = document.getElementById("dateAccident"); // prend le input de la date
 let erreurDateAccident = document.getElementById("erreurDateAccident"); // prend le p pour marquer les erreurs
 inputDateAccident.addEventListener("change", function(){
-    console.log(inputDateAccident.value);
-    console.log(Date.now());
+    // test
+    // console.log(inputDateAccident.value);console.log(new Date(inputDateAccident.value));console.log(new Date());
+    let dateInput = new Date(inputDateAccident.value);let dateNow = new Date(); // variables
+    if(dateInput > dateNow){
+        erreurDateAccident.textContent = "Erreur : la date ne peut pas être plus tard que maintenant"; // si la date rentré est plus tard que la date de maintenant retourne une erreur
+    }
+    else if(dateInput <= dateNow){
+        erreurDateAccident.textContent = ""; // ne met rien dans le cas contraire
+    }
 });
+// Vérifiaction 
