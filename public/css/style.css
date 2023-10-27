@@ -250,6 +250,60 @@ footer{
     color: white;
 }
 
+/* Arnaud */
+/* Modal */
+.modal-form{
+    position: fixed;
+    z-index: 30;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 50%;
+    top: 25%;
+    left: 30%;
+    background-color: var(--light);
+    animation-name: slide-down;
+    animation-duration: 0.5s;
+}
+.modal-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80%;
+    width: 80% !important;
+    outline: 2px solid var(--tertiary) !important;
+}
+.modal-content a{
+    color: var(--main);
+    width: 50%;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.modal-content button{
+    position: relative;
+    top: 10%;
+}
+@keyframes slide-down{
+    from{
+        top: 100%;
+    }
+    to{
+        top: 25%;
+    }
+}
+@keyframes slide-up{
+    from{
+        top: 25%;
+    }
+    to{
+        top: 100%;
+    }
+}
+
+
 
 /*antoine*/
 /* Modal */
@@ -292,7 +346,6 @@ footer{
     color: #ffffff;
     padding: 8px 16px;
 }
-
 .noir
 {
     background-color: black;
