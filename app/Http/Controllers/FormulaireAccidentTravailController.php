@@ -103,7 +103,7 @@ class FormulaireAccidentTravailController extends Controller
         return redirect()->route('menus.index'); // retourne au menu si cela ce passe comme prévu ou non
     }
 
-    public function update(Request $request, FormulaireAccidentTravail $formulaireAccidentTravail)
+    public function update(Request $request, FormulaireAccidentTravailRequest $formulaireAccidentTravail)
     {
         //
     }

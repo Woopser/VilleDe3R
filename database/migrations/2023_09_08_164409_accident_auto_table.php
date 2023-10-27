@@ -22,6 +22,7 @@ return new class extends Migration
             //$table->foreignId('superviseurImpliquer');
             $table->string('numeroDePermis');
             $table->boolean('autreVehicule');
+            $table->date('dateSuperviseur')->nullable($value = true);
             $table->timestamps();
         });
     }
