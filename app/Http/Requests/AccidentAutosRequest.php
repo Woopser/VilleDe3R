@@ -34,8 +34,8 @@ class AccidentAutosRequest extends FormRequest
     public function messages()
 {
     return [
-        'numeroUnite.required' => 'Le champ Numéro d\'unité doit être un matricule.',
-        'numeroUnite.max' => 'Le champ Numéro d\'unité doit être un matricule.',
+        'numeroUnite.required' => 'Le champ Numéro d\'unité est requis.',
+        'numeroUnite.max' => 'Le champ Numéro d\'unité doit être plus petit que 7.',
         'numeroUnite.min' => 'Le champ Numéro d\'unité doit être un matricule.',
         'numeroUnite.numeric' => 'Le champ Numéro d\'unité doit être un nombre.',
         'departement.required' => 'Le champ Département est requis.',

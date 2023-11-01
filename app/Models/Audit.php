@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Audit extends Model
 {
     use HasFactory;
-    protected $fillable = ['matricule','superviseur','lieu','date','EPI','tenueLieux','comportement','signalisation','ficheSignaletique','travaux','espaceClos','methode','autres','distanciation','portMasque','respectProcedure','descriptionTravail','dateSuperviseur'];
+    protected $fillable = ['matricule','superviseur','lieu','date','EPI','tenueLieux','comportement','signalisation','ficheSignaletique','travaux','espaceClos','methode','autres','descAutre','distanciation','portMasque','respectProcedure','descriptionTravail','dateSuperviseur'];
     
 }

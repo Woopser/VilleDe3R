@@ -26,6 +26,7 @@ return new class extends Migration
             $table->float('espaceClos');
             $table->float('methode');
             $table->float('autres');
+            $table->string('descAutre')->default('N/A');
             $table->float('distanciation');
             $table->float('portMasque');
             $table->float('respectProcedure');

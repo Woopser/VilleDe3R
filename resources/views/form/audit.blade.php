@@ -3,8 +3,21 @@
 @section('V3R')
 
 @section('content')
+    <script src=""></script>
     
 
+    @if(isset($errors) && $errors->any())
+
+        <div class="alert alert-danger">
+
+            @foreach($errors->all() as $error)
+
+                <p>{{$error}}</p>
+
+            @endforeach
+
+        </div>
+    @endif
 
     <h2>Formulaire d'audit SST</h2>
 
@@ -147,7 +160,7 @@
             <strong>
             <label for="numImp" class="form-label">Autre(s) : Veuillez préciser</label>
             </strong>
-            <input type="text" class="form-control" id="numUnit" name="lieu">
+            <input type="text" class="form-control" name="descAutre">
         </div>
 
 

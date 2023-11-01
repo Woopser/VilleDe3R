@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuditRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
@@ -28,7 +29,7 @@ class AuditsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AuditRequest $request)
     {
         Log::debug('ICI');
 
@@ -48,7 +49,7 @@ class AuditsController extends Controller
         $audit2->comportement = $audit->comportement;
 
         //signalisation
-        $audit2->signalisation = $audit->comportement;
+        $audit2->signalisation = $audit->signalisation;
 
         //ficheSignalietique
         $audit2->ficheSignaletique = $audit->ficheSignaletique;
@@ -60,7 +61,7 @@ class AuditsController extends Controller
         $audit2->espaceClos = $audit->espaceClos;
 
         //methode
-        $audit2->espaceClos = $audit->espaceClos;
+        $audit2->methode = $audit->methode;
 
         //autres
         $audit2->autres = $audit->autres;
@@ -88,6 +89,9 @@ class AuditsController extends Controller
 
         //date et heure
         $audit2->date = $audit->date;
+
+        //Description Autres
+        $audit2->descAutre = $audit->descAutre;
 
         $audit2->save();
         return redirect()->back();
