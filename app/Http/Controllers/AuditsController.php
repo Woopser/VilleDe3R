@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AuditRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
@@ -28,7 +29,7 @@ class AuditsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AuditRequest $request)
     {
         Log::debug('ICI');
 
@@ -37,149 +38,42 @@ class AuditsController extends Controller
 
         $audit2 = new audit();
 
-        //EPI
-        if($audit->EPI = 0)
-        {
-            $audit2->EPI = "Conforme";
-        }
-        elseif($audit->EPI = 1){
-            $audit2->EPI = "Non-Conforme";
-        }
-        elseif($audit->EPI  = 2 ){
-            $audit2->EPI = "N/A";
-        }
 
-        //Tenue des lieux
-        if($audit->tenueLieux = 0)
-        {
-            $audit2->tenueLieux = "Conforme";
-        }
-        elseif($audit->tenueLieux = 1){
-            $audit2->tenueLieux = "Non-Conforme";
-        }
-        elseif($audit->tenueLieux  = 2 ){
-            $audit2->tenueLieux = "N/A";
-        }
+        //Epi
+        $audit2->EPI = $audit->EPI;
 
-        //comportement
-        if($audit->comportement = 0)
-        {
-            $audit2->comportement = "Conforme";
-        }
-        elseif($audit->comportement = 1){
-            $audit2->comportement = "Non-Conforme";
-        }
-        elseif($audit->comportement  = 2 ){
-            $audit2->comportement = "N/A";
-        }
+        //tenueLieux
+        $audit2->tenueLieux = $audit->tenueLieux;
 
-        //signalissation
-        if($audit->signalisation = 0)
-        {
-            $audit2->signalisation = "Conforme";
-        }
-        elseif($audit->signalisation = 1){
-            $audit2->signalisation = "Non-Conforme";
-        }
-        elseif($audit->signalisation  = 2 ){
-            $audit2->signalisation = "N/A";
-        }
+        //comportement 
+        $audit2->comportement = $audit->comportement;
 
-        //ficheSignaletique
-        if($audit->ficheSignaletique = 0)
-        {
-            $audit2->ficheSignaletique = "Conforme";
-        }
-        elseif($audit->ficheSignaletique = 1){
-            $audit2->ficheSignaletique = "Non-Conforme";
-        }
-        elseif($audit->ficheSignaletique  = 2 ){
-            $audit2->ficheSignaletique = "N/A";
-        }
+        //signalisation
+        $audit2->signalisation = $audit->signalisation;
+
+        //ficheSignalietique
+        $audit2->ficheSignaletique = $audit->ficheSignaletique;
 
         //travaux
-        if($audit->travaux = 0)
-        {
-            $audit2->travaux = "Conforme";
-        }
-        elseif($audit->travaux = 1){
-            $audit2->travaux = "Non-Conforme";
-        }
-        elseif($audit->travaux  = 2 ){
-            $audit2->travaux = "N/A";
-        }
+        $audit2->travaux = $audit->travaux;
 
         //espaceClos
-        if($audit->espaceClos = 0)
-        {
-            $audit2->espaceClos = "Conforme";
-        }
-        elseif($audit->espaceClos = 1){
-            $audit2->espaceClos = "Non-Conforme";
-        }
-        elseif($audit->espaceClos  = 2 ){
-            $audit2->espaceClos = "N/A";
-        }
+        $audit2->espaceClos = $audit->espaceClos;
 
         //methode
-        if($audit->methode = 0)
-        {
-            $audit2->methode = "Conforme";
-        }
-        elseif($audit->methode = 1){
-            $audit2->methode = "Non-Conforme";
-        }
-        elseif($audit->methode  = 2 ){
-            $audit2->methode = "N/A";
-        }
+        $audit2->methode = $audit->methode;
 
         //autres
-        if($audit->autres = 0)
-        {
-            $audit2->autres = "Conforme";
-        }
-        elseif($audit->autres = 1){
-            $audit2->autres = "Non-Conforme";
-        }
-        elseif($audit->autres  = 2 ){
-            $audit2->autres = "N/A";
-        }
+        $audit2->autres = $audit->autres;
 
-        //distanciation
-        if($audit->distanciation = 0)
-        {
-            $audit2->distanciation = "Conforme";
-        }
-        elseif($audit->distanciation = 1){
-            $audit2->distanciation = "Non-Conforme";
-        }
-        elseif($audit->distanciation  = 2 ){
-            $audit2->distanciation = "N/A";
-        }
+        //distantiation
+        $audit2->distanciation = $audit->distanciation;
 
         //portMasque
-        if($audit->portMasque = 0)
-        {
-            $audit2->portMasque = "Conforme";
-        }
-        elseif($audit->portMasque = 1){
-            $audit2->portMasque = "Non-Conforme";
-        }
-        elseif($audit->portMasque  = 2 ){
-            $audit2->portMasque = "N/A";
-        }
+        $audit2->portMasque = $audit->portMasque;
 
         //respectProcedure
-        if($audit->respectProcedure = 0)
-        {
-            $audit2->respectProcedure = "Conforme";
-        }
-        elseif($audit->respectProcedure = 1){
-            $audit2->respectProcedure = "Non-Conforme";
-        }
-        elseif($audit->respectProcedure  = 2 ){
-            $audit2->respectProcedure = "N/A";
-        }
+        $audit2->respectProcedure = $audit->respectProcedure;
 
         //matricule 
         $audit2->matricule = Session::get('matricule');
@@ -195,6 +89,12 @@ class AuditsController extends Controller
 
         //date et heure
         $audit2->date = $audit->date;
+
+        //Description Autres
+        $audit2->descAutre = $audit->descAutre;
+
+        $audit2->save();
+        return redirect()->back();
     }
 
     /**

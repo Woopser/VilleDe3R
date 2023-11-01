@@ -39,7 +39,7 @@ class AccidentAutosController extends Controller
         $accidentAuto = new accidentauto($request->all());
         Log::debug($accidentAuto);
         Log::debug($accidentAuto->employeImpliquer);
-
+        Log::debug($accidentAuto->numeroUnite);
         $accidentAuto2 = new accidentauto();
         $accidentAuto2->matricule = Session::get('matricule');
         $accidentAuto2->superviseur = Session::get('superviseur');

@@ -11,25 +11,27 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('grilleAudits', function (Blueprint $table) {
+        Schema::create('audits', function (Blueprint $table) {
             $table->id();
             $table->foreignId('matricule');
             $table->foreignId('superviseur')->nullable($value = true);
             $table->string('lieu');
             $table->dateTime('date');
-            $table->string('EPI');
-            $table->string('tenueLieux');
-            $table->string('comportement');
-            $table->string('signalisation');
-            $table->string('ficheSignaletique');
-            $table->string('travaux');
-            $table->string('espaceClos');
-            $table->string('methode');
-            $table->string('autres');
-            $table->string('distanciation');
-            $table->string('portMasque');
-            $table->string('respectProcedure');
+            $table->float('EPI');
+            $table->float('tenueLieux');
+            $table->float('comportement');
+            $table->float('signalisation');
+            $table->float('ficheSignaletique');
+            $table->float('travaux');
+            $table->float('espaceClos');
+            $table->float('methode');
+            $table->float('autres');
+            $table->string('descAutre')->default('N/A');
+            $table->float('distanciation');
+            $table->float('portMasque');
+            $table->float('respectProcedure');
             $table->string('descriptionTravail');
+            $table->date('dateSuperviseur')->nullable($value = true);
             $table->timestamps();
         });
     }
