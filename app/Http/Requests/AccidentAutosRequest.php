@@ -22,7 +22,7 @@ class AccidentAutosRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'numeroUnite' => 'required|max:7|min:7|numeric',
+            'numeroUnite' => 'required|numeric|max_digits:7|min_digits:7',
             'departement' => 'required|numeric',
             'employeImpliquer' => 'required|numeric',
             'numeroDePermis' => 'required',
@@ -35,8 +35,9 @@ class AccidentAutosRequest extends FormRequest
 {
     return [
         'numeroUnite.required' => 'Le champ Numéro d\'unité est requis.',
-        'numeroUnite.max' => 'Le champ Numéro d\'unité doit être plus petit que 7.',
-        'numeroUnite.min' => 'Le champ Numéro d\'unité doit être un matricule.',
+        'numeroUnite.max_digits' => 'Le champ Numéro d\'unité doit être plus petit que 7.',
+        'numeroUnite.min_digits' => 'Le champ Numéro d\'unité doit être un matricule.',
+        //'numeroUnite.size' => 'Le champ numéro d\'unite doit être de 7 chiffre',
         'numeroUnite.numeric' => 'Le champ Numéro d\'unité doit être un nombre.',
         'departement.required' => 'Le champ Département est requis.',
         'employeImpliquer.required' => 'Le champ Employé impliqué est requis.',
