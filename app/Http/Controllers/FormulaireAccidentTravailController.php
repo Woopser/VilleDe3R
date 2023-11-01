@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\accidenttravail;
+use App\Models\notification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
@@ -40,12 +41,15 @@ class FormulaireAccidentTravailController extends Controller
         //=================================Store======================================================================================================================================
         try{
             $accident = new accidenttravail(); // Créer une nouvelle variable
+            $notification = new notification(); // Créer la variable pour les notifications
         // Met toute les données utiles
         if(Session::has('matricule')){ // Prend la variable de session matricule pour prendre la matricule de l'employer
         $accident->matricule = Session::get('matricule'); 
+        $notification->matriculeEmploye = Session::get('matricule');
         }
         if(Session::has('superviseur')){ // Prend la variable de session superviseur pour prendre le superviseur de l'employer
             $accident->superviseur = Session::get('superviseur');
+            $notification->matriculeSuperviseur = Session::get('superviseur');
         }
         //$accident->dateAccident = date('yyyy-MM-dd HH:mm:ss',$request->dateAccident);
         $dt = carbon::create($request->dateAccident); // Met la date de l'accident dedans le bon format -> yyyy-MM-dd HH:mm:ss
@@ -94,6 +98,15 @@ class FormulaireAccidentTravailController extends Controller
         //Log::debug($accident->detail); // Test detail
         //================================================== Sauvegarde =========================================================================================
         $accident->save(); // Sauvegarde dedans la BD
+        
+        //==================================================Notification=========================================================================================
+        $notification->typeFormulaire = 3;
+        // je met un id au hasard pour tester, va devoir le faire automatiquement apres
+        $notification->idFormulaire = 7;
+        Log::debug($notification);
+        $notification->save();
+
+        //=======================================================================================================================================================
         }
         catch(\Throwable $e){
             //Il y a une erreur 

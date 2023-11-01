@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('notifications', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('matriculeSuperviseur');
             $table->foreignId('matriculeEmploye');
-            $table->tinyText('description');
+            $table->float('typeFormulaire');
+            $table->float('idFormulaire');
             $table->boolean("verifier")->default(false);
             $table->timestamps();
         });
