@@ -46,11 +46,11 @@ radioNon.addEventListener('change',function(){
 let inputLieu = document.getElementById("lieu"); // prend le input du lieu
 let erreurLieu = document.getElementById("erreurLieu"); // prend le p pour marquer les erreurs
 inputLieu.addEventListener("keyup", function(){ // regarde a chaque fois qu'une touche ce le lève pour regarder si le contenu est null
-    if(inputLieu.value == ""){ // contenu null dit que se n,est pas correcte l'erreur
+    if(inputLieu.value == ""){ // contenu null dit que se n'est pas correcte l'erreur
         erreurLieu.textContent = "Erreur : veuillez rentrer un lieu"
     }
     else{
-        erreurLieu.textContent = ""; // ne met rie dans le cas contraire
+        erreurLieu.textContent = ""; // ne met rien dans le cas contraire
     }
 })
 // Vérification de la date de l'accident
@@ -67,4 +67,50 @@ inputDateAccident.addEventListener("change", function(){
         erreurDateAccident.textContent = ""; // ne met rien dans le cas contraire
     }
 });
-// Vérifiaction 
+// Vérifiaction  de la description de l'accident
+let inputDescription = document.getElementById("descrpition"); // prend le input de la description
+let erreurDescription = document.getElementById("erreurDescription"); // prend le p pour marquer les erreurs
+inputDescription.addEventListener("keyup", function(){
+    if(inputLieu.value == ""){ // contenu null dit que se n'est pas correcte l'erreur
+        erreurDescription.textContent = "Erreur : veuillez rentrer un description";
+    }
+    else{
+        erreurLieu.textContent = ""; // ne met rien dans le cas contraire
+    }
+});
+// Vérification de la nature
+let inputNature = document.getElementById("nature"); // Prend le input de nature
+let erreurNature = document.getElementById("erreurNature"); // Prend le p de nature pour marquer l'erreur
+inputNature.addEventListener("keyup", function(){
+    if(inputNature.value == ""){ // Lorsqu'il y a rien de marquer dedans le input marque une erreur
+        erreurNature.textContent = " Erreur : veillez rentrer la nature";
+    }
+    else{ // Dans le cas contraire met rien
+        erreurNature.textContent = "";
+    }
+});
+// Vérification description blessure
+let inputBlessure = document.getElementById("descriptionblessure"); // Prend le input de description blessure
+let erreurBlessure = document.getElementById("erreurBlessure"); // Prend le p de description blessure pour marquer les erreurs
+inputBlessure.addEventListener("keyup", function(){
+    if(inputBlessure.value == ""){ // Lorsqu'il y a rien de marquer dedans le input marque une erreur
+        erreurBlessure.textContent = "Erreur : Veillez rentrer une description de la blessure"
+    }
+    else{ // Dans le cas contraire met rien
+        erreurBlessure.textContent = "";
+    }
+});
+// Vérification comment
+let inputComment = document.getElementById("comment"); // Prend le input de comment s'est produit l'accident
+let erreurComment = document.getElementById("comment"); // Prend le p de comment s'est produit l'accident pour marquer les erreurs
+inputComment.addEventListener("keyup", function(){
+    if(inputComment.value == ""){ // Lorsqu'il y a rien de marquer dedans le input marque une erreur
+        erreurComment.textContent = "Erreur : Veillez rentrer comment l'accident s'est produit";
+    }
+    else{ // Dans le cas contraire met rien
+        erreurComment.textContent = "";
+    }
+});
+// Vérification premier soin
+let inputPremierSoin = document.getElementById("premierSoin"); // Prend le input de premier soin
+let erreurPremierSoin = document.getElementById("erreurPremier"); // Prend le p de premier pour marquer les erreurs

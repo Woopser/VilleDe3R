@@ -54,7 +54,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="description" class="form-label"><strong>Description de l'accident</strong></label>
-                    <textarea name="description" class="form-control"></textarea>
+                    <textarea name="description" class="form-control" id="description"></textarea>
+                    <p id="erreurDescription" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
                     <label for="temoinTrueFalse" class="form-label"><strong>Es se qu'il y a eu des temoin</strong></label>
@@ -71,11 +72,13 @@
                     </div>
                 <div class="mb-3">
                     <label for="nature" class="form-label"><strong>Nature</strong></label>
-                    <input type="text" class="form-control" name="nature">
+                    <input type="text" class="form-control" name="nature" id="nature">
+                    <p id="erreurNature" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
                     <label for="descriptionBlessure" class="form-label"><strong>Description Blessure</strong></label>
-                    <textarea name="descriptionBlessure" class="form-control"></textarea>
+                    <textarea name="descriptionBlessure" class="form-control" id="DescriptionBlessure"></textarea>
+                    <p id="erreurBlessure" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
                     <label for="violence" class="form-label"><strong>Es se qu'il y a eu de la violence</strong></label>
@@ -90,15 +93,18 @@
                 </div>
                 <div class="mb-3">
                     <label for="comment" class="form-label"><strong>Comment s'est produit la blessure</strong></label>
-                    <textarea name="comment" class="form-control"></textarea>
+                    <textarea name="comment" class="form-control" id="comment"></textarea>
+                    <p id="erreurComment" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
                     <label for="premierSoin" class="form-label"><strong>Premier soin</strong></label>
-                    <input type="text" class="form-control" name="premierSoin">
+                    <input type="text" class="form-control" name="premierSoin" id="premierSoin">
+                    <p id="erreurPremier" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
                     <label for="NomSecouriste" class="form-label"><strong>Nom du secouriste</strong></label>
-                    <input type="text" class="form-control" name="nomSecouriste">
+                    <input type="text" class="form-control" name="nomSecouriste" id="secouriste">
+                    <p id="erreurSecouriste" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">
                     <label for="detail" class="form-label"><strong>Detail de l'accident</strong></label>
@@ -122,4 +128,6 @@
         </div>
     </div>
 </div>
+
+<script src="{{ asset('js/declarationAccident.js') }}"></script>
 @endsection
