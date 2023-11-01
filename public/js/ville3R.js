@@ -40,12 +40,14 @@ async function toggleModal() {
 }
 // Ferme le modal si on clique en dehors
 window.onclick = async function(event) {
-    if (event.target === filter) {
-        modal.style.animationName = "slide-up";
-        await delay(400);
-        modal.style.display = "none";
-        filter.style.filter = "none";
-        filter.style.backdropFilter = "none";
-        filter.style.zIndex = "-1";
+    if(modal.style.display === "flex"){
+        if (event.target === filter) {
+            modal.style.animationName = "slide-up";
+            await delay(400);
+            modal.style.display = "none";
+            filter.style.filter = "none";
+            filter.style.backdropFilter = "none";
+            filter.style.zIndex = "-1";
+        }
     }
 }

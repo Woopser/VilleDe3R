@@ -51,3 +51,4 @@ Route::POST('/formulaire/declarationAccident/store',[FormulaireAccidentTravailCo
 
 //-----------------Route pour Grille Audit SST
 Route::get('/formulaires/audit', [AuditsController::class, 'index'])->name('formulaireAudit');
+Route::POST('formulaire/audit/store', [AuditsController::class, 'store'])->name('audit.store');

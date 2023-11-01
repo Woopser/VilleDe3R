@@ -351,6 +351,16 @@ footer{
     background-color: black;
 }
 
+
+/*THOMAS */
+span {
+    margin-right:3%;
+}
+
+/*Thoma */ 
+#spanGauche {
+    margin-left: 18%;
+
 .ecritureNoir{
     color: black;
 }
@@ -365,4 +375,5 @@ footer{
 .bonForm{
     color: green;
     font-size: 12px;
+
 }
