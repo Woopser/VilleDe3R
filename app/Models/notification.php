@@ -9,5 +9,5 @@ class notification extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['matriculeSuperviseur','matriculeEmploye','typeFormulaire','idFormulaire','verifier'];
+    protected $fillable = ['matriculeEmploye','matriculeSuperviseur','typeFormulaire','idFormulaire','verifier'];
 }

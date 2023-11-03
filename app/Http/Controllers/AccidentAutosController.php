@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\accidentauto;
+use App\Models\notification;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
@@ -35,7 +36,15 @@ class AccidentAutosController extends Controller
     public function store(AccidentAutosRequest $request)
     {
         Log::debug("ICi");
-        
+
+        $notification = new notification(); // Créer la variable pour les notifications
+        $notification->matriculeEmploye = Session::get('matricule');
+        $notification->matriculeSuperviseur = Session::get('superviseur');
+        $notification->typeFormulaire = "AccidentAuto";
+
+        // je met un id au hasard pour tester, va devoir le faire automatiquement apres
+        $notification->idFormulaire = 7;
+
         $accidentAuto = new accidentauto($request->all());
         Log::debug($accidentAuto);
         Log::debug($accidentAuto->employeImpliquer);
@@ -50,6 +59,7 @@ class AccidentAutosController extends Controller
         $accidentAuto2->autreVehicule = $accidentAuto->autreVehicule;
 
         $accidentAuto2->save();
+        $notification->save();
         return redirect()->back();
 
     }

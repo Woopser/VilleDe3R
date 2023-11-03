@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('matriculeSuperviseur');
             $table->foreignId('matriculeEmploye');
-            $table->float('typeFormulaire');
+            $table->string('typeFormulaire');
             $table->float('idFormulaire');
             $table->boolean("verifier")->default(false);
             $table->timestamps();

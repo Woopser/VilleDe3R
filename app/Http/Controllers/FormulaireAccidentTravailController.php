@@ -100,7 +100,7 @@ class FormulaireAccidentTravailController extends Controller
         $accident->save(); // Sauvegarde dedans la BD
         
         //==================================================Notification=========================================================================================
-        $notification->typeFormulaire = 3;
+        $notification->typeFormulaire = "accidentTravail";
         // je met un id au hasard pour tester, va devoir le faire automatiquement apres
         $notification->idFormulaire = 7;
         Log::debug($notification);

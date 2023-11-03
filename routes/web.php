@@ -45,8 +45,8 @@ Route::get('/formulaires',[FormulaireController::class, 'index'])->name('form.in
 Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'store'])->name('accidentAuto.store');
 
 //route du formulaire declaration d'accident de travail =====================================================================================
-Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidentTravail');
-Route::POST('/formulaire/declarationAccident/store',[FormulaireAccidentTravailController::class, 'store'])->name('formulaireAccidentTravail.store');
+Route::get('/formulaires/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidentTravail');
+Route::POST('/formulaires/declarationAccident/store',[FormulaireAccidentTravailController::class, 'store'])->name('formulaireAccidentTravail.store');
 
 
 //-----------------Route pour Grille Audit SST

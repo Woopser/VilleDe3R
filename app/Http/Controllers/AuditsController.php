@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use App\Models\Audit;
+use App\Models\notification;
 
 class AuditsController extends Controller
 {
@@ -37,7 +38,13 @@ class AuditsController extends Controller
         Log::debug($audit);
 
         $audit2 = new audit();
+        $notification = new notification(); // Créer la variable pour les notifications
+        $notification->matriculeEmploye = Session::get('matricule');
+        $notification->matriculeSuperviseur = Session::get('superviseur');
+        $notification->typeFormulaire = "Audit";
 
+        // je met un id au hasard pour tester, va devoir le faire automatiquement apres
+        $notification->idFormulaire = 7;
 
         //Epi
         $audit2->EPI = $audit->EPI;
@@ -94,6 +101,8 @@ class AuditsController extends Controller
         $audit2->descAutre = $audit->descAutre;
 
         $audit2->save();
+        $notification->save();
+        
         return redirect()->back();
     }
 
