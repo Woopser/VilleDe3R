@@ -89,6 +89,13 @@ a:visited{
     transform: scale(0.95);
     filter: blur(0);
 }
+#content-body{
+    position: relative;
+    height: 85%;
+    width: 100%;
+    margin: 10% 0 0 0;
+    padding: 0;
+}
 
 
 
@@ -236,8 +243,7 @@ nav{
 
 /* FOOTER */
 footer{
-    position: fixed;
-    bottom: 0;
+    position: relative;
 
     height: 15%;
     width: 100%;
@@ -248,7 +254,22 @@ footer{
 
     background-color: var(--secondary);
     color: white;
+    margin: 0;
 }
+
+
+
+/* Formulaires */
+.form-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+}
+
+
 
 /* Arnaud */
 /* Modal */
@@ -360,8 +381,7 @@ span {
 /*Thoma */ 
 #spanGauche {
     margin-left: 18%;
-
-.ecritureNoir{
+}.ecritureNoir{
     color: black;
 }
 
@@ -375,5 +395,4 @@ span {
 .bonForm{
     color: green;
     font-size: 12px;
-
 }
