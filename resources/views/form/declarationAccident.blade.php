@@ -77,7 +77,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="descriptionBlessure" class="form-label"><strong>Description Blessure</strong></label>
-                    <textarea name="descriptionBlessure" class="form-control" id="DescriptionBlessure"></textarea>
+                    <textarea name="descriptionBlessure" class="form-control" id="descriptionBlessure"></textarea>
                     <p id="erreurBlessure" class="erreurForm"></p>
                 </div>
                 <div class="mb-3">

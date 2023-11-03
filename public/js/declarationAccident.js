@@ -68,10 +68,10 @@ inputDateAccident.addEventListener("change", function(){
     }
 });
 // Vérifiaction  de la description de l'accident
-let inputDescription = document.getElementById("descrpition"); // prend le input de la description
+let inputDescription = document.getElementById("description"); // prend le input de la description
 let erreurDescription = document.getElementById("erreurDescription"); // prend le p pour marquer les erreurs
 inputDescription.addEventListener("keyup", function(){
-    if(inputLieu.value == ""){ // contenu null dit que se n'est pas correcte l'erreur
+    if(inputDescription.value == ""){ // contenu null dit que se n'est pas correcte l'erreur
         erreurDescription.textContent = "Erreur : veuillez rentrer un description";
     }
     else{
@@ -90,7 +90,7 @@ inputNature.addEventListener("keyup", function(){
     }
 });
 // Vérification description blessure
-let inputBlessure = document.getElementById("descriptionblessure"); // Prend le input de description blessure
+let inputBlessure = document.getElementById("descriptionBlessure"); // Prend le input de description blessure
 let erreurBlessure = document.getElementById("erreurBlessure"); // Prend le p de description blessure pour marquer les erreurs
 inputBlessure.addEventListener("keyup", function(){
     if(inputBlessure.value == ""){ // Lorsqu'il y a rien de marquer dedans le input marque une erreur
@@ -114,3 +114,22 @@ inputComment.addEventListener("keyup", function(){
 // Vérification premier soin
 let inputPremierSoin = document.getElementById("premierSoin"); // Prend le input de premier soin
 let erreurPremierSoin = document.getElementById("erreurPremier"); // Prend le p de premier pour marquer les erreurs
+inputPremierSoin.addEventListener("keyup", function(){
+    if(inputPremierSoin.value == ""){
+        erreurPremierSoin.textContent = "Erreur : Veillez rentrer les premiers soins effectués";
+    }
+    else{
+        erreurPremierSoin.textContent = "";
+    }
+});
+// Vérification secouriste
+let inputSecouriste = document.getElementById("secouriste"); // Prend le input de secouriste
+let erreurSecouriste = document.getElementById("erreurSecouriste"); // Prend le p de secouriste pour marquer les erreurs
+inputSecouriste.addEventListener("keyup", function(){
+    if(inputSecouriste.value == ""){ // Lorsqu'il y rien marquer dedans le input marque une erreur
+        erreurSecouriste.textContent = "Erreur : Veillez rentrer le secouriste";
+    }
+    else{ // Dans le cas conrtaire
+        erreurSecouriste.textContent = ""
+    }
+});
