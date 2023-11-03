@@ -48,7 +48,9 @@ Route::post('/formulaires/accidentVoiture', [AccidentAutosController::class, 'st
 Route::get('/formulaire/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidentTravail');
 Route::POST('/formulaire/declarationAccident/store',[FormulaireAccidentTravailController::class, 'store'])->name('formulaireAccidentTravail.store');
 
-
 //-----------------Route pour Grille Audit SST
 Route::get('/formulaires/audit', [AuditsController::class, 'index'])->name('formulaireAudit');
 Route::POST('formulaire/audit/store', [AuditsController::class, 'store'])->name('audit.store');
+
+// Route liste de formulaire ==================================================================================================================
+Route::get('/formulaire/liste',[MenuController::class, 'listeForm'])->name('menu.listeForm');
