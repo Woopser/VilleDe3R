@@ -22,6 +22,8 @@
 <form method="POST" action="">
     @csrf
 
+    ¯ mn
+
 </form>
 
 @endsection
