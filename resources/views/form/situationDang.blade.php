@@ -22,7 +22,50 @@
 <form method="POST" action="">
     @csrf
 
-    ¯ mn
+    <div class="mb-3">
+        <label for="nomEmp" class="form-label"> <strong>Fonction au moment de l'evenement:  </strong></label>
+        <input type="number" class="form-control" id="nomEmp" name="fonciton">
+    </div>
+
+    <div class="mb-3">
+        <label for="nomEmp" class="form-label"> <strong>Secteur d'activité :  </strong></label>
+        <input type="number" class="form-control" id="nomEmp" name="secteur">
+    </div>
+
+    <div class="mb-3">
+        <label for="nomEmp" class="form-label"> <strong>Date de l'observation :  </strong></label>
+        <input type="datetime-local" class="form-control" id="nomEmp" name="dateObservation">
+    </div>
+
+    <div class="mb-3">
+        <label for="nomEmp" class="form-label"> <strong>Témoin(s) :  </strong></label>
+        <input type="text" class="form-control" id="nomEmp" name="temoin">
+    </div>
+
+    <div class="mb-3">
+        <label for="nomEmp" class="form-label"> <strong>Lieu :  </strong></label>
+        <input type="text" class="form-control" id="nomEmp" name="lieu">
+    </div>
+
+    <div class="mb-3">
+        <label for="nomEmp" class="form-label"> <strong>Description :  </strong></label>
+        <textarea name="description" class="form-control" id="description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="nomEmp" class="form-label"> <strong>Correction :  </strong></label>
+        <textarea name="correction" class="form-control" id="description"></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="nomEmp" class="form-label"> <strong>Date:  </strong></label>
+        <input type="datetime-local" class="form-control" id="nomEmp" name="dateRempli">
+    </div>
+
+
+    <div class="col-12">
+        <button class="btn btn-primary" type="submit">Envoyer</button>
+    </div>
 
 </form>
 
