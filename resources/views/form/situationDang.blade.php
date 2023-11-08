@@ -19,17 +19,17 @@
 <div style="height: 100.05px"></div>
 <h1>Formulaire de signalement de situation dangeureuse</h1>
 
-<form method="POST" action="">
+<form method="POST" action="{{route('situationDang.store')}}">
     @csrf
 
     <div class="mb-3">
         <label for="nomEmp" class="form-label"> <strong>Fonction au moment de l'evenement:  </strong></label>
-        <input type="number" class="form-control" id="nomEmp" name="fonciton">
+        <input type="text" class="form-control" id="nomEmp" name="fonciton">
     </div>
 
     <div class="mb-3">
         <label for="nomEmp" class="form-label"> <strong>Secteur d'activité :  </strong></label>
-        <input type="number" class="form-control" id="nomEmp" name="secteur">
+        <input type="text" class="form-control" id="nomEmp" name="secteur">
     </div>
 
     <div class="mb-3">

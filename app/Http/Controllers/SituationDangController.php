@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\SituationDangRequest;
+use App\Models\SituationDang;
 
 class SituationDangController extends Controller
 {
@@ -25,9 +27,11 @@ class SituationDangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SituationDangRequest $request)
     {
-        //
+        Log::debug('ICI');
+        $situations = new SituationDang($request->all());
+        Log::debug($situations);
     }
 
     /**
