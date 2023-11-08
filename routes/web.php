@@ -7,18 +7,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\FormulaireController;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\SituationDangController;
 
 //Route pour formulaire accident de voiture
 Route::get('/formulaires/accidentVoiture',
@@ -49,6 +38,13 @@ Route::get('/formulaires/declarationAccident', [FormulaireAccidentTravailControl
 Route::POST('/formulaires/declarationAccident/store',[FormulaireAccidentTravailController::class, 'store'])->name('formulaireAccidentTravail.store');
 
 
-//-----------------Route pour Grille Audit SST
+//-----------------Route pour Grille Audit SST-------------------------------------------------//
 Route::get('/formulaires/audit', [AuditsController::class, 'index'])->name('formulaireAudit');
 Route::POST('formulaire/audit/store', [AuditsController::class, 'store'])->name('audit.store');
+
+//-----Route pour Situations dangeureuse-----------//
+Route::get('formulaires/situationDang',[SituationDangController::class, 'index'])->name('formulaireSit');
+
+// Route liste de formulaire ==================================================================================================================
+Route::get('/formulaire/liste',[MenuController::class, 'listeForm'])->name('menu.listeForm');
+
