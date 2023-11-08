@@ -30,7 +30,7 @@
         </div>
 
         <div class="display-flex">
-            <a href="" class="boutonMenu hvr-shrink">
+            <a href="{{route('menu.listeForm')}}" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -60,7 +60,7 @@
 
     <div class="modal-form" id="modal-form">
         <div class="modal-content">
-            <a href="">Formulaire 1</a>
+            <a href="{{ route('formulaireAccidentTravail') }}">Formulaire 1</a>
             <a href="">Formulaire 2</a>
             <a href="">Formulaire 3</a>
             <a href="">Formulaire 4</a>

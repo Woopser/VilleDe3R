@@ -42,4 +42,3 @@
 </body>
 </html>
 <script src="{{ asset('js/ville3R.js') }}"></script>
-<script src="{{ asset('js/declarationAccident.js') }}"></script>

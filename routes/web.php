@@ -44,3 +44,7 @@ Route::POST('formulaire/audit/store', [AuditsController::class, 'store'])->name(
 
 //-----Route pour Situations dangeureuse-----------//
 Route::get('formulaires/situationDang',[SituationDangController::class, 'index'])->name('formulaireSit');
+
+// Route liste de formulaire ==================================================================================================================
+Route::get('/formulaire/liste',[MenuController::class, 'listeForm'])->name('menu.listeForm');
+
