@@ -43,7 +43,7 @@
                 </div>
             </a>
         
-            <a href="" class="boutonMenu hvr-shrink">
+            <a href="{{ route('notification.index') }}" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">

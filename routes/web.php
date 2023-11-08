@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormulaireAccidentTravailController;
 use App\Http\Controllers\AccidentAutosController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\FormulaireController;
@@ -48,3 +49,7 @@ Route::get('formulaires/situationDang',[SituationDangController::class, 'index']
 // Route liste de formulaire ==================================================================================================================
 Route::get('/formulaire/liste',[MenuController::class, 'listeForm'])->name('menu.listeForm');
 
+//--------------------------Notification
+
+Route::get('/notifications',[NotificationController::class,'index'])->name('notification.index');
+Route::get('/notifications/show',[NotificationController::class,'show'])->name('notification.show');

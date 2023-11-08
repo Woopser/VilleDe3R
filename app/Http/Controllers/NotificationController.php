@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\accidentauto;
+use App\Models\accidenttravail;
+use App\Models\notification;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
+use App\Models\User;
+use App\Models\Departement;
+use App\Http\Requests\AccidentAutosRequest;
 class NotificationController extends Controller
 {
     /**
@@ -11,7 +18,9 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        //
+        $notifs = notification::where('matriculeSuperviseur',Session::get('matricule'))->get();
+
+        return View('/notification.index', compact('notifs'));
     }
 
     /**
@@ -33,9 +42,14 @@ class NotificationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
-    {
-        //
+    public function show(Notification $not)
+    {   
+        
+        $notifs = notification::all();
+        $accTravails = accidenttravail::all();
+
+
+        return View('/notification.show', compact('notifs','accTravails',));
     }
 
     /**
