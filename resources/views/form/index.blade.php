@@ -5,16 +5,18 @@
 @section('content')
 
 <div class="container">
-    <div style="height: 115px"></div>
-<div class="container">
-    <a class=" noir" href="{{ route('formulaireAccidentAuto')}}">Formulaire accident d'auto</a>
+<div style="height: 115px"></div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">formulaire d'accident de travail</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
 </div>
-<div class="container">
-    <a class=" noir" href="{{ route('formulaireAccidentTravail')}}">Formulaire accident</a>
-</div>
-</div>
-
-
-
 
 @endsection
