@@ -24,12 +24,12 @@ class SituationDangRequest extends FormRequest
         return [
             'fonction' => 'required',
             'secteur' => 'required',
-            'dateObservation' => 'required|dateTime',
+            //'dateObservation' => 'required|dateTime',
             'temoin' => 'required',
             'lieu' => 'required',
             'description' => 'required',
             'correction' => 'required',
-            'dateRempli' => 'required|dateTime'
+            //'dateRempli' => 'required|dateTime'
         ];
     }
 
