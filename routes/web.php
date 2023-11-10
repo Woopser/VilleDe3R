@@ -52,4 +52,4 @@ Route::get('/formulaire/liste',[MenuController::class, 'listeForm'])->name('menu
 //--------------------------Notification
 
 Route::get('/notifications',[NotificationController::class,'index'])->name('notification.index');
-Route::get('/notifications/show',[NotificationController::class,'show'])->name('notification.show');
+Route::get('/notifications/show/{id}',[NotificationController::class,'show'])->name('notification.show');

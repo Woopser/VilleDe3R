@@ -21,7 +21,9 @@
 
 @foreach($notifs as $notif)
 
-<div><a href="{{ route('notification.show') }}">L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a></div>
+<div>
+    <a href="{{ route('notification.show', [$notif->id]) }}" >L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a>
+</div>
 
 @endforeach
 

@@ -101,8 +101,13 @@ class FormulaireAccidentTravailController extends Controller
         
         //==================================================Notification=========================================================================================
         $notification->typeFormulaire = "accidentTravail";
-        // je met un id au hasard pour tester, va devoir le faire automatiquement apres
-        $notification->idFormulaire = 7;
+
+        $accTravail = accidenttravail::all();
+
+        $accTravailId = count($accTravail);
+
+        $notification->idFormulaire = $accTravailId;
+
         Log::debug($notification);
         $notification->save();
 

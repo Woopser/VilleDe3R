@@ -19,13 +19,72 @@
     </div>
 @endif
 
-@if(isset($notifs))
+@if(isset($forms))
 
 
-@foreach($accTravails->where('nomSecouriste','sda') as $accTravail)
-<div>
-    <p>test : {{$accTravail->matricule}}</p>
-</div>
+@foreach($forms as $form)
+
+                <div class="mb-3">
+                    <label for="matricule" class="form-label"><strong>Matricule</strong></label>
+                    <p>{{$form->matricule}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="dateAccident" class="form-label"><strong>Date de l'accident</strong></label>                   
+                    <p>{{$form->dateAccident}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="lieu" class="form-label"><strong>Quelle est le lieu de l'accident</strong></label>
+                    <p>{{$form->lieu}}</p>    
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label"><strong>Description de l'accident</strong></label>
+                    <p>{{$form->description}}</p>
+                </div>
+            
+
+
+                <div id="Temoin" class="mb-3 temoinCacher">
+                        <label for="temoin" class="form-label"><strong>Témoin</strong></label>
+                        <p>{{$form->temoin}}</p>>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nature" class="form-label"><strong>Nature</strong></label>            
+                    <p>{{$form->nature}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descriptionBlessure" class="form-label"><strong>Description Blessure</strong></label>
+                    <p>{{$form->descriptionBlessure}}</p>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="violence" class="form-label"><strong>Es se qu'il y a eu de la violence</strong></label>
+                    <p>{{$form->violence}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="comment" class="form-label"><strong>Comment s'est produit la blessure</strong></label>
+                    <p>{{$form->comment}}</p>
+                </div>
+                <div class="mb-3">
+                    <label for="premierSoin" class="form-label"><strong>Premier soin</strong></label>
+                    <p>{{$form->premierSoin}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="NomSecouriste" class="form-label"><strong>Nom du secouriste</strong></label>
+                    <p>{{$form->nomSecouriste}}</p>
+                </div>
+
+                <div class="mb-3">
+                    <label for="detail" class="form-label"><strong>Detail de l'accident</strong></label>
+                    <p>{{$form->detail}}</p>
+                </div>
+
 @endforeach
 
 

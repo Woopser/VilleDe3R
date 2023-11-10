@@ -42,14 +42,47 @@ class NotificationController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Notification $not)
+    public function show(string $id)
     {   
-        
-        $notifs = notification::all();
-        $accTravails = accidenttravail::all();
+        try{
+            // Oublie pas de le faire dans un try/catch
+            // va aller chercher la données associer au ID
+
+            $notif = notification::find($id);
+
+            // Regarde le type du formulaire remplit (typeFormualaire)
+
+            if($notif->typeFormulaire = "accidentTravail"){
+
+            //Va aller chercher le formulaire du type entre dans se cas accident de travail avec le id dans notifcation (idFormulaire)
+
+            $forms = accidenttravail::where('id',$notif->idFormulaire)->get();
+
+            //Reture une vue du formulaire selectionner
+
+            return View('/notification.show', compact('forms',));
+
+       // }else if($notif->typeFormulaire == "accidentAuto"){
+
+       // }elseif($notif->typeFormulaire == "accidentTravail"){
+
+       // }elseif($notif){
+
+        }else{
+            return;
+        }
+        }catch(\Throwable $e){
+            Log::debug($e);
+        }
+       
 
 
-        return View('/notification.show', compact('notifs','accTravails',));
+
+    //Inutile présentement
+        //$notifs = notification::all();
+        //$accTravails = accidenttravail::all();
+        //return View('/notification.show', compact('notifs','accTravails',));
+
     }
 
     /**
