@@ -3,7 +3,10 @@
 @section('V3R')
 
 @section('content')
+<div>
 
+
+<div style="height: 100.05px"></div>
 @if(isset($errors) && $errors->any())
 
      <div class="alert alert-danger">
@@ -16,7 +19,7 @@
 
     </div>
 @endif
-<div style="height: 100.05px"></div>
+
 <h1>Formulaire de signalement de situation dangeureuse</h1>
 
 <form method="POST" action="{{route('situationDang.store')}}">
@@ -24,7 +27,7 @@
 
     <div class="mb-3">
         <label for="nomEmp" class="form-label"> <strong>Fonction au moment de l'evenement:  </strong></label>
-        <input type="text" class="form-control" id="nomEmp" name="fonciton">
+        <input type="text" class="form-control" id="nomEmp" name="fonction">
     </div>
 
     <div class="mb-3">
@@ -57,16 +60,11 @@
         <textarea name="correction" class="form-control" id="description"></textarea>
     </div>
 
-    <div class="mb-3">
-        <label for="nomEmp" class="form-label"> <strong>Date:  </strong></label>
-        <input type="datetime-local" class="form-control" id="nomEmp" name="dateRempli">
-    </div>
-
 
     <div class="col-12">
         <button class="btn btn-primary" type="submit">Envoyer</button>
     </div>
-
+<div style="height: 100.05px"></div>
 </form>
-
+</div>
 @endsection
