@@ -277,6 +277,17 @@ footer{
     justify-content: center;
     align-items: center;
     width: 100%;
+    margin: auto;
+}
+table{
+    width: 150%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: -25%;
+}
+.form-check-input{
+    text-align: center;
 }
 
 
