@@ -7,7 +7,7 @@ use App\Http\Controllers\UsersController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\FormulaireController;
-use App\Http\Controllers\SituationDangController;
+use App\Http\Controllers\SituationController;
 
 //Route pour formulaire accident de voiture
 Route::get('/formulaires/accidentVoiture',
@@ -43,8 +43,8 @@ Route::get('/formulaires/audit', [AuditsController::class, 'index'])->name('form
 Route::POST('formulaire/audit/store', [AuditsController::class, 'store'])->name('audit.store');
 
 //-----Route pour Situations dangeureuse-----------//
-Route::get('formulaires/situationDang',[SituationDangController::class, 'index'])->name('formulaireSit');
-Route::POST('formulaires/situationDang/store', [SituationDangController::class, 'store'])->name('situationDang.store');
+Route::get('formulaires/situationDang',[SituationController::class, 'index'])->name('formulaireSit');
+Route::POST('formulaires/situationDang/store', [SituationController::class, 'store'])->name('situationDang.store');
 
 // Route liste de formulaire ==================================================================================================================
 Route::get('/formulaire/liste',[MenuController::class, 'listeForm'])->name('menu.listeForm');

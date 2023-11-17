@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SituationDangRequest extends FormRequest
+class SituationRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,7 +29,6 @@ class SituationDangRequest extends FormRequest
             'lieu' => 'required',
             'description' => 'required',
             'correction' => 'required',
-            'dateRempli' => 'required|date'
         ];
     }
 
@@ -58,10 +57,7 @@ class SituationDangRequest extends FormRequest
             'correction' => [
                 'required' => 'Le champs correction ne doit pas être vide'
             ],
-            'dateRempli' => [
-                'required' => 'Le champs date ne doit pas être vide',
-                'date' => 'Le champs date doit être une date'
-            ]
+            
             ];
     }
 }

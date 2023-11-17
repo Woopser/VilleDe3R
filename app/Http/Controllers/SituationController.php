@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\SituationDangRequest;
-use App\Models\SituationDang;
+use App\Http\Requests\SituationRequest;
+use App\Models\Situation;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Session;
 use Carbon\Carbon;
 
-class SituationDangController extends Controller
+class SituationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -29,13 +30,13 @@ class SituationDangController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(SituationDangRequest $request)
+    public function store(SituationRequest $request)
     {
         Log::debug('ICI');
-        $situations = new SituationDang($request->all());
+        $situations = new Situation($request->all());
         Log::debug($situations);
 
-        $situations2 = new SituationDang();
+        $situations2 = new Situation();
 
         $situations2->matricule = Session::get('matricule');
         $situations2->superviseur = Session::get('superviseur');
@@ -48,6 +49,9 @@ class SituationDangController extends Controller
         $situations2->description  = $situations->description;
         $situations2->correction = $situations->correction;
         $situations2->dateRempli = Carbon::now();
+        $situations2->dateObservation = $situations->dateObservation;
+        $situations2->save();
+        return redirect()->back();
     }
 
     /**
