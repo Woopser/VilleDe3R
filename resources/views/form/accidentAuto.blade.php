@@ -2,6 +2,7 @@
 
 @section('V3R')
 
+<div>
 @section('content')
     <div style="height: 100.05px"></div>
 
@@ -66,5 +67,6 @@
         </div>
 
     </form>
-
+    <div style="height: 115px"></div>
+</div>
 @endsection
