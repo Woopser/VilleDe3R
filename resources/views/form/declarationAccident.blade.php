@@ -35,6 +35,7 @@
                 </div>
             @endif
 
+            <h1>Formulaire de signalement de situation dangeureuse</h1>
             @if(isset($personne))
             <form method="POST" action="{{route('formulaireAccidentTravail.store')}}">
                 @csrf
@@ -71,7 +72,7 @@
                         <input type="text" class="form-control" name="temoin" id="inputTemoin">
                     </div>
                 <div class="mb-3">
-                    <label for="nature" class="form-label"><strong>Nature</strong></label>
+                    <label for="nature" class="form-label"><strong>Nature et site de la blessure</strong></label>
                     <input type="text" class="form-control" name="nature" id="nature">
                     <p id="erreurNature" class="erreurForm"></p>
                 </div>
