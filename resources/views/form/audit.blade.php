@@ -98,7 +98,7 @@
                     <td colspan="3"><textarea name="lieu"></textarea></td>
                 </tr>
             </table>
-            <button class="btn btn-primary" type="submit">Envoyer</button>
+            <button class="btn btn-primary form-button" type="submit">Envoyer</button>
         </form>
     </div>
 @endsection

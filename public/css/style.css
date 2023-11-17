@@ -286,8 +286,15 @@ table{
     position: relative;
     left: -25%;
 }
-.form-check-input{
-    text-align: center;
+table tr td input{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin: auto;
+}
+.form-button{
+    width: 100%;
+    margin: 20px;
 }
 
 
