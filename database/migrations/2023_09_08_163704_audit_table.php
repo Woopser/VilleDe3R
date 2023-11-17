@@ -39,8 +39,9 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
+    
     public function down(): void
     {
-        Schema::dropIfExists('grilleAudits');
+        Schema::dropIfExists('audits');
     }
 };
