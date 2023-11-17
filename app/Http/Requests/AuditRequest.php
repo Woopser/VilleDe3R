@@ -36,7 +36,7 @@ class AuditRequest extends FormRequest
             'respectProcedure' => 'required|numeric',
             'descriptionTravail' => 'required',
             'lieu' => 'required',
-            'date' => 'required|dateTime'
+            'date' => 'required|date'
 
         ];
     }
@@ -100,7 +100,7 @@ class AuditRequest extends FormRequest
             ],
             'date' => [
                 'required' => 'Le champ Date est requis.',
-                'dateTime' => 'Le champ Date doit être une date'
+                'date' => 'Le champ Date doit être une date'
             ]
             
         ];

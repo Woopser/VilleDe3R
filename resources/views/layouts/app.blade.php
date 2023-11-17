@@ -31,7 +31,9 @@
     <div id="nav-filter"></div>
 
     <!-- Content -->
-    @yield('content')
+    <div id="content-body">
+        @yield('content')
+    </div>
 
     <!-- Footer -->
     <footer>

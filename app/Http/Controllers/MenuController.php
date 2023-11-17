@@ -12,7 +12,8 @@ class MenuController extends Controller
     public function index()
     {
         //$accidentTravail = accidenttravail::all();
-        return view ('menus.index' /*, compact('accientTravail') */);
+      return view ('menus.index'/*, compact('accientTravail')*/);
+
     }
 
     // Renvoit la liste des formulaire
