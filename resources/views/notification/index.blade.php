@@ -20,10 +20,17 @@
 @endif
 
 @foreach($notifs as $notif)
+@if($notif->typeFormulaire == "accidentTravail")
+    <div>
+    <a href="{{ route('notification.accTravail', [$notif->id]) }}" >L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a>
+    </div>
 
-<div>
-    <a href="{{ route('notification.show', [$notif->id]) }}" >L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a>
-</div>
+@elseif($notif->typeFormulaire == "accidentAuto")
+    <div>
+    <a href="{{ route('notification.accAuto', [$notif->id]) }}" >L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a>
+    </div>
+
+@endif
 
 @endforeach
 

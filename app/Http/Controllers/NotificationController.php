@@ -44,54 +44,57 @@ class NotificationController extends Controller
      */
     public function show(string $id)
     {   
-        try{
-            // Oublie pas de le faire dans un try/catch
-            // va aller chercher la données associer au ID
 
-            $notif = notification::find($id);
-
-            // Regarde le type du formulaire remplit (typeFormualaire)
-
-            if($notif->typeFormulaire = "accidentTravail"){
-
-            //Va aller chercher le formulaire du type entre dans se cas accident de travail avec le id dans notifcation (idFormulaire)
-
-            $forms = accidenttravail::where('id',$notif->idFormulaire)->get();
-
-            //Retourne une vue du formulaire selectionner
-
-            return View('/notification.accTravail', compact('forms',));
-
-        }else if($notif->typeFormulaire == "accidentAuto"){
-
-            $forms = accidentauto::where('id',$notif->idFormulaire)->get();
-
-            return View('/notification.accAuto', compact('forms',));      
-
-        }elseif($notif->typeFormulaire == "audit"){
-
-            $forms = Audit::where('id',$notif->idFormulaire)->get();
-
-            return View('/notification.audit', compact('forms',));      
-       // }elseif($notif){
-
-        }else{
-            return;
-        }
-        }catch(\Throwable $e){
-            Log::debug($e);
-        }
        
-
-
-
-    //Inutile présentement
-        //$notifs = notification::all();
-        //$accTravails = accidenttravail::all();
-        //return View('/notification.show', compact('notifs','accTravails',));
-
     }
 
+    public function accTravail(string $id)
+    {
+        try{
+        $notif = notification::find($id);
+
+        $forms = accidenttravail::where('id',$notif->idFormulaire)->get();
+
+        return View('/notification.accTravail', compact('forms',));
+           
+        }
+        catch(\Throwable $e){
+        Log::debug($e);
+        }
+
+        
+    }
+
+    public function accAuto(string $id)
+    {
+        try{
+            $notif = notification::find($id);
+
+            $forms = accidentauto::where('id',$notif->idFormulaire)->get();
+    
+            return View('/notification.accAuto', compact('forms',)); 
+        } 
+        catch(\Throwable $e){
+            Log::debug($e);
+        }
+         
+    }
+
+    public function audit(string $id)
+    {
+
+        try{
+            $notif = notification::find($id);
+
+            $forms = Audit::where('id',$notifs->idFormulaire)->get();
+    
+            return View('/notification.audit', compact('forms',)); 
+        }
+        catch(\Throwable $e){
+            Log::debug($e);
+        }
+        
+    }
     /**
      * Show the form for editing the specified resource.
      */

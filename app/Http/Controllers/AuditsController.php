@@ -85,8 +85,8 @@ class AuditsController extends Controller
             //matricule 
             if(Session::has('matricule')){
             $audit2->matricule = Session::get('matricule');
-           
-            } $notification->matricule = Session::get('matricule');
+            $notification->matriculeEmploye = Session::get('matricule');
+            } 
 
             //Superviseur
             if(Session::has('superviseur')){          

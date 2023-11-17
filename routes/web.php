@@ -53,8 +53,7 @@ Route::get('/formulaire/liste',[MenuController::class, 'listeForm'])->name('menu
 //--------------------------Notification
 
 Route::get('/notifications',[NotificationController::class,'index'])->name('notification.index');
-Route::get('/notifications/shows/{id}',[NotificationController::class,'show'])->name('notification.show');
-Route::get('/notifications/accTravail/{id}',[NotificationController::class,'show'])->name('notification.accTravail');
-Route::get('/notifications/audit/{id}',[NotificationController::class,'show'])->name('notification.audit');
-Route::get('/notifications/accAuto/{id}',[NotificationController::class,'show'])->name('notification.accAuto');
+Route::get('/notifications/accTravail/{id}',[NotificationController::class,'accTravail'])->name('notification.accTravail');
+Route::get('/notifications/audit/{id}',[NotificationController::class,'audit'])->name('notification.audit');
+Route::get('/notifications/accAuto/{id}',[NotificationController::class,'accAuto'])->name('notification.accAuto');
 //Route::get('/notifications/accTravail/{id}',[NotificationController::class,'show'])->name('notification.show');

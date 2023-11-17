@@ -45,7 +45,8 @@ class AccidentAutosController extends Controller
 
             if(Session::has('matricule')){
             $accidentAuto2->matricule = Session::get('matricule');
-            $notification->matricule = Session::get('matricule');
+            $notification->matriculeEmploye = Session::get('matricule');
+            Log::debug($notification->matricule);
             }
 
             if(Session::has('superviseur')){
@@ -66,7 +67,7 @@ class AccidentAutosController extends Controller
             $accidentAuto2->autreVehicule = $accidentAuto->autreVehicule;
     
             $accidentAuto2->save();
-      
+            Log::debug("ICi2");
             //==========Notification================================                     
             $notification->typeFormulaire = "accidentAuto";
     
@@ -75,7 +76,7 @@ class AccidentAutosController extends Controller
             $accAutoId = count($accAuto);
     
             $notification->idFormulaire =  $accAutoId;
-    
+            Log::debug("ICi3");
             $notification->save();
             return redirect()->back();
 
