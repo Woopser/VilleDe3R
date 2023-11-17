@@ -99,7 +99,9 @@ class FormulaireAccidentTravailController extends Controller
         //================================================== Sauvegarde =========================================================================================
         $accident->save(); // Sauvegarde dedans la BD
         
+        
         //==================================================Notification=========================================================================================
+       
         $notification->typeFormulaire = "accidentTravail";
 
         $accTravail = accidenttravail::all();

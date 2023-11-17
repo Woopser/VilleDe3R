@@ -32,78 +32,106 @@ class AuditsController extends Controller
      */
     public function store(AuditRequest $request)
     {
-        Log::debug('ICI');
 
-        $audit = new Audit($request->all());
-        Log::debug($audit);
+        try{
 
-        $audit2 = new audit();
-        $notification = new notification(); // Créer la variable pour les notifications
-        $notification->matriculeEmploye = Session::get('matricule');
-        $notification->matriculeSuperviseur = Session::get('superviseur');
-        $notification->typeFormulaire = "Audit";
+           
 
-        // je met un id au hasard pour tester, va devoir le faire automatiquement apres
-        $notification->idFormulaire = 7;
+            Log::debug('ICI');
 
-        //Epi
-        $audit2->EPI = $audit->EPI;
+            $audit = new Audit($request->all());
+            $notification = new notification(); // Créer la variable pour les notifications
 
-        //tenueLieux
-        $audit2->tenueLieux = $audit->tenueLieux;
+            Log::debug($audit);
+    
+            $audit2 = new audit();
+          
+            //Epi
+            $audit2->EPI = $audit->EPI;
+    
+            //tenueLieux
+            $audit2->tenueLieux = $audit->tenueLieux;
+    
+            //comportement 
+            $audit2->comportement = $audit->comportement;
+    
+            //signalisation
+            $audit2->signalisation = $audit->signalisation;
+    
+            //ficheSignalietique
+            $audit2->ficheSignaletique = $audit->ficheSignaletique;
+    
+            //travaux
+            $audit2->travaux = $audit->travaux;
+    
+            //espaceClos
+            $audit2->espaceClos = $audit->espaceClos;
+    
+            //methode
+            $audit2->methode = $audit->methode;
+    
+            //autres
+            $audit2->autres = $audit->autres;
+    
+            //distantiation
+            $audit2->distanciation = $audit->distanciation;
+    
+            //portMasque
+            $audit2->portMasque = $audit->portMasque;
+    
+            //respectProcedure
+            $audit2->respectProcedure = $audit->respectProcedure;
+    
+            //matricule 
+            if(Session::has('matricule')){
+            $audit2->matricule = Session::get('matricule');
+           
+            } $notification->matricule = Session::get('matricule');
 
-        //comportement 
-        $audit2->comportement = $audit->comportement;
+            //Superviseur
+            if(Session::has('superviseur')){          
+            $audit2->superviseur = Session::get('superviseur');  
+            $notification->matriculeSuperviseur = Session::get('superviseur');
+            }
 
-        //signalisation
-        $audit2->signalisation = $audit->signalisation;
-
-        //ficheSignalietique
-        $audit2->ficheSignaletique = $audit->ficheSignaletique;
-
-        //travaux
-        $audit2->travaux = $audit->travaux;
-
-        //espaceClos
-        $audit2->espaceClos = $audit->espaceClos;
-
-        //methode
-        $audit2->methode = $audit->methode;
-
-        //autres
-        $audit2->autres = $audit->autres;
-
-        //distantiation
-        $audit2->distanciation = $audit->distanciation;
-
-        //portMasque
-        $audit2->portMasque = $audit->portMasque;
-
-        //respectProcedure
-        $audit2->respectProcedure = $audit->respectProcedure;
-
-        //matricule 
-        $audit2->matricule = Session::get('matricule');
-
-        //Superviseur
-        $audit2->superviseur = Session::get('superviseur');  
-
-        //description travail
-        $audit2->descriptionTravail  = $audit->descriptionTravail;
-
-        //lieu
-        $audit2->lieu = $audit->lieu;
-
-        //date et heure
-        $audit2->date = $audit->date;
-
-        //Description Autres
-        $audit2->descAutre = $audit->descAutre;
-
-        $audit2->save();
+            //description travail
+            $audit2->descriptionTravail  = $audit->descriptionTravail;
+    
+            //lieu
+            $audit2->lieu = $audit->lieu;
+    
+            //date et heure
+            $audit2->date = $audit->date;
+    
+            //Description Autres
+            $audit2->descAutre = $audit->descAutre;
+    
+            $audit2->save();
+    
+        //============Notification================
+    
+        $notification->typeFormulaire = "audit";
+    
+        $audit = Audit::all();
+    
+        $auditId = count($audit);
+    
+        $notification->idFormulaire =  $auditId;
+    
         $notification->save();
-        
+            
+    
         return redirect()->back();
+        }
+        
+        catch(\Throwable $e)
+        {
+        //Il y a une erreur 
+        Log::debug($e);
+        return redirect()->route('menus.index');  // retourne quand même au menu
+        }
+
+        
     }
 
     /**

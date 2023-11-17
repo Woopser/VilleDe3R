@@ -35,33 +35,58 @@ class AccidentAutosController extends Controller
      */
     public function store(AccidentAutosRequest $request)
     {
-        Log::debug("ICi");
+        try{
+            
+            Log::debug("ICi");
+            $notification = new notification(); // Créer la variable pour les notifications
+            $accidentAuto = new accidentauto($request->all());
 
-        $notification = new notification(); // Créer la variable pour les notifications
-        $notification->matriculeEmploye = Session::get('matricule');
-        $notification->matriculeSuperviseur = Session::get('superviseur');
-        $notification->typeFormulaire = "AccidentAuto";
+            $accidentAuto2 = new accidentauto();
 
-        // je met un id au hasard pour tester, va devoir le faire automatiquement apres
-        $notification->idFormulaire = 7;
+            if(Session::has('matricule')){
+            $accidentAuto2->matricule = Session::get('matricule');
+            $notification->matricule = Session::get('matricule');
+            }
 
-        $accidentAuto = new accidentauto($request->all());
-        Log::debug($accidentAuto);
-        Log::debug($accidentAuto->employeImpliquer);
-        Log::debug($accidentAuto->numeroUnite);
-        $accidentAuto2 = new accidentauto();
-        $accidentAuto2->matricule = Session::get('matricule');
-        $accidentAuto2->superviseur = Session::get('superviseur');
-        $accidentAuto2->numeroUnite = $accidentAuto->numeroUnite;
-        $accidentAuto2->departement = $accidentAuto->departement;
-        $accidentAuto2->employeImpliquer = $accidentAuto->employeImpliquer;
-        $accidentAuto2->numeroDePermis = $accidentAuto->numeroDePermis;
-        $accidentAuto2->autreVehicule = $accidentAuto->autreVehicule;
+            if(Session::has('superviseur')){
+            $accidentAuto2->superviseur = Session::get('superviseur');
+            $notification->matriculeSuperviseur = Session::get('superviseur');
+            }
 
-        $accidentAuto2->save();
-        $notification->save();
-        return redirect()->back();
+            Log::debug($accidentAuto);
+            Log::debug($accidentAuto->employeImpliquer);
+            Log::debug($accidentAuto->numeroUnite);
+      
+            
+           
+            $accidentAuto2->numeroUnite = $accidentAuto->numeroUnite;
+            $accidentAuto2->departement = $accidentAuto->departement;
+            $accidentAuto2->employeImpliquer = $accidentAuto->employeImpliquer;
+            $accidentAuto2->numeroDePermis = $accidentAuto->numeroDePermis;
+            $accidentAuto2->autreVehicule = $accidentAuto->autreVehicule;
+    
+            $accidentAuto2->save();
+      
+            //==========Notification================================                     
+            $notification->typeFormulaire = "accidentAuto";
+    
+            $accAuto = accidentauto::all();
+    
+            $accAutoId = count($accAuto);
+    
+            $notification->idFormulaire =  $accAutoId;
+    
+            $notification->save();
+            return redirect()->back();
 
+        }
+        catch(\Throwable $e){
+        //Il y a une erreur 
+        Log::debug($e);
+        return redirect()->route('menus.index');  // retourne quand même au menu
+        }
+
+        
     }
 
     /**

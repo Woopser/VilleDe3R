@@ -58,14 +58,21 @@ class NotificationController extends Controller
 
             $forms = accidenttravail::where('id',$notif->idFormulaire)->get();
 
-            //Reture une vue du formulaire selectionner
+            //Retourne une vue du formulaire selectionner
 
-            return View('/notification.show', compact('forms',));
+            return View('/notification.accTravail', compact('forms',));
 
-       // }else if($notif->typeFormulaire == "accidentAuto"){
+        }else if($notif->typeFormulaire == "accidentAuto"){
 
-       // }elseif($notif->typeFormulaire == "accidentTravail"){
+            $forms = accidentauto::where('id',$notif->idFormulaire)->get();
 
+            return View('/notification.accAuto', compact('forms',));      
+
+        }elseif($notif->typeFormulaire == "audit"){
+
+            $forms = Audit::where('id',$notif->idFormulaire)->get();
+
+            return View('/notification.audit', compact('forms',));      
        // }elseif($notif){
 
         }else{
