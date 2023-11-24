@@ -32,10 +32,9 @@ class AuditsController extends Controller
      */
     public function store(AuditRequest $request)
     {
+        Log::debug('ICI');
 
         try{
-
-           
 
             Log::debug('ICI');
 
@@ -81,6 +80,9 @@ class AuditsController extends Controller
     
             //respectProcedure
             $audit2->respectProcedure = $audit->respectProcedure;
+
+            //desAuttre
+            $audit2->descAutre = $audit->descAutre;
     
             //matricule 
             if(Session::has('matricule')){

@@ -2,6 +2,18 @@
 @section('V3R')
 @section('content')
     <div class="form-main">
+
+        @if(isset($errors) && $errors->any())
+
+     <div class="alert alert-danger">
+
+         @foreach($errors->all() as $error)
+
+             <p>{{$error}}</p>
+
+        @endforeach
+
+        @endif
         <h2>Formulaire d'audit SST</h2>
         <form method="POST" action="{{route('audit.store')}}">
             @csrf
@@ -74,7 +86,7 @@
                 </tr>
                 <tr>
                     
-                    <td colspan="3"><input type="text" class="form-control" placeholder="Veuillez préciser" name="lieu"></td>
+                    <td colspan="3"><input type="text" class="form-control" placeholder="Veuillez préciser" name="descAutre"></td>
                 </tr>
                 <tr>
                     <td>Distanciation Sociale</td>
@@ -95,7 +107,7 @@
                     <td><input type="radio" name="respectProcedure" value="2" class="form-check-input"></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><textarea name="lieu"></textarea></td>
+                    <td colspan="3"><textarea name="descriptionTravail"></textarea></td>
                 </tr>
             </table>
             <button class="btn btn-primary" type="submit">Envoyer</button>

@@ -26,7 +26,7 @@ class AuditRequest extends FormRequest
             'tenueLieux' => 'required|numeric',
             'comportement' => 'required|numeric',
             'signalisation' => 'required|numeric',
-            'ficheSignalisation' => 'required|numeric',
+            'ficheSignaletique' => 'required|numeric',
             'travaux' => 'required|numeric',
             'espaceClos' => 'required|numeric',
             'methode' => 'required|numeric',
@@ -36,7 +36,8 @@ class AuditRequest extends FormRequest
             'respectProcedure' => 'required|numeric',
             'descriptionTravail' => 'required',
             'lieu' => 'required',
-            'date' => 'required|date'
+            'date' => 'required|date',
+            'descAutre' => 'required'
 
         ];
     }
@@ -60,7 +61,7 @@ class AuditRequest extends FormRequest
                 'required' => 'Le champ Signalisation doit etre coché.',
                 'numeric' => 'Le champ Signalisation doit être un nombre.'
             ],
-            'ficheSignalisation' => [
+            'ficheSignaletique' => [
                 'required' => 'Le champ Fiche Signalisation doit etre coché.',
                 'numeric' => 'Le champ Fiche Signalisation doit être un nombre.'
             ],
@@ -79,6 +80,9 @@ class AuditRequest extends FormRequest
             'autres' => [
                 'required' => 'Le champ Autres doit etre coché.',
                 'numeric' => 'Le champ Autres doit être un nombre.'
+            ],
+            'descAutre' => [
+                'required' => 'Le champ de description autres est requis'
             ],
             'distanciation' => [
                 'required' => 'Le champ Distanciation doit etre coché.',

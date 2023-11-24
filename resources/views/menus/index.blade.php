@@ -61,7 +61,7 @@
     <div class="modal-form" id="modal-form">
         <div class="modal-content">
             <a href="{{ route('formulaireAccidentTravail') }}">Accident de travail</a>
-            <a href="">Situation dangereuse</a>
+            <a href="{{ route ('formulaireSit')}}">Situation dangereuse</a>
             <a href="{{ route('formulaireAccidentAuto') }}">Accident de voitures</a>
             <a href="{{ route('formulaireAudit') }}">Grille audit SST</a>
         </div>
