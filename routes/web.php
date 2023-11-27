@@ -11,22 +11,19 @@ use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\SituationController;
 
 //Route pour formulaire accident de voiture
-Route::get('/formulaires/accidentVoiture',
-[AccidentAutosController::class, 'index'])->name('formulaireAccidentAuto');
+Route::get('/formulaires/accidentVoiture',[AccidentAutosController::class, 'index'])->name('formulaireAccidentAuto');
 
-Route::get('/accueil',
-[MenuController::class, 'index'])->name('menus.index');
 
+Route::get('/accueil',[MenuController::class, 'index'])->name('menus.index');
+
+//Route::middleware([''])
 
 //------------- Authentification
-Route::get('/',
-[UsersController::class, 'index'])->name('users.index');
+Route::get('/',[UsersController::class, 'index'])->name('users.index');
 
-Route::post('/connexion/login',
-[UsersController::class, 'login'])->name('users.login');
+Route::post('/connexion/login',[UsersController::class, 'login'])->name('users.login');
 
-Route::post('/connexion/logout',
-[UsersController::class, 'logout'])->name('users.logout');
+Route::post('/connexion/logout',[UsersController::class, 'logout'])->name('users.logout');
 
 //------------- Route liste formulaire
 Route::get('/formulaires',[FormulaireController::class, 'index'])->name('form.index');
@@ -50,7 +47,7 @@ Route::POST('formulaires/situationDang/store', [SituationController::class, 'sto
 // Route liste de formulaire ==================================================================================================================
 Route::get('/formulaire/liste',[MenuController::class, 'listeForm'])->name('menu.listeForm');
 
-//--------------------------Notification
+//--------------------------Notification----------------------
 
 Route::get('/notifications',[NotificationController::class,'index'])->name('notification.index');
 Route::get('/notifications/accTravail/{id}',[NotificationController::class,'accTravail'])->name('notification.accTravail');

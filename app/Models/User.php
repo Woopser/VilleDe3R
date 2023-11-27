@@ -17,6 +17,7 @@ class User extends Authenticable
     protected $fillable = [
         'matricule',
         'password',
+        'role',
     ];
 
     protected $hidden = [
