@@ -9,14 +9,25 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\SituationController;
+use App\Http\Controllers\LienController;
 
 //Route pour formulaire accident de voiture
 Route::get('/formulaires/accidentVoiture',
 [AccidentAutosController::class, 'index'])->name('formulaireAccidentAuto');
 
+//Route d'accueil du site 
 Route::get('/accueil',
 [MenuController::class, 'index'])->name('menus.index');
 
+//Route pour pages de liens 
+Route::get('/accueil/liens',
+[LienController::class, 'index'])->name('lien.index');
+
+Route::get('/accueil/AjoutLien',
+[LienController::class, 'spindex'])->name('lien.spindex');
+
+Route::POST('/acceuil/store',
+[LienController::class, 'store'])->name('lien.store');
 
 //------------- Authentification
 Route::get('/',
