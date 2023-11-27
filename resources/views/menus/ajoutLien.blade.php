@@ -3,8 +3,8 @@
 @section('V3R')
 
 @section('content')
-
-<h1> ADPOIWJADIOAWJDIOA </h1>
+<div style="height: 100.05px"></div>
+<h1> Ajout d'une ressource </h1>
 
 
 <form method="POST" action="{{route('lien.store')}}">
