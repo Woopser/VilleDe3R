@@ -37,6 +37,8 @@ class UsersController extends Controller
            // Authentification
            if($con)
            {
+                Log::debug("allo");
+                //$request->session()->regenerate();
                 $user = User::where('matricule', $request->matricule)->first();
 
                 Log::debug($user->matricule);
@@ -46,8 +48,6 @@ class UsersController extends Controller
                 }
                 Log::debug(Session::get('matricule'));
                 Log::debug(Session::get('superviseur'));
-
-
                 Session::put('matricule', $request->matricule);
                 Session::put('nom',$user->nom);
                 Session::put('prenom',$user->prenom);
@@ -55,9 +55,6 @@ class UsersController extends Controller
                 Session::put('departement',$user->departement);
                 Session::put('superviseur',$user->superviseur);
                 Session::put('role',$user->role);
-
-
-
                 return redirect('/accueil');
            } 
            else
@@ -68,6 +65,7 @@ class UsersController extends Controller
 
     public function logout()
     {
+        Log::debug("NOOOOO");
         Auth::logout();
         Session::flush();
         return redirect()->route('users.index')->with('message','Deconnexion réussi');
