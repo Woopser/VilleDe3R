@@ -11,6 +11,11 @@
     --button-width: 500px;
     --nav-justify-content: start;
     --nav-font-size: 4vw;
+
+    --content-body-margin: 12% 0 0 0;
+    --table-width: 150%;
+    --table-tranform: -25%;
+    --form-button-margin: 20px 0 120px 0;
 }
 @media only screen and (max-width: 768px){
     :root{
@@ -18,6 +23,11 @@
         --button-width: 150px;
         --nav-justify-content: center;
         --nav-font-size: 14vw;
+
+        --content-body-margin: 35% 0 0 0;
+        --table-width: 100%;
+        --table-tranform: 0%;
+        --form-button-margin: 20px 0 220px 0;
     }
 }
 
@@ -99,7 +109,7 @@ a:visited{
     align-items: center;
     height: 85%;
     width: 100%;
-    margin: 12% 0 0 0;
+    margin: var(--content-body-margin);
     padding-bottom: 13%;
 }
 table tr td{
@@ -107,7 +117,9 @@ table tr td{
 }
 textarea{
     resize: none;
-    width: 103.5%;
+    width: 120%;
+    position: relative;
+    left: -4%;
 }
 
 
@@ -285,11 +297,11 @@ footer{
     margin: auto;
 }
 table{
-    width: 150%;
+    width: var(--table-width);
     margin: 0;
     padding: 0;
     position: relative;
-    left: -25%;
+    left: var(--table-tranform);
 }
 table tr td input{
     width: 100%;
@@ -299,7 +311,7 @@ table tr td input{
 }
 .form-button{
     width: 100%;
-    margin: 20px 0 120px 0;
+    margin: var(--form-button-margin);
 }
 .form-control{
     width: 100%;
@@ -307,18 +319,28 @@ table tr td input{
     padding: 0;
 }
 .form-text-input{
-    width: 195%;
+    width: 150%;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    left: -4%;
+}
+.text-input{
+    width: 100%;
+    margin: 0;
+    padding: 5px;
 }
 .form-check-input{
     margin: 0;
     padding: 0;
     width: 20px;
     border: 1px solid black !important;
+}
+.table-header{
+    padding-right: 15px;
 }
 
 

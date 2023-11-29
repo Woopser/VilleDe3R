@@ -7,15 +7,15 @@
             @csrf
             <table>
                 <tr>
-                    <td colspan="3" class="form-text-input"><input type="text" name="lieu" placeholder="Lieu des travaux"></td>
+                    <td colspan="3" class="form-text-input"><input type="text" name="lieu" class="text-input" placeholder="Lieu des travaux"></td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="form-text-input"><input type="datetime-local" name="date"></td>
+                    <td colspan="3" class="form-text-input"><input type="datetime-local" name="date" class="text-input"></td>
                 </tr>
                 <tr>
                     <th></th>
-                    <th>Conforme</th>
-                    <th>Non-Conforme</th>
+                    <th class="table-header"><i class="fa-solid fa-check" style="color: #04ff00"></i></th>
+                    <th class="table-header"><i class="fa-solid fa-x" style="color: #ff0000;"></i></th>
                     <th>N/A</th>
                 </tr>
                 <tr>
@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                     
-                    <td colspan="3" class="form-text-input"><input type="text" class="" placeholder="Veuillez préciser" name="lieu"></td>
+                    <td colspan="3" class="form-text-input"><input type="text" class="text-input" placeholder="Veuillez préciser" name="lieu"></td>
                 </tr>
                 <tr>
                     <td>Distanciation Sociale</td>

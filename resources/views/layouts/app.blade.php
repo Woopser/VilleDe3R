@@ -43,5 +43,6 @@
     </footer>
 </body>
 </html>
+<script src="https://kit.fontawesome.com/7cd2227a76.js" crossorigin="anonymous"></script>
 <script src="{{ asset('js/ville3R.js') }}"></script>
 <script src="{{ asset('js/declarationAccident.js') }}"></script>
