@@ -53,6 +53,7 @@ html, body{
     width: 100vw;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 body{
     z-index: 1;
@@ -101,8 +102,12 @@ a:visited{
     margin: 12% 0 0 0;
     padding-bottom: 13%;
 }
-table tr{
-   margin: 15px 0 !important; 
+table tr td{
+    padding: 10px 0 !important; 
+}
+textarea{
+    resize: none;
+    width: 103.5%;
 }
 
 
@@ -294,7 +299,26 @@ table tr td input{
 }
 .form-button{
     width: 100%;
-    margin: 20px;
+    margin: 20px 0 120px 0;
+}
+.form-control{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.form-text-input{
+    width: 195%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-check-input{
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    border: 1px solid black !important;
 }
 
 

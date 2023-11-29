@@ -7,10 +7,10 @@
             @csrf
             <table>
                 <tr>
-                    <td colspan="3"><input type="text" class="form-control" name="lieu" placeholder="Lieu des travaux"></td>
+                    <td colspan="3" class="form-text-input"><input type="text" name="lieu" placeholder="Lieu des travaux"></td>
                 </tr>
                 <tr>
-                    <td colspan="3"><input type="datetime-local" class="form-control" name="date"></td>
+                    <td colspan="3" class="form-text-input"><input type="datetime-local" name="date"></td>
                 </tr>
                 <tr>
                     <th></th>
@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                     
-                    <td colspan="3"><input type="text" class="form-control" placeholder="Veuillez préciser" name="lieu"></td>
+                    <td colspan="3" class="form-text-input"><input type="text" class="" placeholder="Veuillez préciser" name="lieu"></td>
                 </tr>
                 <tr>
                     <td>Distanciation Sociale</td>
