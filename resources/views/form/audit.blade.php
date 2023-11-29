@@ -19,11 +19,13 @@
             @csrf
             <table>
                 <tr>
-                    <td colspan="3"><input type="text" class="form-control" name="lieu" placeholder="Lieu des travaux"></td>
+                    <td colspan="3"><input type="text" class="form-control" name="lieu" placeholder="Lieu des travaux" id="lieu"></td>
                 </tr>
+                <tr  id="erreurLieu" class="erreurForm"></tr>
                 <tr>
-                    <td colspan="3"><input type="datetime-local" class="form-control" name="date"></td>
+                    <td colspan="3"><input type="datetime-local" class="form-control" name="date" id="dateAudit"></td>
                 </tr>
+                <tr  id="erreurLieu" class="erreurForm"></tr>
                 <tr>
                     <th></th>
                     <th>Conforme</th>
@@ -107,10 +109,12 @@
                     <td><input type="radio" name="respectProcedure" value="2" class="form-check-input"></td>
                 </tr>
                 <tr>
+                    <td>Autre commentaires: </td>
                     <td colspan="3"><textarea name="descriptionTravail"></textarea></td>
                 </tr>
             </table>
             <button class="btn btn-primary" type="submit">Envoyer</button>
         </form>
     </div>
+    <script src="{{ asset('js/audit.js') }}"></script>
 @endsection

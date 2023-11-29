@@ -52,7 +52,7 @@ inputLieu.addEventListener("keyup", function(){ // regarde a chaque fois qu'une 
     else{
         erreurLieu.textContent = ""; // ne met rien dans le cas contraire
     }
-})
+});
 // Vérification de la date de l'accident
 let inputDateAccident = document.getElementById("dateAccident"); // prend le input de la date
 let erreurDateAccident = document.getElementById("erreurDateAccident"); // prend le p pour marquer les erreurs

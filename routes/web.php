@@ -9,6 +9,22 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\SituationController;
+use App\Http\Controllers\LienController;
+
+
+//Route pour pages de liens 
+Route::get('/accueil/liens',
+[LienController::class, 'index'])->name('lien.index');
+
+Route::get('/accueil/AjoutLien',
+[LienController::class, 'spindex'])->name('lien.spindex');
+
+Route::POST('/acceuil/store',
+[LienController::class, 'store'])->name('lien.store');
+
+
+
+=======
 use App\Http\Middleware\CheckRole;
 
 // ================================================================= Route pour admin ==========================================================================================
@@ -56,3 +72,4 @@ Route::middleware(['CheckRole:admin,superieur,employe'])->group(function(){
 Route::post('/connexion/login',[UsersController::class, 'login'])->name('users.login');
 Route::post('/connexion/logout',[UsersController::class, 'logout'])->name('users.logout');
 Route::get('/',[UsersController::class, 'index'])->name('users.index');
+

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('liens', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('departement');
+            $table->foreignId('departement')->references('id')->on('departements');
             $table->string('nom');
             $table->string('lien');
             $table->timestamps();

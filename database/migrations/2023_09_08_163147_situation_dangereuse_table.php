@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('fonction');
             $table->string('secteur');
             $table->dateTime('dateObservation');
-            $table->string('temoin');
+            $table->string('temoin')->nullable($value = true);
             $table->string('lieu');
             $table->text('description');
             $table->text('correction');

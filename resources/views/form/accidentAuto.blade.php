@@ -20,6 +20,7 @@
     </div>
 @endif
 
+    <h2>Formulaire de déclaration d'accident de voitures</h2>
     <form method="POST" action="{{route('accidentAuto.store')}}">
       @csrf
         <div class="mb-3">
