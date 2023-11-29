@@ -25,6 +25,8 @@
 @foreach($forms as $form)
 
 <div class="mb-3">
+<form method="POST" action="{{route('notification.update')}}">
+    @csrf
             <label for="numImp" class="form-label"> <strong> Travaux des travaux : </strong></label>
             <p>{{$form->lieu}}</p>
         </div>
@@ -157,6 +159,10 @@
             <p>{{$form->descriptionTravail}}</p>
         </div>
 
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="BTEnvoyer ">Verifier</button>
+        </div>
+</form>
 @endforeach
 
 

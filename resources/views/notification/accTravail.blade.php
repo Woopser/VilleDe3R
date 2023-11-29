@@ -24,6 +24,8 @@
 
 @foreach($forms as $form)
 
+<form method="POST" action="{{route('situationDang.store')}}">
+    @csrf
                 <div class="mb-3">
                     <label for="matricule" class="form-label"><strong>Matricule</strong></label>
                     <p>{{$form->matricule}}</p>
@@ -84,6 +86,12 @@
                     <label for="detail" class="form-label"><strong>Detail de l'accident</strong></label>
                     <p>{{$form->detail}}</p>
                 </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="BTEnvoyer ">Verifier</button>
+                </div>
+
+              </form>  
 
 @endforeach
 

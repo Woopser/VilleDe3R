@@ -56,4 +56,8 @@ Route::get('/notifications',[NotificationController::class,'index'])->name('noti
 Route::get('/notifications/accTravail/{id}',[NotificationController::class,'accTravail'])->name('notification.accTravail');
 Route::get('/notifications/audit/{id}',[NotificationController::class,'audit'])->name('notification.audit');
 Route::get('/notifications/accAuto/{id}',[NotificationController::class,'accAuto'])->name('notification.accAuto');
-//Route::get('/notifications/accTravail/{id}',[NotificationController::class,'show'])->name('notification.show');
+Route::get('/notifications/situation/{id}',[NotificationController::class,'situation'])->name('notification.situation');
+//-----------------------------------Verification
+Route::POST('/notifications/update', [NotificationController::class, 'update'])->name('notification.update');
+
+

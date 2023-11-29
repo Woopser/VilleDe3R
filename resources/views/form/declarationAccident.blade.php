@@ -37,7 +37,7 @@
 
             <h1>Formulaire de signalement de situation dangeureuse</h1>
             @if(isset($personne))
-            <form method="POST" action="{{route('formulaireAccidentTravail.store')}}">
+            <form method="POST" action="{{route('notification.update')}}">
                 @csrf
                     <div class="mb-3">
                         <label for="matricule" class="form-label"><strong>Matricule</strong></label>
