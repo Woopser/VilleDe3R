@@ -10,7 +10,7 @@ use App\Http\Controllers\AuditsController;
 use App\Http\Controllers\FormulaireController;
 use App\Http\Controllers\SituationController;
 use App\Http\Controllers\LienController;
-
+use App\Http\Middleware\CheckRole;
 
 //Route pour pages de liens 
 Route::get('/accueil/liens',
@@ -24,8 +24,7 @@ Route::POST('/acceuil/store',
 
 
 
-=======
-use App\Http\Middleware\CheckRole;
+
 
 // ================================================================= Route pour admin ==========================================================================================
 Route::middleware(['CheckRole:admin'])->group(function(){
