@@ -25,7 +25,7 @@
       @csrf
         <div class="mb-3">
             <label for="numImp" class="form-label"><strong>Numéro unité impliqué :</strong></label>
-            <input type="text" class="form-control" id="numUnit" name="numeroUnite">
+            <input type="number" class="form-control" id="numUnit" name="numeroUnite">
             <p id="erreurUnit" class="erreurForm"></p>
         </div>
 
@@ -42,12 +42,13 @@
         <div class="mb-3">
             <label for="nomEmp" class="form-label"> <strong>Matricule de l'employé impliqué :  </strong></label>
             <input type="number" class="form-control" id="Matri" name="employeImpliquer">
-            <p id="erreurMarti" class="erreurForm"></p>
+            <p id="erreurMatri" class="erreurForm"></p>
         </div>
 
         <div class="mb-3">
             <label for="numPerm" class="form-label"><strong> Numéro du permis de conduire de l'employé: </strong></label>
             <input type="text" class="form-control" id="numPerm" name="numeroDePermis">
+            <p id="erreurPerm" class="erreurForm"></p>
         </div>
 
         <label for="civil" class="form-label"><strong> Autres véhicules impliqués (citoyen) : </strong></label>
