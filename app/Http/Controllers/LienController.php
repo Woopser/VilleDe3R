@@ -18,7 +18,7 @@ class LienController extends Controller
         Log::debug("ICICI");
         $liens = Lien::where('departement', '=', Session::get('departement'))->get();
         $lian = Lien::where('departement', '=', Session::get('departement'))->first();   
-        return view('menus.liens', compact('liens'));
+        return view('menus.liens', compact('liens','l'));
     }
 
     public function spindex()
