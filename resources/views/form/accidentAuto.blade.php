@@ -39,6 +39,7 @@
                   <td colspan="3" class="form-text-input">
                     <input type="text" class="text-input" id="numPerm" name="numeroDePermis" placeholder="Numéro du permis de conduire de l'employé">
                   </td>
+              <tr>
               <tr class="flexed">
                   <th class="table-radio-3"></th>
                   <th class=""><i class="fa-solid fa-check" style="color: #04ff00"></i></th>
