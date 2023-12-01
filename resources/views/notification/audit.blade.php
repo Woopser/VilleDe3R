@@ -25,7 +25,7 @@
 @foreach($forms as $form)
 
 <div class="mb-3">
-<form method="POST" action="{{route('notification.update')}}">
+<form method="POST" action="{{route('notification.update', [$notif->id])}}">
     @csrf
             <label for="numImp" class="form-label"> <strong> Travaux des travaux : </strong></label>
             <p>{{$form->lieu}}</p>

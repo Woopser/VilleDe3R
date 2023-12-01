@@ -27,7 +27,7 @@
 
 <h1>Formulaire de signalement de situation dangeureuse</h1>
 
-<form method="POST" action="{{route('notification.update')}}">
+<form method="POST" action="{{route('notification.update',[$notif->id])}}">
     @csrf
 
     <div class="mb-3">

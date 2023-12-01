@@ -58,6 +58,6 @@ Route::get('/notifications/audit/{id}',[NotificationController::class,'audit'])-
 Route::get('/notifications/accAuto/{id}',[NotificationController::class,'accAuto'])->name('notification.accAuto');
 Route::get('/notifications/situation/{id}',[NotificationController::class,'situation'])->name('notification.situation');
 //-----------------------------------Verification
-Route::POST('/notifications/update', [NotificationController::class, 'update'])->name('notification.update');
+Route::POST('/notifications/update/{id}', [NotificationController::class, 'update'])->name('notification.update');
 
 

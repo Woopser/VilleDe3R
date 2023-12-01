@@ -24,7 +24,7 @@
 
 @foreach($forms as $form)
 
-<form method="POST" action="{{route('situationDang.store')}}">
+<form method="POST" action="{{route('notification.update', [$notif->id])}}">
     @csrf
                 <div class="mb-3">
                     <label for="matricule" class="form-label"><strong>Matricule</strong></label>
@@ -92,7 +92,6 @@
                 </div>
 
               </form>  
-
 @endforeach
 
 

@@ -56,7 +56,7 @@ class NotificationController extends Controller
 
         $forms = accidenttravail::where('id',$notif->idFormulaire)->get();
 
-        return View('/notification.accTravail', compact('forms',));
+        return View('/notification.accTravail', compact('forms','notif'));
            
         }
         catch(\Throwable $e){
@@ -73,7 +73,7 @@ class NotificationController extends Controller
 
             $forms = accidentauto::where('id',$notif->idFormulaire)->get();
     
-            return View('/notification.accAuto', compact('forms',)); 
+            return View('/notification.accAuto', compact('forms','notif')); 
         } 
         catch(\Throwable $e){
             Log::debug($e);
@@ -89,7 +89,7 @@ class NotificationController extends Controller
 
             $forms = Audit::where('id',$notif->idFormulaire)->get();
     
-            return View('/notification.audit', compact('forms',)); 
+            return View('/notification.audit', compact('forms','notif')); 
         }
         catch(\Throwable $e){
             Log::debug($e);
@@ -105,7 +105,7 @@ class NotificationController extends Controller
 
             $forms = Situation::where('id',$notif->idFormulaire)->get();
     
-            return View('/notification.situation', compact('forms',)); 
+            return View('/notification.situation', compact('forms','notif')); 
         }
         catch(\Throwable $e){
             Log::debug($e);
@@ -125,11 +125,12 @@ class NotificationController extends Controller
      */
     public function update(string $id)
     {
-        $notif = notifcation::find($id);
+        $notif = notification::find($id);
 
         $notif->verifier = 1;
 
         $notif->save();
+        return redirect()->route('notification.index')->with('message'," réussi!");
     }
 
     /**

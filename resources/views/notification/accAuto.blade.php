@@ -26,7 +26,7 @@
 
 <div class="mb-3">
 
-<form method="POST" action="{{route('notification.update')}}">
+<form method="POST" action="{{route('notification.update', [$notif->id])}}">
     @csrf
             <label for="numImp" class="form-label"><strong>Numéro(s) unité(s) impliqué(s) :</strong></label>
             <p>{{$form->numeroUnite}}</p>
