@@ -28,7 +28,7 @@
                 </div>
             </a>
         </div>
-
+        @if(Session::get('role') == "admin" || Session::get('role') == "superieur" )
         <div class="display-flex">
             <a href="{{route('menu.listeForm')}}" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
@@ -56,6 +56,7 @@
                 </div>
             </a>
         </div>
+        @endif
     </div>
 
     <div class="modal-form" id="modal-form">
