@@ -24,6 +24,8 @@
 
 @foreach($forms as $form)
 
+<form method="POST" action="{{route('notification.update', [$notif->id])}}">
+    @csrf
                 <div class="mb-3">
                     <label for="matricule" class="form-label"><strong>Matricule</strong></label>
                     <p>{{$form->matricule}}</p>
@@ -85,6 +87,11 @@
                     <p>{{$form->detail}}</p>
                 </div>
 
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="BTEnvoyer ">Verifier</button>
+                </div>
+
+              </form>  
 @endforeach
 
 

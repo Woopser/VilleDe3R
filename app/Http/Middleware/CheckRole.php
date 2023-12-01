@@ -37,7 +37,7 @@ class CheckRole
             }
         }
             // Sinon, rediriger vers une page d'erreur
-           return redirect()->route('users.index')->withErrors(['Vous n\'avez pas l\'accès a cette page']);
+           return redirect()->route('menus.index')->withErrors(['Vous n\'avez pas l\'accès a cette page']);
         
     }
 }

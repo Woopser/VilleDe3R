@@ -35,7 +35,7 @@
                 </div>
             @endif
 
-            <h1>Formulaire de signalement de situation dangeureuse</h1>
+            <h1>Formulaire de déclaration d'accident de travail</h1>
             @if(isset($personne))
             <form method="POST" action="{{route('formulaireAccidentTravail.store')}}">
                 @csrf

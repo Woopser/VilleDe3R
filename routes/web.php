@@ -16,7 +16,6 @@ use App\Http\Middleware\CheckRole;
 // ================================================================= Route pour admin ==========================================================================================
 Route::middleware(['CheckRole:admin'])->group(function(){
     //---------------------------------------------------------- Route pour pages de liens -------------------------------------------------------------------------------------- 
-    
     Route::get('/accueil/AjoutLien',[LienController::class, 'spindex'])->name('lien.spindex');
     Route::POST('/acceuil/store',[LienController::class, 'store'])->name('lien.store');
 });
@@ -62,4 +61,15 @@ Route::middleware(['CheckRole:admin,superieur,employe'])->group(function(){
 Route::post('/connexion/login',[UsersController::class, 'login'])->name('users.login');
 Route::post('/connexion/logout',[UsersController::class, 'logout'])->name('users.logout');
 Route::get('/',[UsersController::class, 'index'])->name('users.index');
+
+//--------------------------Notification
+
+Route::get('/notifications',[NotificationController::class,'index'])->name('notification.index');
+Route::get('/notifications/accTravail/{id}',[NotificationController::class,'accTravail'])->name('notification.accTravail');
+Route::get('/notifications/audit/{id}',[NotificationController::class,'audit'])->name('notification.audit');
+Route::get('/notifications/accAuto/{id}',[NotificationController::class,'accAuto'])->name('notification.accAuto');
+Route::get('/notifications/situation/{id}',[NotificationController::class,'situation'])->name('notification.situation');
+//-----------------------------------Verification
+Route::POST('/notifications/update/{id}', [NotificationController::class, 'update'])->name('notification.update');
+
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\accidentauto;
 use App\Models\accidenttravail;
 use App\Models\notification;
+use App\Models\Situation;
+use App\Models\Audit;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
@@ -19,7 +21,6 @@ class NotificationController extends Controller
     public function index()
     {
         $notifs = notification::where('matriculeSuperviseur',Session::get('matricule'))->get();
-
         return View('/notification.index', compact('notifs'));
     }
 
@@ -55,7 +56,7 @@ class NotificationController extends Controller
 
         $forms = accidenttravail::where('id',$notif->idFormulaire)->get();
 
-        return View('/notification.accTravail', compact('forms',));
+        return View('/notification.accTravail', compact('forms','notif'));
            
         }
         catch(\Throwable $e){
@@ -72,7 +73,7 @@ class NotificationController extends Controller
 
             $forms = accidentauto::where('id',$notif->idFormulaire)->get();
     
-            return View('/notification.accAuto', compact('forms',)); 
+            return View('/notification.accAuto', compact('forms','notif')); 
         } 
         catch(\Throwable $e){
             Log::debug($e);
@@ -86,9 +87,25 @@ class NotificationController extends Controller
         try{
             $notif = notification::find($id);
 
-            $forms = Audit::where('id',$notifs->idFormulaire)->get();
+            $forms = Audit::where('id',$notif->idFormulaire)->get();
     
-            return View('/notification.audit', compact('forms',)); 
+            return View('/notification.audit', compact('forms','notif')); 
+        }
+        catch(\Throwable $e){
+            Log::debug($e);
+        }
+        
+    }
+
+    public function situation(string $id)
+    {
+
+        try{
+            $notif = notification::find($id);
+
+            $forms = Situation::where('id',$notif->idFormulaire)->get();
+    
+            return View('/notification.situation', compact('forms','notif')); 
         }
         catch(\Throwable $e){
             Log::debug($e);
@@ -106,9 +123,14 @@ class NotificationController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(string $id)
     {
-        //
+        $notif = notification::find($id);
+
+        $notif->verifier = 1;
+
+        $notif->save();
+        return redirect()->route('notification.index')->with('message'," réussi!");
     }
 
     /**

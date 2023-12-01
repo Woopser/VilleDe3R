@@ -20,17 +20,32 @@
 @endif
 
 @foreach($notifs as $notif)
-@if($notif->typeFormulaire == "accidentTravail")
+@if($notif->typeFormulaire == "accidentTravail" && $notif->verifier == "0")
     <div>
     <a href="{{ route('notification.accTravail', [$notif->id]) }}" >L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a>
     </div>
 
-@elseif($notif->typeFormulaire == "accidentAuto")
+@elseif($notif->typeFormulaire == "accidentAuto" && $notif->verifier == "0")
     <div>
     <a href="{{ route('notification.accAuto', [$notif->id]) }}" >L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a>
     </div>
 
+@elseif($notif->typeFormulaire == "audit" && $notif->verifier == "0") 
+    <div>
+    <a href="{{ route('notification.audit', [$notif->id]) }}" >L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a>
+    </div>
+@elseif($notif->typeFormulaire == "situation" && $notif->verifier == "0")
+    <div>
+    <a href="{{ route('notification.situation', [$notif->id]) }}" >L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}</a>
+    </div>
 @endif
+
+@if($notif->verifier == "1")
+    <div>
+    L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}
+    </div>
+@endif
+
 
 @endforeach
 

@@ -28,7 +28,7 @@
                 </div>
             </a>
         </div>
-
+        @if(Session::get('role') == "admin" || Session::get('role') == "superieur" )
         <div class="display-flex">
             <a href="{{route('menu.listeForm')}}" class="boutonMenu hvr-shrink">
                 <div class="boutonMenu-content">
@@ -56,14 +56,17 @@
                 </div>
             </a>
         </div>
+        @endif
     </div>
 
     <div class="modal-form" id="modal-form">
         <div class="modal-content">
             <a href="{{ route('formulaireAccidentTravail') }}">Accident de travail</a>
             <a href="{{ route ('formulaireSit')}}">Situation dangereuse</a>
+            @if(Session::get('role') == "admin" || Session::get('role') == "superieur" )
             <a href="{{ route('formulaireAccidentAuto') }}">Accident de voitures</a>
             <a href="{{ route('formulaireAudit') }}">Grille audit SST</a>
+            @endif
         </div>
     </div>
 @endsection

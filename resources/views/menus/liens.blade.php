@@ -7,17 +7,7 @@
 <h1> Liens utiles</h1>
 
 
-<div>
-    <div>
-        <h1></h1>
-        @foreach($liens as $lien)
-        @if($lien->departement == 1)
-            <div><a href="{{$lien->lien}}" target="_blank">{{$lien->nom}}</a></div>
-        @endif
-        @endforeach
-    </div>
 
-    
 
 
 

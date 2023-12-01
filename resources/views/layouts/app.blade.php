@@ -19,10 +19,11 @@
         </a>
         <div id="nav-links">
             <a class="nav-link" href="{{route('menus.index')}}"><h1 class="nav-link-text">Accueil</h1></a>
-            <a class="nav-link" href=""><h1 class="nav-link-text">Formulaires</h1></a>
             <a class="nav-link" href="{{route('lien.index')}}"><h1 class="nav-link-text">Liens Utiles</h1></a>
             <a class="nav-link" href=""><h1 class="nav-link-text">Consulter</h1></a>
+            @if(Session::get('role') == "admin") 
             <a class="nav-link" href="{{route('lien.spindex')}}"><h1 class="nav-link-text">Ajouter une ressource</h1></a>
+            @endif
             <form action="{{ route('users.logout') }}" method="POST" class="w-100">
                 @csrf
                 <button type="submit" class="nav-link w-100"><h1 class="nav-link-text">Déconnexion</h1></button>
@@ -44,4 +45,5 @@
     </footer>
 </body>
 </html>
+<script src="https://kit.fontawesome.com/7cd2227a76.js" crossorigin="anonymous"></script>
 <script src="{{ asset('js/ville3R.js') }}"></script>
