@@ -19,7 +19,6 @@
         </a>
         <div id="nav-links">
             <a class="nav-link" href="{{route('menus.index')}}"><h1 class="nav-link-text">Accueil</h1></a>
-            <a class="nav-link" href=""><h1 class="nav-link-text">Formulaires</h1></a>
             <a class="nav-link" href="{{route('lien.index')}}"><h1 class="nav-link-text">Liens Utiles</h1></a>
             <a class="nav-link" href=""><h1 class="nav-link-text">Consulter</h1></a>
             @if(Session::get('role') == "admin") 
