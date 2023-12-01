@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use \Illuminate\Support\Str;
 class CheckRole
 {
     /**
@@ -22,12 +23,16 @@ class CheckRole
         {
             return redirect()->route('users.index')->withErrors(['Accès interdit']);
         }
+        Log::debug($roles);
         // Vérifier si l'utilisateur courant a un des rôles autorisés
         foreach ($roles as $role) // pour chaque role rentrer dedans le middleware il va
         {
-            Log::debug("dedans le foreach");
-            if ($role == Session::get('role')); // regarder si l'employe est un de ceux ci
+
+            if ($role == Session::get('role')) // regarder si l'employe est un de ceux ci
             {
+                Log::debug(strcmp($role,"admin") + 1);
+                Log::debug(Session::get('role'));
+                Log::debug("dedans la boucle");
                 return $next($request); // si oui il retourne la request qu'il doit faire
             }
         }
