@@ -12,23 +12,13 @@ use App\Http\Controllers\SituationController;
 use App\Http\Controllers\LienController;
 use App\Http\Middleware\CheckRole;
 
-//Route pour pages de liens 
-Route::get('/accueil/liens',
-[LienController::class, 'index'])->name('lien.index');
-
-Route::get('/accueil/AjoutLien',
-[LienController::class, 'spindex'])->name('lien.spindex');
-
-Route::POST('/acceuil/store',
-[LienController::class, 'store'])->name('lien.store');
-
-
-
-
 
 // ================================================================= Route pour admin ==========================================================================================
 Route::middleware(['CheckRole:admin'])->group(function(){
-
+    //---------------------------------------------------------- Route pour pages de liens -------------------------------------------------------------------------------------- 
+    
+    Route::get('/accueil/AjoutLien',[LienController::class, 'spindex'])->name('lien.spindex');
+    Route::POST('/acceuil/store',[LienController::class, 'store'])->name('lien.store');
 });
 // ============================================================ Route pour admin et superieur ===================================================================================
 Route::middleware(['CheckRole:admin,superieur'])->group(function(){
@@ -65,6 +55,7 @@ Route::middleware(['CheckRole:admin,superieur,employe'])->group(function(){
     //---------------------------------------------- Route du formulaire declaration d'accident de travail -------------------------------------------------------------------
     Route::get('/formulaires/declarationAccident', [FormulaireAccidentTravailController::class, 'index'])->name('formulaireAccidentTravail');
     Route::POST('/formulaires/declarationAccident/store',[FormulaireAccidentTravailController::class, 'store'])->name('formulaireAccidentTravail.store');
+    Route::get('/accueil/liens',[LienController::class, 'index'])->name('lien.index');
 });
 // ================================================================ Route pour tous =============================================================================================
 // --------------------------------------------------------------- Route pour login ----------------------------------------------------------------------------------------------
