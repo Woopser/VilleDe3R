@@ -40,6 +40,13 @@
     </div>
 @endif
 
+@if($notif->verifier == "1")
+    <div>
+    L'employé : {{$notif->matriculeEmploye}} à remplis le formulaire {{$notif->typeFormulaire}}
+    </div>
+@endif
+
+
 @endforeach
 
 

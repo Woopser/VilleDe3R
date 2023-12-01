@@ -152,7 +152,7 @@
         @endforeach
     </div>
 
-    <div>
+    <div style="margin-bottom:200px;">
         <h2>Travaux publics</h2>
         @foreach($liens as $lien)
         @if($lien->departement == 17)
