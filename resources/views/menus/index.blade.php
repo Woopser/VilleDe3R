@@ -62,8 +62,10 @@
         <div class="modal-content">
             <a href="{{ route('formulaireAccidentTravail') }}">Accident de travail</a>
             <a href="{{ route ('formulaireSit')}}">Situation dangereuse</a>
+            @if(Session::get('role') == "admin" || Session::get('role') == "superieur" )
             <a href="{{ route('formulaireAccidentAuto') }}">Accident de voitures</a>
             <a href="{{ route('formulaireAudit') }}">Grille audit SST</a>
+            @endif
         </div>
     </div>
 @endsection
