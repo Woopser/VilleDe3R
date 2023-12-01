@@ -13,8 +13,8 @@
     --nav-font-size: 4vw;
 
     --content-body-margin: 12% 0 0 0;
-    --table-width: 150%;
-    --table-tranform: -25%;
+    --table-width: 490px;
+    --table-tranform: 0%;
     --form-button-margin: 20px 0 120px 0;
 }
 @media only screen and (max-width: 768px){
@@ -25,7 +25,7 @@
         --nav-font-size: 14vw;
 
         --content-body-margin: 35% 0 0 0;
-        --table-width: 100%;
+        --table-width: 300px;
         --table-tranform: 0%;
         --form-button-margin: 20px 0 220px 0;
     }
@@ -116,10 +116,7 @@ table tr td{
     padding: 10px 0 !important; 
 }
 textarea{
-    resize: none;
-    width: 120%;
-    position: relative;
-    left: -4%;
+    resize: none;  
 }
 
 
@@ -303,11 +300,15 @@ table{
     position: relative;
     left: var(--table-tranform);
 }
-table tr td input{
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    margin: auto;
+table tr{
+    display: flex;
+    flex-direction: column;
+}
+.flexed{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 .form-button{
     width: 100%;
@@ -319,18 +320,16 @@ table tr td input{
     padding: 0;
 }
 .form-text-input{
-    width: 150%;
+    width: var(--table-width);
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    left: -4%;
 }
 .text-input{
     width: 100%;
-    margin: 0;
+    margin: auto;
     padding: 5px;
 }
 .form-check-input{
@@ -339,8 +338,20 @@ table tr td input{
     width: 20px;
     border: 1px solid black !important;
 }
-.table-header{
-    padding-right: 15px;
+.table-radio-4{
+    width: 25%;
+}
+.table-radio-3{
+    width: 33.33%;
+}
+.form-auto{
+    width: var(--table-width);
+    margin: auto;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 
