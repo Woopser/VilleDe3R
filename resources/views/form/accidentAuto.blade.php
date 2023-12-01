@@ -7,6 +7,7 @@
         @foreach($errors->all() as $error)
           <p>{{$error}}</p>
         @endforeach
+
       </div>
     @endif
 
@@ -53,4 +54,5 @@
           <button class="btn btn-primary form-button" type="submit">Envoyer</button>
       </form>
   </div>
+
 @endsection

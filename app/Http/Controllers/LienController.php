@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Models\Lien;
 use App\Models\Departement;
+use Illuminate\Support\Facades\Session;
 
 class LienController extends Controller
 {
@@ -15,7 +16,8 @@ class LienController extends Controller
     public function index()
     {
         Log::debug("ICICI");
-        $liens = Lien::all();
+        $liens = Lien::where('departement', '=', Session::get('departement'))->get();
+        $lian = Lien::where('departement', '=', Session::get('departement'))->first();   
         return view('menus.liens', compact('liens'));
     }
 
