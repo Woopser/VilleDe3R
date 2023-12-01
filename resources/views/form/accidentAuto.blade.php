@@ -24,9 +24,9 @@
     <form method="POST" action="{{route('accidentAuto.store')}}">
       @csrf
         <div class="mb-3">
-            <label for="numImp" class="form-label"><strong>Numéro(s) unité(s) impliqué(s) :</strong></label>
+            <label for="numImp" class="form-label"><strong>Numéro unité impliqué :</strong></label>
             <input type="text" class="form-control" id="numUnit" name="numeroUnite">
-            <div id="numUnite" class="form-text">123, 456 , 765, etc...</div>
+            <p id="erreurUnit" class="erreurForm"></p>
         </div>
 
         <div class="mb-3">
@@ -41,7 +41,8 @@
 
         <div class="mb-3">
             <label for="nomEmp" class="form-label"> <strong>Matricule de l'employé impliqué :  </strong></label>
-            <input type="number" class="form-control" id="nomEmp" name="employeImpliquer">
+            <input type="number" class="form-control" id="Matri" name="employeImpliquer">
+            <p id="erreurMarti" class="erreurForm"></p>
         </div>
 
         <div class="mb-3">
@@ -68,6 +69,7 @@
         </div>
 
     </form>
+    <script src="{{ asset('js/accidentVoiture.js') }}"></script>
     <div style="height: 115px"></div>
 </div>
 @endsection
