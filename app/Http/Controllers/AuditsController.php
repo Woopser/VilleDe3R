@@ -123,7 +123,7 @@ class AuditsController extends Controller
         $notification->save();
             
     
-        return redirect()->back();
+        return redirect()->route('menus.index');
         }
         
         catch(\Throwable $e)

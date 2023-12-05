@@ -78,7 +78,7 @@ class AccidentAutosController extends Controller
             $notification->idFormulaire =  $accAutoId;
             Log::debug("ICi3");
             $notification->save();
-            return redirect()->back();
+            return redirect()->route('menus.index');
 
         }
         catch(\Throwable $e){
