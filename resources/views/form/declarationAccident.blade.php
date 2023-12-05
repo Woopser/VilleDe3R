@@ -1,11 +1,11 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container">
+    <!--
     <div style="height: 115px"></div>
     <div>
         <div>
-            <!--
+            
             @if(isset($personne))
             <div class="modalYesNo" id="yesNoModal">
                 <div style="height: 115px"></div>
@@ -35,100 +35,99 @@
                 </div>
             @endif
 
-            <h1>Formulaire de déclaration d'accident de travail</h1>
-            @if(isset($personne))
-            <form method="POST" action="{{route('formulaireAccidentTravail.store')}}">
-                @csrf
-                    <div class="mb-3">
-                        <label for="matricule" class="form-label"><strong>Matricule</strong></label>
-                        <input type="text" class="form-control" id="inputMatricule" name="matricule" disabled value="{{$personne->matricule}}">
-                    </div>
-                <div class="mb-3">
-                    <label for="dateAccident" class="form-label"><strong>Date de l'accident</strong></label>                   
-                    <input type="datetime-local" class="form-control" name="dateAccident" id="dateAccident">
-                    <p id="erreurDateAccident" class="erreurForm"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="lieu" class="form-label"><strong>Quelle est le lieu de l'accident</strong></label>
-                    <input type="text" id="lieu" class="form-control" name="lieu">
-                    <p id="erreurLieu" class="erreurForm"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="description" class="form-label"><strong>Description de l'accident</strong></label>
-                    <textarea name="description" class="form-control" id="description"></textarea>
-                    <p id="erreurDescription" class="erreurForm"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="temoinTrueFalse" class="form-label"><strong>Es se qu'il y a eu des temoin</strong></label>
-                    <div class="d-flex justify-content-center">
-                        <input type="radio" name="ouiNon" class="form-check-input" id="Oui">
-                        <label style="margin-right: 20px; margin-left:5px" for="Oui" class="form-check-label">Oui</label>
-                        <input style="margin-left: 20px; margin-right: 5px" type="radio" name="ouiNon" class="form-check-input" id="Non">
-                        <label for="Non" class="form-check-label">Non</label>
-                    </div>
-                </div>
-                <div id="Temoin" class="mb-3 temoinCacher">
-                        <label for="temoin" class="form-label"><strong>Témoin</strong></label>
-                        <input type="text" class="form-control" name="temoin" id="inputTemoin">
-                    </div>
-                <div class="mb-3">
-                    <label for="nature" class="form-label"><strong>Nature et site de la blessure</strong></label>
-                    <input type="text" class="form-control" name="nature" id="nature">
-                    <p id="erreurNature" class="erreurForm"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="descriptionBlessure" class="form-label"><strong>Description Blessure</strong></label>
-                    <textarea name="descriptionBlessure" class="form-control" id="descriptionBlessure"></textarea>
-                    <p id="erreurBlessure" class="erreurForm"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="violence" class="form-label"><strong>Es se qu'il y a eu de la violence</strong></label>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="violenceP" value="Physique">
-                        <label for="violenecePhysique" class="form-check-label">Physique</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="checkbox" class="form-check-input" name="violenceV" value="Verbale">
-                        <label for="violeneceVerbale" class="form-check-label">Verbale</label>
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="comment" class="form-label"><strong>Comment s'est produit la blessure</strong></label>
-                    <textarea name="comment" class="form-control" id="comment"></textarea>
-                    <p id="erreurComment" class="erreurForm"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="premierSoin" class="form-label"><strong>Premier soin</strong></label>
-                    <input type="text" class="form-control" name="premierSoin" id="premierSoin">
-                    <p id="erreurPremier" class="erreurForm"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="NomSecouriste" class="form-label"><strong>Nom du secouriste</strong></label>
-                    <input type="text" class="form-control" name="nomSecouriste" id="secouriste">
-                    <p id="erreurSecouriste" class="erreurForm"></p>
-                </div>
-                <div class="mb-3">
-                    <label for="detail" class="form-label"><strong>Detail de l'accident</strong></label>
-                    <div class="form-check">
-                        <input type="radio" name="detail" value="1" class="form-check-input">
-                        <label for="aucuneAbsence" class="form-check-label">Accident ne nécessitant aucune absence</label>
-                    </div>
-                    <div class="form-check">
-                        <input type="radio" name="detail" value="2" class="form-check-input">
-                        <label for="aucuneAbsence" class="form-check-label">Accident nécessitant une consultation médicale</label>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-end">
-                    <button type="submit" class="BTEnvoyer ">Remplir</button>
-                </div>
-            </form>
-            @else
-                <p>bipboup erreur</p>
-            @endif
-            <div style="height: 115px"></div>
-        </div>
-    </div>
+
+
+<div class="form-main">
+    <h2>Formulaire d'accident de travail</h2>
+    <form method="POST" action="{{route('formulaireAccidentTravail.store')}}" class="form-auto">
+        @csrf
+        <table>
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <input type="text" class="text-input" id="inputMatricule" name="matricule" disabled value="{{$personne->matricule}}" placeholder="Matricule">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <input type="datetime-local" class="text-input" name="dateAccident" id="dateAccident">
+                </td>
+            <tr>
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <input type="text" class="text-input" id="lieu" name="lieu" placeholder="Lieu de l'accident">
+                </td>    
+            </tr>    
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <textarea name="description" class="text-input" id="description" placeholder="Description de l'accident"></textarea>
+                </td>
+            </tr>
+            <tr class="flexed">
+                <th class="table-radio-3"></th>
+                <th class=""><i class="fa-solid fa-check" style="color: #04ff00"></i></th>
+                <th class="table-header"><i class="fa-solid fa-x" style="color: #ff0000;"></i></th>             
+            </tr>
+            <tr class="flexed">
+                <td class="table-radio-3">Est-ce qu'il y avait des témoins</th>
+                    <td><input type="radio" name="ouiNon" class="form-check-input" id="Oui"></td>
+                    <td><input type="radio" name="ouiNon" checked class="form-check-input" id="Non"></td>
+            </tr>
+            <tr id="Temoin" class="temoinCacher">
+                <td colspan="3" class="form-text-input">
+                    <input type="text" class="text-input" id="inputTemoin" name="temoin" placeholder="Témoin">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <input type="text" class="text-input" id="nature" name="nature" placeholder="Nature et site de la blessure">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <textarea name="descriptionBlessure" class="text-input" id="descriptionBlessure" placeholder="Description de la blessure"></textarea>
+                </td>
+            </tr>
+            <tr class="flexed">
+                <th class="table-radio-3"></th>
+                <th class=""><p>Physique</p></th>
+                <th class="table-header"><p>Verbale</p></th>             
+            </tr>
+            <tr class="flexed">
+                <td class="table-radio-3">Est-ce qu'il y a eu violence</th>
+                <td><input type="checkbox" class="form-check-input" name="violenceP" value="Physique"></td>
+                <td><input type="checkbox" class="form-check-input" name="violenceV" value="Verbale"></td>
+            </tr>
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <textarea name="comment" class="text-input" id="comment" placeholder="Comment s'est produit la blessure"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <input type="text" class="text-input" id="premierSoin" name="premierSoin" placeholder="Premier soin">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" class="form-text-input">
+                    <input type="text" class="text-input" id="secouriste" name="nomSecouriste" placeholder="Nom du secouriste">
+                </td>
+            </tr>
+            <tr>
+                <td for="detail" class="form-label"><strong>Detail de l'accident</strong></td>
+                <td class="form-check ms-5">
+                    <input type="radio" name="detail" value="1" class="form-check-input" id="aucuneAbsence">
+                    <label for="aucuneAbsence" class="form-check-label">Accident ne nécessitant aucune absence</label>
+                </td>
+                <td class="form-check ms-5">
+                    <input type="radio" name="detail" value="2" class="form-check-input" id="absence">
+                    <label for="absence" class="form-check-label">Accident nécessitant une consultation médicale</label>
+                </td>
+            </tr>
+        </table>
+        <button class="btn btn-primary form-button" type="submit">Envoyer</button>
+    </form>
 </div>
+
 
 <script src="{{ asset('js/declarationAccident.js') }}"></script>
 @endsection
