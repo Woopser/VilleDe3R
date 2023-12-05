@@ -72,7 +72,7 @@ class SituationController extends Controller
            $situation = situation::all();
    
            $situationId = count($situation);
-           Log:debug(situationId);
+           Log::debug($situationId);
            $notification->idFormulaire =  $situationId;
 
            $notification->save();
