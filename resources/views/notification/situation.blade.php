@@ -1,33 +1,19 @@
 @extends('layouts.app')
-
 @section('V3R')
-
 @section('content')
-    <div style="height: 144.89px"></div>
 
 
-    @if(isset($errors) && $errors->any())
-
-     <div class="alert alert-danger">
-
-         @foreach($errors->all() as $error)
-
-             <p>{{$error}}</p>
-
+@if(isset($errors) && $errors->any())
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{$error}}</p>
         @endforeach
-
     </div>
 @endif
 
 @if(isset($forms))
-
-
 @foreach($forms as $form)
-
-
-<h1>Formulaire de signalement de situation dangeureuse</h1>
-
-<form method="POST" action="{{route('notification.update',[$notif->id])}}">
+<form method="POST" action="{{route('notification.update',[$notif->id])}}" class="notif-main notif-show">
     @csrf
 
     <div class="mb-3">
@@ -65,11 +51,11 @@
         <p>{{$form->correction}}</p>
     </div>
 
-    @if($notif->verifier == 0){
+    @if($notif->verifier == 0)
             <div class="d-flex justify-content-end">
                 <button type="submit" class="BTEnvoyer ">Verifier</button>
         </div>
-        }
+        
         @endif
 </form>
 @endforeach

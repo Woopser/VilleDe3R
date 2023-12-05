@@ -3,19 +3,13 @@
 @section('V3R')
 
 @section('content')
-    <div style="height: 144.89px"></div>
 
 
-    @if(isset($errors) && $errors->any())
-
-     <div class="alert alert-danger">
-
-         @foreach($errors->all() as $error)
-
-             <p>{{$error}}</p>
-
+@if(isset($errors) && $errors->any())
+    <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+            <p>{{$error}}</p>
         @endforeach
-
     </div>
 @endif
 
@@ -23,10 +17,9 @@
 
 
 @foreach($forms as $form)
-
+<form method="POST" action="{{route('notification.update', [$notif->id])}}" class="notif-main notif-show">
+@csrf
 <div class="mb-3">
-<form method="POST" action="{{route('notification.update', [$notif->id])}}">
-    @csrf
             <label for="numImp" class="form-label"> <strong> Travaux des travaux : </strong></label>
             <p>{{$form->lieu}}</p>
         </div>
@@ -159,17 +152,12 @@
             <p>{{$form->descriptionTravail}}</p>
         </div>
 
-        @if($notif->verifier == 0){
+        @if($notif->verifier == 0)
             <div class="d-flex justify-content-end">
                 <button type="submit" class="BTEnvoyer ">Verifier</button>
-        </div>
-        }
+            </div>
         @endif
 </form>
 @endforeach
-
-
 @endif
-
-
 @endsection

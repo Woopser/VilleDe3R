@@ -258,8 +258,14 @@ nav{
     filter: brightness(90%);
     color: white;
 }
+.boutonMenu:visited{
+    color: white;
+}
 .boutonMenuLarge:hover{
     filter: brightness(90%);
+    color: white;
+}
+.boutonMenuLarge:visited{
     color: white;
 }
 .boutonMenu-content{
@@ -384,6 +390,43 @@ table tr{
     padding: 1%;
 }
 
+
+/* Notifications */
+.notif-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: var(--table-width);
+    margin: var(--form-margin);
+    padding: auto;
+    text-align: center;
+}
+.notif-show{
+    border: 1px solid gray;
+}
+.notif-show div{
+    padding: 2%;
+    width: 100%;
+}
+.notif-show div:nth-child(odd){
+    background-color: var(--light);
+}
+.notif-table tr td{
+    text-align: center;
+}
+.notif-table tr:nth-child(odd){
+    background-color: var(--light);
+}
+.notif-table tr td a{
+    color: black;
+}
+.notif-table tr td a:hover{
+    color: black;
+}
+.notif-table tr td a:visited{
+    color: black;
+}
 
 
 /* Arnaud */
