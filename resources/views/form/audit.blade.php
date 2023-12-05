@@ -86,7 +86,7 @@
                     <td><input type="radio" name="autres" value="2" class="form-check-input"></td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="form-text-input"><input type="text" class="text-input" placeholder="Veuillez préciser" name="lieu"></td>
+                    <td colspan="3" class="form-text-input"><input type="text" class="text-input" placeholder="Veuillez préciser" name="descAutre"></td>
                 </tr>
                 <tr class="flexed">
                     <td class="table-radio-4">Distanciation Sociale</td>
@@ -107,7 +107,7 @@
                     <td><input type="radio" name="respectProcedure" value="2" class="form-check-input"></td>
                 </tr>
                 <tr>
-                    <td colspan="3" class="form-text-input"><textarea class="text-input" name="lieu"></textarea></td>
+                    <td colspan="3" class="form-text-input"><textarea class="text-input" name="descriptionTravail"></textarea></td>
                 </tr>
             </table>
             <button class="btn btn-primary form-button" type="submit">Envoyer</button>

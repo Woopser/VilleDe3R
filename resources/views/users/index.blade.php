@@ -2,7 +2,7 @@
     <html lang="en"> 
     <head> 
     <meta charset="UTF-8"> 
-    <link rel="stylesheet" href="{{ asset('connexion.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('../css/connexion.css') }}"> 
     </head> 
     <body> 
         <section>  
@@ -18,7 +18,6 @@
                         <div class="inputBox"> 
                             <input type="password" id="password" name="password" required> <i>Mot de passe</i> 
                         </div> 
-                        <div class="links"> <a href="#">Mot de passe oublié ?</a> <a href="#"></a></div> 
                         <button type="submit">Connexion</button> 
                     </div> 
                 </form>               
