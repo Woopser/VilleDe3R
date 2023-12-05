@@ -1,18 +1,19 @@
 @extends('layouts.app')
-
 @section('V3R')
-
 @section('content')
 
-<h1> Liens utiles</h1>
-
-<h2> {{$lian->nom}} </h2>
-@foreach($liens as $lien)
-
-   <a href="{{$lien->lien}}">{{$lien->nom}}</a>
-
-@endforeach
-
+<div class="notif-main">
+   <h1>Liens utiles</h1>
+   <h3> {{$lian->nom}} </h3>
+   <table class="notif-table">
+      @foreach($liens as $lien)
+         <tr>
+               <td>
+                  <a href="{{$lien->lien}}">{{$lien->nom}}</a>
+               </td>
+         </tr>
+      @endforeach
+   </table>
 </div>
 
 @endsection
