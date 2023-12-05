@@ -65,9 +65,12 @@
         <p>{{$form->correction}}</p>
     </div>
 
-    <div class="d-flex justify-content-end">
-        <button type="submit" class="BTEnvoyer ">Verifier</button>
-    </div>
+    @if($notif->verifier == 0){
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="BTEnvoyer ">Verifier</button>
+        </div>
+        }
+        @endif
 </form>
 @endforeach
 

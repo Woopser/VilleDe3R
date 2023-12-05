@@ -9,12 +9,9 @@
 <h2> {{$lian->nom}} </h2>
 @foreach($liens as $lien)
 
-    <a href="{{$lien->lien}}">{{$lien->nom}}</a>
+   <a href="{{$lien->lien}}">{{$lien->nom}}</a>
 
 @endforeach
-
-
-
 
 </div>
 

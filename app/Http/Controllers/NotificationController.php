@@ -21,7 +21,14 @@ class NotificationController extends Controller
     public function index()
     {
         $notifs = notification::where('matriculeSuperviseur',Session::get('matricule'))->get();
-        return View('/notification.index', compact('notifs'));
+        $users = User::all();
+
+        if($notifs)
+        foreach($notifs as $notif)
+        $users = User::where('matricule',$notif->matriculeEmploye)->get();
+
+
+        return View('/notification.index', compact('notifs','users'));
     }
 
     /**
@@ -102,7 +109,7 @@ class NotificationController extends Controller
 
         try{
             $notif = notification::find($id);
-
+      
             $forms = Situation::where('id',$notif->idFormulaire)->get();
     
             return View('/notification.situation', compact('forms','notif')); 
