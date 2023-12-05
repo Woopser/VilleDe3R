@@ -9,6 +9,7 @@
 
     --slide-in-x: 70%;
     --button-width: 500px;
+    --button-width-large: 1030px;
     --nav-justify-content: start;
     --nav-font-size: 4vw;
 
@@ -16,11 +17,16 @@
     --table-width: 490px;
     --table-tranform: 0%;
     --form-button-margin: 20px 0 120px 0;
+    --form-margin: 12% 0;
+
+    --modal-width: 40%;
+    --modal-transform: 30%;
 }
 @media only screen and (max-width: 768px){
     :root{
         --slide-in-x: 0%;
         --button-width: 150px;
+        --button-width-large: 330px;
         --nav-justify-content: center;
         --nav-font-size: 14vw;
 
@@ -28,6 +34,10 @@
         --table-width: 300px;
         --table-tranform: 0%;
         --form-button-margin: 20px 0 220px 0;
+        --form-margin: 35% 0;
+
+        --modal-width: 80%;
+        --modal-transform: 10%;
     }
 }
 
@@ -109,8 +119,8 @@ a:visited{
     align-items: center;
     height: 85%;
     width: 100%;
-    margin: var(--content-body-margin);
-    padding-bottom: 13%;
+    margin: auto;
+    padding: auto;
 }
 table tr td{
     padding: 10px 0 !important; 
@@ -234,8 +244,23 @@ nav{
     height: 100px;
     text-align: center;
 }
+.boutonMenuLarge{
+    display: block;
+    background-color: var(--dark);
+    color: white;
+    margin: 15px;
+    padding: 10px;
+    width: var(--button-width-large);
+    height: 100px;
+    text-align: center;
+}
 .boutonMenu:hover{
     filter: brightness(90%);
+    color: white;
+}
+.boutonMenuLarge:hover{
+    filter: brightness(90%);
+    color: white;
 }
 .boutonMenu-content{
     margin: auto;
@@ -270,7 +295,7 @@ footer{
     position: absolute;
     bottom: 0;
 
-    height: 15%;
+    height: 15vh;
     width: 100%;
 
     display: flex;
@@ -291,7 +316,8 @@ footer{
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin: auto;
+    margin: var(--form-margin);
+    padding: auto;
 }
 table{
     width: var(--table-width);
@@ -312,7 +338,6 @@ table tr{
 }
 .form-button{
     width: 100%;
-    margin: var(--form-button-margin);
 }
 .form-control{
     width: 100%;
@@ -353,6 +378,11 @@ table tr{
     align-items: center;
     justify-content: center;
 }
+.form-check-container{
+    border: 1px solid gray;
+    border-radius: 1%;
+    padding: 1%;
+}
 
 
 
@@ -365,10 +395,10 @@ table tr{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40%;
+    width: var(--modal-width);
     height: 50%;
     top: 25%;
-    left: 30%;
+    left: var(--modal-transform);
     background-color: var(--light);
     animation-name: slide-down;
     animation-duration: 0.5s;

@@ -11,7 +11,7 @@
 <body>
     <!-- Navbar -->
     <nav>
-        <a id="nav-logo" href=""><img src="{{ asset('img/logo_v3r_blanc.svg') }}" alt="Logo" width="60"></a>
+        <a id="nav-logo" href="{{route('menus.index')}}"><img src="{{ asset('img/logo_v3r_blanc.svg') }}" alt="Logo" width="60"></a>
         <a id="nav-hamburger" href="javascript:void(0);" class="icon" onclick="toggleMenu()">
             <div class="bar1"></div>
             <div class="bar2"></div>
@@ -20,7 +20,6 @@
         <div id="nav-links">
             <a class="nav-link" href="{{route('menus.index')}}"><h1 class="nav-link-text">Accueil</h1></a>
             <a class="nav-link" href="{{route('lien.index')}}"><h1 class="nav-link-text">Liens Utiles</h1></a>
-            <a class="nav-link" href=""><h1 class="nav-link-text">Consulter</h1></a>
             @if(Session::get('role') == "admin") 
             <a class="nav-link" href="{{route('lien.spindex')}}"><h1 class="nav-link-text">Ajouter une ressource</h1></a>
             @endif
