@@ -19,7 +19,7 @@
     </div>
 @endif
 
-<h1>Formulaires NON vérifiés</h1>
+<h1>Formulaires non vérifiés</h1>
 
 @foreach($notifs as $notif)
 @if($notif->typeFormulaire == "accidentTravail" && $notif->verifier == "0")
