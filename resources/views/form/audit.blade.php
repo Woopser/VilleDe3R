@@ -106,7 +106,7 @@
                     <td><input type="radio" name="respectProcedure" value="1" class="form-check-input"></td>
                     <td><input type="radio" name="respectProcedure" value="2" class="form-check-input"></td>
                 </tr>
-                <tr>
+                <tr class="mb-5">
                     <td colspan="3" class="form-text-input"><textarea class="text-input" name="lieu"></textarea></td>
                 </tr>
             </table>

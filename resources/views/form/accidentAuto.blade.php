@@ -41,15 +41,16 @@
                     <input type="text" class="text-input" id="numPerm" name="numeroDePermis" placeholder="Numéro du permis de conduire de l'employé">
                   </td>
               <tr>
-              <tr class="flexed">
-                  <th class="table-radio-3"></th>
-                  <th class=""><i class="fa-solid fa-check" style="color: #04ff00"></i></th>
-                  <th class="table-header"><i class="fa-solid fa-x" style="color: #ff0000;"></i></th>             
-              </tr>
-              <tr class="flexed">
-                  <td class="table-radio-3">Autres véhicules impliqués (citoyen)</th>
-                  <td><input type="radio" name="autreVehicule" value="1" class="form-check-input"></td>
-                  <td><input type="radio" name="autreVehicule" checked value="0" class="form-check-input"></td>
+              <tr class="form-check-container mt-3 mb-5">
+                <td class="form-label ms-1"><strong>Autres véhicules impliqués (citoyen)</strong></td>
+                  <td class="form-check ms-5">
+                    <input type="radio" name="autreVehicule" value="1" class="form-check-input" id="OuiAuto">
+                    <label for="OuiAuto" class="form-check-label">Oui</label>
+                  </td>
+                  <td class="form-check ms-5">
+                    <input type="radio" name="autreVehicule" checked value="0" class="form-check-input" id="NonAuto">
+                    <label for="NonAuto" class="form-check-label">Non</label>
+                  </td>
               </tr>
           </table>
           <button class="btn btn-primary form-button" type="submit">Envoyer</button>

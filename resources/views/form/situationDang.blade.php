@@ -50,7 +50,7 @@
                     <textarea name="description" class="text-input" id="description" placeholder="Description"></textarea>
                 </td>
             </tr>
-            <tr>
+            <tr class="mb-5">
                 <td colspan="3" class="form-text-input">
                     <textarea name="correction" class="text-input" id="correction" placeholder="Correction"></textarea>
                 </td>

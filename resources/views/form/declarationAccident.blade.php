@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<div class="container">
     <!--
     <div style="height: 115px"></div>
     <div>
@@ -62,15 +61,16 @@
                     <textarea name="description" class="text-input" id="description" placeholder="Description de l'accident"></textarea>
                 </td>
             </tr>
-            <tr class="flexed">
-                <th class="table-radio-3"></th>
-                <th class=""><i class="fa-solid fa-check" style="color: #04ff00"></i></th>
-                <th class="table-header"><i class="fa-solid fa-x" style="color: #ff0000;"></i></th>             
-            </tr>
-            <tr class="flexed">
-                <td class="table-radio-3">Est-ce qu'il y avait des témoins</th>
-                    <td><input type="radio" name="ouiNon" class="form-check-input" id="Oui"></td>
-                    <td><input type="radio" name="ouiNon" checked class="form-check-input" id="Non"></td>
+            <tr class="form-check-container">
+                <td class="form-label ms-1"><strong>Est-ce qu'il y avait des témoins</strong></td>
+                    <td class="form-check ms-5">
+                        <input type="radio" name="ouiNon" class="form-check-input" id="Oui">
+                        <label for="Oui" class="form-check-label">Oui</label>
+                    </td>
+                    <td class="form-check ms-5">
+                        <input type="radio" name="ouiNon" checked class="form-check-input" id="Non">
+                        <label for="Non" class="form-check-label">Non</label>
+                    </td>
             </tr>
             <tr id="Temoin" class="temoinCacher">
                 <td colspan="3" class="form-text-input">
@@ -87,15 +87,16 @@
                     <textarea name="descriptionBlessure" class="text-input" id="descriptionBlessure" placeholder="Description de la blessure"></textarea>
                 </td>
             </tr>
-            <tr class="flexed">
-                <th class="table-radio-3"></th>
-                <th class=""><p>Physique</p></th>
-                <th class="table-header"><p>Verbale</p></th>             
-            </tr>
-            <tr class="flexed">
-                <td class="table-radio-3">Est-ce qu'il y a eu violence</th>
-                <td><input type="checkbox" class="form-check-input" name="violenceP" value="Physique"></td>
-                <td><input type="checkbox" class="form-check-input" name="violenceV" value="Verbale"></td>
+            <tr class="form-check-container">
+                <td class="form-label ms-1"><strong>Est-ce qu'il y a eu violence</strong></td>
+                <td class="form-check ms-5">
+                    <input type="checkbox" class="form-check-input" name="violenceP" value="Physique" id="violenceP">
+                    <label for="violenceP" class="form-check-label">Physique</label>
+                </td>
+                <td class="form-check ms-5">
+                    <input type="checkbox" class="form-check-input" name="violenceV" value="Verbale" id="violenceV">
+                    <label for="violenceV" class="form-check-label">Verbale</label>
+                </td>
             </tr>
             <tr>
                 <td colspan="3" class="form-text-input">
@@ -112,8 +113,8 @@
                     <input type="text" class="text-input" id="secouriste" name="nomSecouriste" placeholder="Nom du secouriste">
                 </td>
             </tr>
-            <tr>
-                <td for="detail" class="form-label"><strong>Detail de l'accident</strong></td>
+            <tr class="form-check-container mt-3 mb-5">
+                <td for="detail" class="form-label ms-1"><strong>Detail de l'accident</strong></td>
                 <td class="form-check ms-5">
                     <input type="radio" name="detail" value="1" class="form-check-input" id="aucuneAbsence">
                     <label for="aucuneAbsence" class="form-check-label">Accident ne nécessitant aucune absence</label>
