@@ -21,12 +21,24 @@
 @csrf
 <div class="mb-3">
             <label for="numImp" class="form-label"> <strong> Travaux des travaux : </strong></label>
-            <p>{{$form->lieu}}</p>
+            @if($form->lieu == 0)
+            <p>Conforme</p>
+            @elseif($form->lieu == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->lieu == 2)
+            <p>N/A</p>
+            @endif
         </div>
 
         <div class="mb-3">
             <label for="numImp" class="form-label"> <strong> Date et heure : </strong></label>
-            <p>{{$form->date}}</p>
+            @if($form->date == 0)
+            <p>Conforme</p>
+            @elseif($form->date == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->date == 2)
+            <p>N/A</p>
+            @endif
         </div>
       
         <div>
@@ -34,7 +46,13 @@
                 <strong>
                 EPI
                 </strong>
-                <p>{{$form->EPI}}</p>
+                @if($form->EPI == 0)
+            <p>Conforme</p>
+            @elseif($form->EPI == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->EPI == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -43,7 +61,13 @@
                 Tenue des lieux
                 </strong>
             </label>
-            <p>{{$form->tenueLieux}}</p>
+            @if($form->tenueLieux == 0)
+            <p>Conforme</p>
+            @elseif($form->tenueLieux == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->tenueLieux == 2)
+            <p>N/A</p>
+            @endif
              </div>
 
         <div>
@@ -52,7 +76,13 @@
                 Comportement sécuritaire
                 </strong>
             </label>
-            <p>{{$form->comportement}}</p>
+            @if($form->comportement == 0)
+            <p>Conforme</p>
+            @elseif($form->comportement == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->comportement == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -61,7 +91,13 @@
                 Signalisation
                 </strong>
             </label>
-            <p>{{$form->signalisation}}</p>
+            @if($form->signalisation == 0)
+            <p>Conforme</p>
+            @elseif($form->signalisation == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->signalisation == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -70,7 +106,13 @@
                 Fiches Signalétiques
                 </strong>
             </label>
-            <p>{{$form->ficheSignaletique}}</p>
+            @if($form->ficheSignaletique == 0)
+            <p>Conforme</p>
+            @elseif($form->ficheSignaletique == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->ficheSignaletique == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -79,7 +121,13 @@
                 Travaux - Excabvation
                 </strong>
             </label>
-            <p>{{$form->travaux}}</p>
+            @if($form->travaux == 0)
+            <p>Conforme</p>
+            @elseif($form->travaux == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->travaux == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -88,7 +136,13 @@
                 Espace clos
                 </strong>
             </label>
-            <p>{{$form->espaceClos}}</p>
+            @if($form->espaceClos == 0)
+            <p>Conforme</p>
+            @elseif($form->espaceClos == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->espaceClos == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -97,7 +151,13 @@
                 Méthode de travail
                 </strong>
             </label>
-            <p>{{$form->methode}}</p>
+            @if($form->methode == 0)
+            <p>Conforme</p>
+            @elseif($form->mehode == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->methode == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -106,7 +166,13 @@
                 Autre(s) (optionnel)
                 </strong>
             </label>
-            <p>{{$form->autres}}</p>
+            @if($form->autres == 0)
+            <p>Conforme</p>
+            @elseif($form->autres == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->autres == 2)
+            <p>N/A</p>
+            @endif
             </div>
             
  
@@ -114,7 +180,13 @@
             <strong>
             <label for="numImp" class="form-label">Autre(s) : Veuillez préciser</label>
             </strong>
-            <p>{{$form->descAutre}}</p>
+            @if($form->descAutre == 0)
+            <p>Conforme</p>
+            @elseif($form->descAutre == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->descAutre == 2)
+            <p>N/A</p>
+            @endif
         </div>
 
 
@@ -124,7 +196,13 @@
                 Distanciation Social
                 </strong>
             </label>
-            <p>{{$form->distanciation}}</p>
+            @if($form->distanciation == 0)
+            <p>Conforme</p>
+            @elseif($form->distanciation == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->distanciation == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -133,7 +211,13 @@
                 Port des  EPI (masques/visières)
                 </strong>
             </label>
-            <p>{{$form->portMasque}}</p>
+            @if($form->portMasque == 0)
+            <p>Conforme</p>
+            @elseif($form->portMasque == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->portMasque == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div>
@@ -142,14 +226,26 @@
                 Respect des procédures établis 
                 </strong>
             </label>
-            <p>{{$form->respectProcedure}}</p>
+            @if($form->respectProcedure == 0)
+            <p>Conforme</p>
+            @elseif($form->respectProcedure == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->respectProcedure == 2)
+            <p>N/A</p>
+            @endif
             </div>
 
         <div class="mb-3">
             <strong>
             <label for="numImp" class="form-label">Description:  :</label>
             </strong>
-            <p>{{$form->descriptionTravail}}</p>
+            @if($form->descriptionTravail == 0)
+            <p>Conforme</p>
+            @elseif($form->descriptionTravail == 1)
+            <p>Non-Conforme</p>
+            @elseif($form->descriptionTravail == 2)
+            <p>N/A</p>
+            @endif
         </div>
 
         @if($notif->verifier == 0)
