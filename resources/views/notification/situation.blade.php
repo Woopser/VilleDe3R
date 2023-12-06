@@ -51,11 +51,15 @@
         <p>{{$form->correction}}</p>
     </div>
 
-    @if($notif->verifier == 0)
+        @if($notif->verifier == 0)
             <div class="d-flex justify-content-end">
                 <button type="submit" class="BTEnvoyer ">Verifier</button>
-        </div>
-        
+            </div>
+        @endif
+        @if(Session::get('role') == "admin" && $notif->verifierAdmin == 0)
+            <div class="d-flex justify-content-end">
+                <button type="submit" class="BTEnvoyer ">Verifier</button>
+            </div> 
         @endif
 </form>
 @endforeach

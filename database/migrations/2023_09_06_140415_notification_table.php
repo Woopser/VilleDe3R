@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('typeFormulaire');
             $table->float('idFormulaire');
             $table->boolean("verifier")->default(false);
+            $table->boolean("verifierAdmin")->default(false);
             $table->timestamps();
         });
     }

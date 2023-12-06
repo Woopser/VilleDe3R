@@ -27,10 +27,20 @@ class NotificationController extends Controller
         foreach($notifs as $notif)
         $users = User::where('matricule',$notif->matriculeEmploye)->get();
 
-
         return View('/notification.index', compact('notifs','users'));
     }
 
+    public function indexAdmin()
+    {
+        $notifs = notification::where('verifier',true)->get();
+        $users = User::all();
+
+        if($notifs)
+        foreach($notifs as $notif)
+        $users = User::where('matricule',$notif->matriculeEmploye)->get();
+        
+        return View('/notification.indexAdmin', compact('notifs','users'));
+    }
     /**
      * Show the form for creating a new resource.
      */
@@ -134,10 +144,16 @@ class NotificationController extends Controller
     {
         $notif = notification::find($id);
 
-        $notif->verifier = 1;
-
-        $notif->save();
-        return redirect()->route('notification.index')->with('message'," réussi!");
+        if(Session::get('role') == 'superieur'){
+            $notif->verifier = 1;
+            $notif->save();
+            return redirect()->route('notification.index');
+        }
+        elseif(Session::get('role') == 'admin'){
+            $notif->verifierAdmin = 1;
+            $notif->save();
+            return redirect()->route('notification.indexAdmin');
+        }
     }
 
     /**

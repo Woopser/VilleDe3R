@@ -18,6 +18,8 @@ Route::middleware(['CheckRole:admin'])->group(function(){
     //---------------------------------------------------------- Route pour pages de liens -------------------------------------------------------------------------------------- 
     Route::get('/accueil/AjoutLien',[LienController::class, 'spindex'])->name('lien.spindex');
     Route::POST('/acceuil/store',[LienController::class, 'store'])->name('lien.store');
+    //------------------------------------------------------------------ Notification --------------------------------------------------------------------------------------------
+    Route::get('/notifications/admin',[NotificationController::class,'indexAdmin'])->name('notification.indexAdmin');
 });
 // ============================================================ Route pour admin et superieur ===================================================================================
 Route::middleware(['CheckRole:admin,superieur'])->group(function(){

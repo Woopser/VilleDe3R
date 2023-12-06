@@ -29,8 +29,12 @@
             </a>
         </div>
         @if(Session::get('role') == "admin" || Session::get('role') == "superieur" )
-        <div class="display-flex">        
-            <a href="{{ route('notification.index') }}" class="boutonMenuLarge hvr-shrink">
+        <div class="display-flex">    
+            @if(Session::get('role') == "admin")
+                <a href="{{ route('notification.indexAdmin') }}" class="boutonMenuLarge hvr-shrink">
+            @elseif(Session::get('role') == "superieur")
+                <a href="{{ route('notification.index') }}" class="boutonMenuLarge hvr-shrink">
+            @endif
                 <div class="boutonMenu-content">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-paperclip" viewBox="0 0 16 16">
@@ -42,6 +46,7 @@
                     </div>  
                 </div>
             </a>
+            
         </div>
         @endif
     </div>

@@ -9,7 +9,7 @@ class notification extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['matriculeEmploye','matriculeSuperviseur','typeFormulaire','idFormulaire','verifier'];
+    protected $fillable = ['matriculeEmploye','matriculeSuperviseur','typeFormulaire','idFormulaire','verifier','verifierAdmin'];
 
     public function usagers(){
         return $this->belongsToMany('App\Models\User');
