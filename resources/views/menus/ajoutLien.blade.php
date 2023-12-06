@@ -6,6 +6,14 @@
 <div style="height: 100.05px"></div>
 <h1> Ajout d'une ressource </h1>
 
+@if(isset($errors) && $errors->any())
+      <div class="alert alert-danger">
+        @foreach($errors->all() as $error)
+          <p>{{$error}}</p>
+        @endforeach
+
+      </div>
+    @endif
 
 <form method="POST" action="{{route('lien.store')}}">
     @csrf

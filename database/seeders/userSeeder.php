@@ -23,7 +23,7 @@ class userSeeder extends Seeder
                 'email' => 'antoinelefebvre@hotmail.com',
                 'departement' => 1,
                 'superviseur' => null,
-                'role' => 'Directeur'
+                'role' => 'superieur'
             ],
             [
                 'matricule' => 7654321,

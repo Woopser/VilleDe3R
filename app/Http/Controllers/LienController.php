@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Log;
 use App\Models\Lien;
 use App\Models\Departement;
 use Illuminate\Support\Facades\Session;
+use App\Http\Requests\LienRequest;
 
 class LienController extends Controller
 {
@@ -39,7 +40,7 @@ class LienController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(LienRequest $request)
     {
         Log::debug("ICICICICICI");
         $lien = new Lien($request->all());
